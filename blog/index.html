@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog · Mentes en Movimiento</title>
+
+  <!-- 🚫 NO INDEXING -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css" />
+  <script defer src="/app.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+    <div class="inner nav-wrapper">
+      <a class="brand" href="/" aria-label="Mentes en Movimiento">
+        <img class="brand-logo" src="/assets/logo.png" alt="Mentes en Movimiento logo" />
+        <span class="brand-text">
+          <span class="brand-name">Mentes en Movimiento</span>
+          <span class="brand-tagline">Cada niño, su propio camino</span>
+        </span>
+      </a>
+
+      <div class="nav-actions">
+        <a class="btn-secondary" href="/#contacto">Contacto</a>
+        <a class="btn-primary" href="/">Volver</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="inner">
+        <header class="section-header" data-reveal>
+          <p class="section-kicker">Blog</p>
+          <h1 class="section-title">Archivo</h1>
+          <p class="section-desc">Artículos cortos y prácticos (en construcción).</p>
+        </header>
+
+        <div class="post-grid" data-reveal>
+          <article class="post">
+            <a href="/blog/rutinas-visuales/" class="post-link">
+              <h3>Rutinas visuales sin agobio</h3>
+              <p class="muted">Cómo empezar con una rutina simple y sostenible.</p>
+              <span class="post-meta">3 min</span>
+            </a>
+          </article>
+
+          <article class="post">
+            <a href="/blog/movimiento-y-atencion/" class="post-link">
+              <h3>Movimiento y atención en el aula</h3>
+              <p class="muted">Mini-pausas que mejoran foco y regulación.</p>
+              <span class="post-meta">4 min</span>
+            </a>
+          </article>
+
+          <article class="post">
+            <a href="/blog/comunicacion-funcional/" class="post-link">
+              <h3>Comunicación funcional en casa</h3>
+              <p class="muted">5 hábitos que facilitan participación y lenguaje.</p>
+              <span class="post-meta">5 min</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="inner footer-row">
+      <div>© <span id="year"></span> Mentes en Movimiento</div>
+      <div class="footer-links">
+        <a href="/">Inicio</a>
+        <a href="/#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
