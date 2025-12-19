@@ -479,3 +479,29 @@ textarea{min-height:120px;resize:vertical}
 @media (prefers-reduced-motion: reduce){
   *{scroll-behavior:auto !important;transition:none !important;animation:none !important}
 }
+/* Blog footer button alignment */
+.blog-footer{margin-top: 1rem}
+
+/* Subtle animations (reveals) */
+[data-reveal]{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+[data-reveal].is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle hover lift for cards */
+.post, .tile, .model-card, .timeline-card, .split-card, .hero-visual-card, .contact-card, .card{
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.post:hover, .tile:hover, .model-card:hover, .timeline-card:hover, .split-card:hover, .hero-visual-card:hover{
+  transform: translateY(-2px);
+}
+
+/* Smooth accordion body animation */
+.tile-body{
+  overflow: hidden;
+}
