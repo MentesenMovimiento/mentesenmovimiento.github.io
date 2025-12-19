@@ -1,2 +1,2 @@
 # Website
-Official website for Mentes en Movimiento (NGO)
+Official website for Mentes en Movimiento - Applying for (NGO)
