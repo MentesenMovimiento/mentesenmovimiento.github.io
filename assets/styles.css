@@ -11,7 +11,7 @@
   --white: #FFFFFF;
   --text: #2F2722;
   --muted: #6B7280;
-  --overlay-dark: rgba(0, 0, 0, 0.45);
+  --overlay-dark: rgba(0, 0, 0, 0.55);
 
   /* Typography */
   --font-head: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -71,9 +71,11 @@ a:hover {
 .hidden {
   display: none !important;
 }
+
 .muted {
   color: var(--muted);
 }
+
 .small {
   font-size: 0.9rem;
 }
@@ -125,6 +127,7 @@ a:hover {
   font-family: var(--font-head);
   font-weight: 500;
 }
+
 .nav-toggle {
   display: none;
   border: none;
@@ -135,11 +138,11 @@ a:hover {
   HERO SECTION
 ----------------------------------- */
 .hero-mentes {
-  color: #D36A2E; /* Terracotta */
+  color: var(--terracotta);
 }
 
 .hero-mov {
-  color: #D64B78; /* Fuchsia */
+  color: var(--fuchsia);
 }
 
 .hero {
@@ -190,11 +193,13 @@ a:hover {
   font-weight: 600;
   padding: 0.72rem 1.15rem;
 }
+
 .btn--primary {
   background: var(--fuchsia);
   color: var(--white);
   border: 1px solid var(--fuchsia);
 }
+
 .btn--primary:hover {
   background: #b03d6a;
 }
@@ -205,14 +210,17 @@ a:hover {
 .section {
   padding: 40px 0;
 }
+
 .section--alt {
   background: #fff;
   border-top: 1px solid rgba(231,221,206,0.9);
   border-bottom: 1px solid rgba(231,221,206,0.9);
 }
+
 .section__head h2 {
   color: var(--terracotta);
 }
+
 .section__head p {
   color: var(--muted);
   max-width: 72ch;
@@ -222,40 +230,18 @@ a:hover {
 /* -----------------------------------
   SERVICES FLIP CARDS
 ----------------------------------- */
-/* SERVICES GRID */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 18px;
 }
 
-/* Ensure flip cards don’t shrink too much */
-.flip-card {
-  min-width: 300px;
-  min-height: 340px;
-}
-
-/* Improve readability on text overlay */
-.img-overlay h3,
-.img-overlay p {
-  z-index: 2;
-  color: #fff;
-}
-
-/* Optional: Slightly darker overlay for legibility */
-.img-overlay .flip-shade {
-  background: rgba(0, 0, 0, 0.55);
-}
-
-.services-grid {
-  display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-}
 .flip-card {
   perspective: 1000px;
-  min-height: 300px;
+  min-height: 340px;
+  position: relative;
 }
+
 .flip-hit {
   position: absolute;
   inset: 0;
@@ -263,14 +249,17 @@ a:hover {
   background: transparent;
   cursor: pointer;
 }
+
 .flip-inner {
   transition: transform 0.7s ease;
   transform-style: preserve-3d;
   position: relative;
 }
+
 .flip-card.is-flipped .flip-inner {
   transform: rotateY(180deg);
 }
+
 .flip-front,
 .flip-back {
   position: absolute;
@@ -280,20 +269,24 @@ a:hover {
   overflow: hidden;
   box-shadow: var(--shadow);
 }
+
 .img-overlay {
   display: flex;
   align-items: flex-end;
   padding: 14px;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
-.flip-shade {
+
+.img-overlay .flip-shade {
   position: absolute;
   inset: 0;
   background: var(--overlay-dark);
 }
-.flip-front h3,
-.flip-front p {
+
+.img-overlay h3,
+.img-overlay p {
   color: #fff;
   position: relative;
   z-index: 1;
@@ -307,6 +300,7 @@ a:hover {
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
 }
+
 .blog-card {
   display: grid;
   grid-template-columns: 110px 1fr;
@@ -320,25 +314,49 @@ a:hover {
 }
 
 /* -----------------------------------
-  STEP-BY-STEP ENFOQUE
+  ACCORDION (ENFOQUE)
 ----------------------------------- */
-.step-grid {
-  display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+
+.accordion {
+  border-top: 1px solid rgba(231,221,206,0.9);
+  border-bottom: 1px solid rgba(231,221,206,0.9);
 }
-.step-card {
-  background: var(--white);
+
+.accordion-item + .accordion-item {
+  border-top: 1px solid rgba(231,221,206,0.9);
+}
+
+.accordion-toggle {
+  width: 100%;
+  background: var(--terracotta);
+  color: #fff;
+  padding: 14px;
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
   border-radius: var(--radius);
-  padding: 18px;
-  border: 1px solid rgba(231,221,206,0.9);
-  box-shadow: var(--shadow);
-  text-align: center;
 }
-.step-num {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--fuchsia);
+
+.accordion-toggle::after {
+  content: "+";
+  position: absolute;
+  right: 16px;
+  font-size: 1.2rem;
+}
+
+.accordion-toggle.active::after {
+  content: "-";
+}
+
+.accordion-panel {
+  display: none;
+  padding: 14px 18px;
+  background: var(--white);
+  color: var(--text);
 }
 
 /* -----------------------------------
@@ -349,6 +367,7 @@ a:hover {
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
 }
+
 .instagram-media {
   border: 1px solid rgba(231,221,206,0.9) !important;
   border-radius: var(--radius) !important;
@@ -366,28 +385,36 @@ a:hover {
   padding: 20px;
   box-shadow: var(--shadow);
 }
+
 .field {
   margin-bottom: 14px;
   display: flex;
   flex-direction: column;
 }
+
 label {
   font-family: var(--font-head);
   font-weight: 600;
   color: var(--terracotta);
   margin-bottom: 6px;
 }
-input, textarea {
+
+input,
+textarea {
   border: 1px solid rgba(231,221,206,0.9);
   border-radius: var(--radius);
-  padding: 0.72rem .85rem;
+  padding: 0.72rem 0.85rem;
   font-family: var(--font-body);
 }
-textarea { resize: vertical; }
+
+textarea {
+  resize: vertical;
+}
+
 #contact-success {
   display: none;
   background: var(--fuchsia);
-  color: #fff;
+  color: var(--white);
   padding: 18px;
   border-radius: var(--radius);
   text-align: center;
@@ -399,7 +426,7 @@ textarea { resize: vertical; }
 ----------------------------------- */
 .toc-toggle {
   background: var(--terracotta);
-  color: #fff;
+  color: var(--white);
   padding: 8px 14px;
   border-radius: var(--radius);
   font-family: var(--font-head);
@@ -407,6 +434,7 @@ textarea { resize: vertical; }
   display: inline-block;
   margin-bottom: 12px;
 }
-.toc hidden {
+
+.toc.hidden {
   display: none;
 }
