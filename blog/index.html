@@ -1,72 +1,58 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="es">
 <head>
-  <title>Blog · Mentes en Movimiento</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog · Mentes en Movimiento</title>
+  <meta name="description" content="Artículos claros y útiles sobre desarrollo infantil, comunicación y movimiento." />
+  <link rel="canonical" href="https://mentesenmovimiento.github.io/Website/blog/" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/site.css" />
 </head>
-<body class="is-preload">
-<div id="wrapper">
-
-  <header id="header">
-    <a href="../index.html" class="logo">
-      <span class="symbol"><img src="../assets/images/logo.png" alt="Logo"></span>
-      <span class="title">Mentes en Movimiento</span>
-    </a>
-    <nav><a href="#menu">Menú</a></nav>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../"><img src="../assets/logo-horizontal.svg" alt="Mentes en Movimiento" height="40" /></a>
+      <nav class="menu menu--static">
+        <a href="../#servicios">Servicios</a>
+        <a href="../#enfoque">Enfoque</a>
+        <a href="../#contacto">Contacto</a>
+        <a href="../legal.html">Legal</a>
+      </nav>
+    </div>
   </header>
 
-  <nav id="menu">
-    <ul class="links">
-      <li><a href="../index.html#one">Servicios</a></li>
-      <li><a href="../index.html#contacto">Contacto</a></li>
-      <li><a href="../legal.html">Legal</a></li>
-    </ul>
-  </nav>
-
-  <section id="main" class="wrapper">
-    <div class="inner">
-      <header class="major">
+  <main id="contenido" class="section">
+    <div class="container">
+      <header class="section__head">
         <h1>Blog</h1>
-        <p>Contenido útil, claro y respetuoso para familias y centros.</p>
+        <p class="muted">Lecturas breves y prácticas para familias y profesionales.</p>
       </header>
-
-      <div class="blog-grid">
-        <a class="blog-card" href="movimiento-desarrollo.html">
-          <h3>Por qué el movimiento es clave en el desarrollo infantil</h3>
-          <p>La conexión mente-cuerpo y su impacto en regulación y aprendizaje.</p>
-        </a>
-        <a class="blog-card" href="logopedia-global.html">
-          <h3>Logopedia y desarrollo global: mucho más que hablar</h3>
-          <p>Comunicación funcional para participar, relacionarse y aprender.</p>
-        </a>
-        <a class="blog-card" href="cada-nino-camino.html">
-          <h3>Cada niño, su propio camino: intervención individualizada</h3>
-          <p>Personalizar con objetivos realistas y sostenibles.</p>
-        </a>
+      <div class="grid blog-cards">
+        <!-- Same cards as home; link to real posts -->
+        <article class="blog-card">
+          <a class="blog-card__link" href="movimiento-desarrollo.html">
+            <img loading="lazy" src="../assets/blog/movimiento-cover.jpg" alt="" class="blog-card__img" />
+            <div class="blog-card__body">
+              <span class="badge">Movimiento</span>
+              <h3>¿Por qué el movimiento es clave en el desarrollo infantil?</h3>
+              <p class="muted">Conexión cerebro–cuerpo y preparación para aprender.</p>
+              <p class="meta">8 min · Lectura</p>
+            </div>
+          </a>
+        </article>
+        <!-- Add more items… -->
       </div>
-
-      <ul class="actions">
-        <li><a href="../index.html" class="button">Volver al inicio</a></li>
-      </ul>
     </div>
-  </section>
+  </main>
 
-  <footer id="footer">
-    <div class="inner">
-      <ul class="copyright">
-        <li>&copy; <span id="year"></span> Mentes en Movimiento</li>
-        <li><a href="../legal.html">Legal</a></li>
-      </ul>
+  <footer class="site-footer">
+    <div class="container">
+      <p class="muted small">© <span id="year">2025</span> Mentes en Movimiento</p>
     </div>
   </footer>
-
-</div>
-<script src="../assets/js/site.js"></script>
 </body>
 </html>
