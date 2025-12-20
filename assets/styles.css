@@ -134,6 +134,14 @@ a:hover {
 /* -----------------------------------
   HERO SECTION
 ----------------------------------- */
+.hero-mentes {
+  color: #D36A2E; /* Terracotta */
+}
+
+.hero-mov {
+  color: #D64B78; /* Fuchsia */
+}
+
 .hero {
   padding: 70px 0 40px;
   text-align: center;
@@ -214,6 +222,31 @@ a:hover {
 /* -----------------------------------
   SERVICES FLIP CARDS
 ----------------------------------- */
+/* SERVICES GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+/* Ensure flip cards don’t shrink too much */
+.flip-card {
+  min-width: 300px;
+  min-height: 340px;
+}
+
+/* Improve readability on text overlay */
+.img-overlay h3,
+.img-overlay p {
+  z-index: 2;
+  color: #fff;
+}
+
+/* Optional: Slightly darker overlay for legibility */
+.img-overlay .flip-shade {
+  background: rgba(0, 0, 0, 0.55);
+}
+
 .services-grid {
   display: grid;
   gap: 14px;
