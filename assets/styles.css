@@ -170,10 +170,10 @@ a:hover { text-decoration: underline; }
 
 .hero-cta{
   display: flex;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .trust-strip{
