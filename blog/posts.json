@@ -1,26 +1,5 @@
 [
-  {
-    "slug": "movimiento-desarrollo",
-    "title": "¿Por qué el movimiento es clave en el desarrollo infantil?",
-    "tag": "Movimiento",
-    "cover": "assets/images/blog/movimiento-cover.jpg",
-    "excerpt": "Conexión cerebro–cuerpo, regulación y preparación para aprender.",
-    "minutes": 8
-  },
-  {
-    "slug": "logopedia-desarrollo",
-    "title": "Logopedia y desarrollo global: mucho más que hablar",
-    "tag": "Comunicación",
-    "cover": "assets/images/blog/logopedia-cover.jpg",
-    "excerpt": "Comunicación funcional, interacción y enfoque integrador.",
-    "minutes": 7
-  },
-  {
-    "slug": "intervencion-individualizada",
-    "title": "Cada niño, su propio camino: intervención individualizada",
-    "tag": "Enfoque",
-    "cover": "assets/images/blog/individualizada-cover.jpg",
-    "excerpt": "Calidad, colaboración y enfoque basado en fortalezas.",
-    "minutes": 6
-  }
+  { "slug":"movimiento-desarrollo", "title":"¿Por qué el movimiento es clave en el desarrollo infantil?", "tag":"Movimiento", "cover":"assets/images/blog/movimiento-cover.jpg", "excerpt":"Conexión cerebro–cuerpo, regulación y preparación para aprender.", "minutes":8 },
+  { "slug":"logopedia-desarrollo", "title":"Logopedia y desarrollo global: mucho más que hablar", "tag":"Comunicación", "cover":"assets/images/blog/logopedia-cover.jpg", "excerpt":"Comunicación funcional, interacción y enfoque integrador.", "minutes":7 },
+  { "slug":"intervencion-individualizada", "title":"Cada niño, su propio camino: intervención individualizada", "tag":"Enfoque", "cover":"assets/images/blog/individualizada-cover.jpg", "excerpt":"Calidad, colaboración y enfoque basado en fortalezas.", "minutes":6 }
 ]
