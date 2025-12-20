@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Mentes en Movimiento · Cada niño, su propio camino</title>
   <meta name="description" content="Clínica de desarrollo infantil que integra educación, logopedia, fisioterapia y movimiento/regulación con un enfoque cálido y profesional." />
   <link rel="canonical" href="https://mentesenmovimiento.github.io/Website/" />
@@ -34,7 +34,8 @@
   <!-- Header -->
   <header class="site-header" data-header>
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Inicio">
+      <!-- IMPORTANT: link to ./ so it works on GitHub Pages repo path -->
+      <a class="brand" href="./" aria-label="Inicio">
         <img src="assets/logo-horizontal.svg" alt="Mentes en Movimiento" height="40" />
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="navmenu" data-nav-toggle>
@@ -45,7 +46,6 @@
         <a href="#servicios">Servicios</a>
         <a href="#enfoque">Enfoque</a>
         <a href="blog/index.html">Blog</a>
-        <a href="#instagram">Instagram</a>
         <a href="#contacto">Contacto</a>
         <a href="legal.html">Legal</a>
       </nav>
@@ -53,7 +53,7 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero / Banner (60% of page height) -->
   <section class="hero">
     <div class="hero__bg contours" aria-hidden="true">
       <svg viewBox="0 0 1440 420" preserveAspectRatio="none" class="wave">
@@ -71,19 +71,19 @@
   </section>
 
   <main id="contenido">
-    <!-- Servicios: Títulos sobre banda de imagen -->
+    <!-- Servicios (with background images behind titles) -->
     <section class="section" id="servicios">
       <div class="container">
         <header class="section__head reveal">
           <h2>Servicios</h2>
-          <p>Explora cada área. Pasa el ratón (o toca) y abre “Detalles”.</p>
+          <p>Explora cada área y abre “Detalles”.</p>
         </header>
 
         <div class="grid services-grid">
-          <!-- EDUCACIÓN (cambia la URL si tu archivo tiene otro nombre) -->
+          <!-- EDUCACIÓN (uses an existing cover as background) -->
           <article class="service service--edu" data-tilt>
             <div class="service__inner">
-              <div class="service__media" style="--bg-url: url('assets/images/services/educacion.jpg');">
+              <div class="service__media" style="--bg-url: url('assets/images/blog/individualizada-cover.jpg');">
                 <header class="service__head">
                   <div class="service__icon" aria-hidden="true">📘</div>
                   <h3>Educación Especial</h3>
@@ -103,10 +103,10 @@
             </div>
           </article>
 
-          <!-- FISIOTERAPIA -->
+          <!-- FISIOTERAPIA (background linked) -->
           <article class="service service--fisio" data-tilt>
             <div class="service__inner">
-              <div class="service__media" style="--bg-url: url('assets/images/services/fisioterapia.jpg');">
+              <div class="service__media" style="--bg-url: url('assets/images/blog/movimiento-cover.jpg');">
                 <header class="service__head">
                   <div class="service__icon" aria-hidden="true">🧩</div>
                   <h3>Fisioterapia Pediátrica</h3>
@@ -126,10 +126,10 @@
             </div>
           </article>
 
-          <!-- MOVIMIENTO / REGULACIÓN -->
+          <!-- MOVIMIENTO / REGULACIÓN (background linked) -->
           <article class="service service--move" data-tilt>
             <div class="service__inner">
-              <div class="service__media" style="--bg-url: url('assets/images/services/movimiento.jpg');">
+              <div class="service__media" style="--bg-url: url('assets/images/blog/movimiento-cover.jpg');">
                 <header class="service__head">
                   <div class="service__icon" aria-hidden="true">🏃‍♀️</div>
                   <h3>Movimiento &amp; Regulación</h3>
@@ -149,10 +149,10 @@
             </div>
           </article>
 
-          <!-- LOGOPEDIA -->
+          <!-- LOGOPEDIA (background linked) -->
           <article class="service service--logo" data-tilt>
             <div class="service__inner">
-              <div class="service__media" style="--bg-url: url('assets/images/services/logopedia.jpg');">
+              <div class="service__media" style="--bg-url: url('assets/images/blog/logopedia-cover.jpg');">
                 <header class="service__head">
                   <div class="service__icon" aria-hidden="true">🗣️</div>
                   <h3>Logopedia</h3>
@@ -269,14 +269,14 @@
           <p>Contenido claro y útil para familias y centros.</p>
         </header>
         <div id="home-blog" class="grid blog-cards" data-blog-home>
-          <!-- Fallback si JS falla: 1 card -->
+          <!-- Fallback si JS falla -->
           <article class="blog-card">
             <a class="blog-card__link" href="blog/movimiento-desarrollo.html">
               <img loading="lazy" src="assets/images/blog/movimiento-cover.jpg" alt="" class="blog-card__img" />
               <div class="blog-card__body">
                 <span class="badge">Movimiento</span>
                 <h3>¿Por qué el movimiento es clave en el desarrollo infantil?</h3>
-                <p class="muted">Conexión cerebro–cuerpo y preparación para aprender.</p>
+                <p class="muted">Conexión cerebro–cuerpo, regulación y preparación para aprender.</p>
                 <p class="meta">8 min · Lectura</p>
               </div>
             </a>
@@ -286,23 +286,7 @@
       </div>
     </section>
 
-    <!-- Instagram (3 posts) -->
-    <section class="section section--alt contours" id="instagram">
-      <div class="container">
-        <header class="section__head reveal">
-          <h2>Instagram</h2>
-          <p>Historias reales de progreso en el día a día.</p>
-        </header>
-        <div class="insta-grid" data-insta>
-          <!-- Fallback links si falla JS -->
-          <a class="insta" href="https://www.instagram.com/mentesenmovimiento/" target="_blank" rel="noopener">Ver en Instagram</a>
-          <a class="insta" href="https://www.instagram.com/mentesenmovimiento/" target="_blank" rel="noopener">Ver en Instagram</a>
-          <a class="insta" href="https://www.instagram.com/mentesenmovimiento/" target="_blank" rel="noopener">Ver en Instagram</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contacto (serverless: FormSubmit) -->
+    <!-- Contacto -->
     <section class="section" id="contacto">
       <div class="container">
         <div class="split">
@@ -349,7 +333,9 @@
     <div class="container">
       <div class="footer__grid">
         <div>
-          <img src="assets/logo-horizontal.svg" alt="" height="28" />
+          <a href="./" aria-label="Inicio">
+            <img src="assets/logo-horizontal.svg" alt="" height="28" />
+          </a>
           <p class="muted small">© <span id="year"></span> Mentes en Movimiento</p>
         </div>
         <nav class="footer__nav">
@@ -365,4 +351,4 @@
 
   <script src="assets/script.js" defer></script>
 </body>
-</html
+</html>
