@@ -21,34 +21,34 @@
   <meta property="og:url" content="https://mentesenmovimiento.org/" />
   <meta property="og:image" content="https://mentesenmovimiento.org/assets/images/og-image.jpg" />
 
-  <!-- Twitter Card (SEO) -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mentes en Movimiento" />
   <meta name="twitter:description" content="Cada niño, su propio camino – acompañamiento integral en desarrollo infantil." />
   <meta name="twitter:image" content="https://mentesenmovimiento.org/assets/images/og-image.jpg" />
 
-  <!-- Preload critical images (same URLs) -->
+  <!-- Preload key imagery -->
   <link rel="preload" as="image" href="assets/images/logo-trans.svg" />
   <link rel="preload" as="image" href="assets/images/tiles-educacion.jpg" />
   <link rel="preload" as="image" href="assets/images/tiles-fisio.jpg" />
   <link rel="preload" as="image" href="assets/images/tiles-logopedia.jpg" />
   <link rel="preload" as="image" href="assets/images/tiles-mov.jpg" />
 
-  <!-- Structured Data (Organization) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "MedicalOrganization",
-    "name": "Mentes en Movimiento",
-    "url": "https://mentesenmovimiento.org/",
-    "areaServed": "Costa Daurada (Tarragona)",
-    "sameAs": [],
-    "description": "Clínica de desarrollo infantil que integra mente, cuerpo y acción. Acompañamos a niños y adolescentes con un enfoque cálido, profesional e inclusivo."
+    "@context":"https://schema.org",
+    "@type":"MedicalOrganization",
+    "name":"Mentes en Movimiento",
+    "url":"https://mentesenmovimiento.org/",
+    "areaServed":"Costa Daurada (Tarragona)",
+    "description":"Clínica de desarrollo infantil que integra mente, cuerpo y acción. Acompañamos a niños y adolescentes con un enfoque cálido, profesional e inclusivo."
   }
   </script>
 </head>
 <body>
 
+  <!-- Visually hidden until focused (see .skip-link CSS) -->
   <a href="#servicios" class="skip-link">Saltar al contenido</a>
 
   <!-- STICKY AUTO-HIDE HEADER -->
@@ -96,7 +96,7 @@
   <main>
 
     <!-- SERVICES -->
-    <section class="section" id="servicios">
+    <section class="section" id="servicios" tabindex="-1">
       <div class="container">
         <div class="section__head">
           <h2>Servicios</h2>
@@ -207,7 +207,7 @@
             <div><h3>¿Por qué el movimiento es clave?</h3><p class="muted">Cuerpo y cerebro: conexión que importa.</p></div>
           </a>
 
-          <a class="blog-card" href="blog/logopedia-global.html">
+        <a class="blog-card" href="blog/logopedia-global.html">
             <img src="assets/images/blog-logopedia.jpg" alt="Logopedia y desarrollo global" loading="lazy" decoding="async">
             <div><h3>Logopedia y desarrollo global</h3><p class="muted">Mucho más que hablar.</p></div>
           </a>
@@ -236,36 +236,46 @@
 
           <div class="accordion-item">
             <button class="accordion-toggle" aria-expanded="false" aria-controls="p-explorar" id="t-explorar">1 — Explorar</button>
-            <div class="accordion-panel" id="p-explorar" role="region" aria-labelledby="t-explorar" hidden>
-              <p>Escuchar y observar con atención, recopilando contexto familiar y escolar para entender fortalezas y retos reales.</p>
+            <div class="accordion-panel" id="p-explorar" role="region" aria-labelledby="t-explorar">
+              <div>
+                <p>Escuchar y observar con atención, recopilando contexto familiar y escolar para entender fortalezas y retos reales.</p>
+              </div>
             </div>
           </div>
 
           <div class="accordion-item">
             <button class="accordion-toggle" aria-expanded="false" aria-controls="p-evaluar" id="t-evaluar">2 — Evaluar</button>
-            <div class="accordion-panel" id="p-evaluar" role="region" aria-labelledby="t-evaluar" hidden>
-              <p>Evaluar funciones y habilidades en contextos reales para identificar necesidades y prioridades de intervención.</p>
+            <div class="accordion-panel" id="p-evaluar" role="region" aria-labelledby="t-evaluar">
+              <div>
+                <p>Evaluar funciones y habilidades en contextos reales para identificar necesidades y prioridades de intervención.</p>
+              </div>
             </div>
           </div>
 
           <div class="accordion-item">
             <button class="accordion-toggle" aria-expanded="false" aria-controls="p-planificar" id="t-planificar">3 — Planificar</button>
-            <div class="accordion-panel" id="p-planificar" role="region" aria-labelledby="t-planificar" hidden>
-              <p>Diseñar un plan centrado en objetivos claros, medibles y relevantes para el niño y su entorno.</p>
+            <div class="accordion-panel" id="p-planificar" role="region" aria-labelledby="t-planificar">
+              <div>
+                <p>Diseñar un plan centrado en objetivos claros, medibles y relevantes para el niño y su entorno.</p>
+              </div>
             </div>
           </div>
 
           <div class="accordion-item">
             <button class="accordion-toggle" aria-expanded="false" aria-controls="p-implementar" id="t-implementar">4 — Implementar</button>
-            <div class="accordion-panel" id="p-implementar" role="region" aria-labelledby="t-implementar" hidden>
-              <p>Aplicar estrategias y prácticas funcionales en la vida diaria del niño, con ajustes continuos.</p>
+            <div class="accordion-panel" id="p-implementar" role="region" aria-labelledby="t-implementar">
+              <div>
+                <p>Aplicar estrategias y prácticas funcionales en la vida diaria del niño, con ajustes continuos.</p>
+              </div>
             </div>
           </div>
 
           <div class="accordion-item">
             <button class="accordion-toggle" aria-expanded="false" aria-controls="p-revisar" id="t-revisar">5 — Revisar</button>
-            <div class="accordion-panel" id="p-revisar" role="region" aria-labelledby="t-revisar" hidden>
-              <p>Monitorear resultados, recopilar retroalimentación y adaptar el plan para fomentar autonomía y bienestar.</p>
+            <div class="accordion-panel" id="p-revisar" role="region" aria-labelledby="t-revisar">
+              <div>
+                <p>Monitorear resultados, recopilar retroalimentación y adaptar el plan para fomentar autonomía y bienestar.</p>
+              </div>
             </div>
           </div>
 
