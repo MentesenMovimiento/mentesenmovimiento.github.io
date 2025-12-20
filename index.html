@@ -77,7 +77,7 @@
         </div>
 
         <div class="services-grid">
-
+          <!-- EDUCACIÓN -->
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Educación"></button>
             <div class="flip-inner">
@@ -99,6 +99,7 @@
             </div>
           </article>
 
+          <!-- FISIOTERAPIA -->
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Fisioterapia"></button>
             <div class="flip-inner">
@@ -120,6 +121,7 @@
             </div>
           </article>
 
+          <!-- LOGOPEDIA -->
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Logopedia"></button>
             <div class="flip-inner">
@@ -141,6 +143,7 @@
             </div>
           </article>
 
+          <!-- MOVIMIENTO -->
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Movimiento"></button>
             <div class="flip-inner">
@@ -213,37 +216,73 @@
       </div>
     </section>
 
-    <!-- INSTAGRAM -->
+    <!-- UPDATED INSTAGRAM SECTION -->
     <section class="section section--alt" id="instagram">
       <div class="container">
         <div class="section__head"><h2>Instagram</h2><p>Últimas publicaciones</p></div>
-        <div class="insta-embeds">
-          <script>
-            fetch('assets/insta.json')
-              .then(r => r.json())
-              .then(data => { data.posts.forEach(url => {
-                document.write(`<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14"><a href="${url}">Ver en Instagram</a></blockquote>`);
-              }); });
-          </script>
-        </div>
-        <script async src="https://www.instagram.com/embed.js"></script>
+
+        <div class="insta-embeds"></div>
+
+        <script>
+          fetch("assets/insta.json")
+            .then((res) => res.json())
+            .then((data) => {
+              const container = document.querySelector(".insta-embeds");
+              data.posts.forEach((url) => {
+                const block = document.createElement("blockquote");
+                block.className = "instagram-media";
+                block.setAttribute("data-instgrm-permalink", url);
+                block.setAttribute("data-instgrm-version", "14");
+
+                const anchor = document.createElement("a");
+                anchor.href = url;
+                anchor.textContent = "Ver en Instagram";
+
+                block.appendChild(anchor);
+                container.appendChild(block);
+              });
+              const script = document.createElement("script");
+              script.src = "https://www.instagram.com/embed.js";
+              script.async = true;
+              document.body.appendChild(script);
+            })
+            .catch((e) => console.error("Error loading Instagram feed:", e));
+        </script>
       </div>
     </section>
 
-    <!-- CONTACT -->
+       <!-- CONTACT -->
     <section class="section" id="contacto">
       <div class="container">
-        <div class="section__head"><h2>Contacto</h2><p>Escríbenos y te responderemos pronto.</p></div>
+        <div class="section__head">
+          <h2>Contacto</h2>
+          <p>Escríbenos y te responderemos pronto.</p>
+        </div>
 
         <form id="contact-form" class="form" action="https://formsubmit.co/info@mentesenmovimiento.org" method="POST">
-          <input type="hidden" name="_subject" value="Consulta desde la web" />
+          <input type="hidden" name="_subject" value="Consulta desde la web Mentes en Movimiento" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
 
-          <div class="field"><label for="nombre">Nombre *</label><input id="nombre" name="nombre" required></div>
-          <div class="field"><label for="email">Email *</label><input type="email" id="email" name="email" required></div>
-          <div class="field"><label for="phone">Teléfono (opcional)</label><input id="phone" name="phone"></div>
-          <div class="field"><label for="mensaje">Mensaje *</label><textarea id="mensaje" name="mensaje" rows="5" required></textarea></div>
+          <div class="field">
+            <label for="nombre">Nombre *</label>
+            <input id="nombre" name="nombre" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Teléfono (opcional)</label>
+            <input id="phone" name="phone">
+          </div>
+
+          <div class="field">
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          </div>
 
           <button class="btn btn--primary" type="submit">Enviar</button>
 
@@ -257,19 +296,46 @@
     <!-- LEGAL -->
     <section class="section section--alt" id="legal">
       <div class="container">
-        <div class="section__head"><h2>Legal y privacidad</h2><p>Lo esencial explicado con claridad.</p></div>
+        <div class="section__head">
+          <h2>Legal y privacidad</h2>
+          <p>Lo esencial explicado con claridad para generar confianza.</p>
+        </div>
+
         <div class="legal-grid">
-          <div class="legal-card"><h3>Identidad</h3><p>Mentes en Movimiento | Email: <a href="mailto:info@mentesenmovimiento.org">info@mentesenmovimiento.org</a></p></div>
-          <div class="legal-card"><h3>Privacidad</h3><p>Solo usamos tus datos para responder a tu consulta.</p></div>
-          <div class="legal-card"><h3>Contenido de terceros</h3><p>Contenido incrustado puede usar cookies según sus políticas.</p></div>
+          <div class="legal-card">
+            <h3>Identidad</h3>
+            <p><strong>Mentes en Movimiento</strong></p>
+            <p>Email: <a href="mailto:info@mentesenmovimiento.org">info@mentesenmovimiento.org</a></p>
+            <p>Zona: Costa Daurada (Tarragona)</p>
+            <p class="muted small">La entidad legal (ONG/asociación) está en proceso de registro. Actualizaremos aquí razón social, NIF y registro cuando esté disponible.</p>
+          </div>
+
+          <div class="legal-card">
+            <h3>Privacidad</h3>
+            <p>Procesamos tus datos solo para responder a tu consulta y coordinar próximos pasos.</p>
+            <ul>
+              <li><strong>Datos:</strong> Nombre, Email, Teléfono (si lo envías), Mensaje</li>
+              <li><strong>Finalidad:</strong> Responder y coordinar</li>
+              <li><strong>Conservación:</strong> El tiempo necesario para responder</li>
+            </ul>
+          </div>
+
+          <div class="legal-card">
+            <h3>Contenido de terceros</h3>
+            <p>Debido a que mostramos contenido incrustado (por ejemplo de Instagram), esos servicios pueden usar cookies según sus propias políticas.</p>
+            <p class="muted small">Puedes bloquear este contenido desde tu navegador si lo prefieres.</p>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container"><p class="muted small">© <span id="year"></span> Mentes en Movimiento</p></div>
+    <div class="container">
+      <p class="muted small">© <span id="year"></span> Mentes en Movimiento</p>
+    </div>
   </footer>
 
   <script src="assets/script.js"></script>
