@@ -34,7 +34,6 @@
   <!-- Header -->
   <header class="site-header" data-header>
     <div class="container nav">
-      <!-- IMPORTANT: link to ./ so it works on GitHub Pages repo path -->
       <a class="brand" href="./" aria-label="Inicio">
         <img src="assets/logo-horizontal.svg" alt="Mentes en Movimiento" height="40" />
       </a>
@@ -46,6 +45,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#enfoque">Enfoque</a>
         <a href="blog/index.html">Blog</a>
+        <a href="#instagram">Instagram</a>
         <a href="#contacto">Contacto</a>
         <a href="legal.html">Legal</a>
       </nav>
@@ -53,7 +53,7 @@
     </div>
   </header>
 
-  <!-- Hero / Banner (60% of page height) -->
+  <!-- Hero / Banner (60% viewport) -->
   <section class="hero">
     <div class="hero__bg contours" aria-hidden="true">
       <svg viewBox="0 0 1440 420" preserveAspectRatio="none" class="wave">
@@ -71,7 +71,7 @@
   </section>
 
   <main id="contenido">
-    <!-- Servicios (with background images behind titles) -->
+    <!-- Servicios: títulos sobre banda de imagen -->
     <section class="section" id="servicios">
       <div class="container">
         <header class="section__head reveal">
@@ -80,7 +80,7 @@
         </header>
 
         <div class="grid services-grid">
-          <!-- EDUCACIÓN (uses an existing cover as background) -->
+          <!-- EDUCACIÓN -->
           <article class="service service--edu" data-tilt>
             <div class="service__inner">
               <div class="service__media" style="--bg-url: url('assets/images/blog/individualizada-cover.jpg');">
@@ -103,7 +103,7 @@
             </div>
           </article>
 
-          <!-- FISIOTERAPIA (background linked) -->
+          <!-- FISIOTERAPIA -->
           <article class="service service--fisio" data-tilt>
             <div class="service__inner">
               <div class="service__media" style="--bg-url: url('assets/images/blog/movimiento-cover.jpg');">
@@ -126,7 +126,7 @@
             </div>
           </article>
 
-          <!-- MOVIMIENTO / REGULACIÓN (background linked) -->
+          <!-- MOVIMIENTO / REGULACIÓN -->
           <article class="service service--move" data-tilt>
             <div class="service__inner">
               <div class="service__media" style="--bg-url: url('assets/images/blog/movimiento-cover.jpg');">
@@ -149,7 +149,7 @@
             </div>
           </article>
 
-          <!-- LOGOPEDIA (background linked) -->
+          <!-- LOGOPEDIA -->
           <article class="service service--logo" data-tilt>
             <div class="service__inner">
               <div class="service__media" style="--bg-url: url('assets/images/blog/logopedia-cover.jpg');">
@@ -175,7 +175,7 @@
       </div>
     </section>
 
-    <!-- Enfoque (interactive tabs/stepper) -->
+    <!-- Enfoque (auto-rotate + arrow zones) -->
     <section class="section section--alt contours" id="enfoque">
       <div class="container">
         <header class="section__head reveal">
@@ -183,7 +183,7 @@
           <p>Cuatro pasos claros y coordinados con familia y escuela.</p>
         </header>
 
-        <div class="tabs" data-tabs>
+        <div class="tabs" data-tabs data-autoplay="6000">
           <div class="tabs__list" role="tablist" aria-label="Pasos del enfoque">
             <button class="tabs__btn" role="tab" aria-selected="true" aria-controls="p-evaluacion" id="t-evaluacion">1. Evaluación</button>
             <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="p-objetivos" id="t-objetivos">2. Objetivos</button>
@@ -191,6 +191,14 @@
             <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="p-revision" id="t-revision">4. Revisión</button>
             <span class="tabs__progress" aria-hidden="true"></span>
           </div>
+
+          <!-- Click zones (semi-transparent arrows) -->
+          <button class="tabs__zone tabs__zone--left" aria-label="Paso anterior">
+            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="tabs__zone tabs__zone--right" aria-label="Paso siguiente">
+            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
 
           <div class="tabs__panels">
             <section class="tabs__panel" role="tabpanel" id="p-evaluacion" aria-labelledby="t-evaluacion">
@@ -286,6 +294,21 @@
       </div>
     </section>
 
+    <!-- Instagram (3 posts) -->
+    <section class="section section--alt contours" id="instagram">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2>Instagram</h2>
+          <p>Historias reales de progreso en el día a día.</p>
+        </header>
+        <div class="insta-grid" data-insta>
+          <a class="insta" href="https://www.instagram.com/mentesenmovimiento/" target="_blank" rel="noopener">Ver en Instagram</a>
+          <a class="insta" href="https://www.instagram.com/mentesenmovimiento/" target="_blank" rel="noopener">Ver en Instagram</a>
+          <a class="insta" href="https://www.instagram.com/mentesenmovimiento/" target="_blank" rel="noopener">Ver en Instagram</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Contacto -->
     <section class="section" id="contacto">
       <div class="container">
@@ -351,4 +374,4 @@
 
   <script src="assets/script.js" defer></script>
 </body>
-</html>
+</html
