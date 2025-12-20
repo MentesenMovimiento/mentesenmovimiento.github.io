@@ -29,6 +29,7 @@
 
   <!-- Preload key imagery -->
   <link rel="preload" as="image" href="assets/images/logo-trans.svg" />
+  <link rel="preload" as="image" href="assets/images/logo-trans.svg" />
   <link rel="preload" as="image" href="assets/images/tiles-educacion.jpg" />
   <link rel="preload" as="image" href="assets/images/tiles-fisio.jpg" />
   <link rel="preload" as="image" href="assets/images/tiles-logopedia.jpg" />
@@ -48,7 +49,6 @@
 </head>
 <body>
 
-  <!-- Skip link (first focusable) -->
   <a href="#servicios" class="skip-link">Saltar al contenido</a>
 
   <!-- HEADER -->
@@ -81,9 +81,17 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner container">
-      <h1 class="hero-animate">
-        <span class="hero-mentes">Mentes en <span class="hero-mov">Movimiento</span></span>
-      </h1>
+      <!-- Logo replaces text title -->
+      <div class="hero-logo-wrap hero-animate" aria-label="Mentes en Movimiento">
+        <img
+          src="assets/images/logo-trans.svg"
+          alt="Mentes en Movimiento"
+          class="hero-logo"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+
       <p class="hero-slogan">Cada niño, su propio camino</p>
       <p class="hero-lead">
         Clínica de desarrollo infantil que integra mente, cuerpo y acción.
@@ -115,7 +123,6 @@
               <div class="service-front">
                 <h3>Educación Especial</h3>
                 <p>Aprendizaje funcional, objetivos con sentido y participación en contextos reales.</p>
-                <span class="service-hint">Click para ampliar</span>
               </div>
             </div>
 
@@ -141,7 +148,6 @@
               <div class="service-front">
                 <h3>Fisioterapia Pediátrica</h3>
                 <p>Postura, coordinación y fuerza funcional para la vida diaria.</p>
-                <span class="service-hint">Click para ampliar</span>
               </div>
             </div>
 
@@ -167,7 +173,6 @@
               <div class="service-front">
                 <h3>Logopedia</h3>
                 <p>Comunicación funcional: mucho más que hablar.</p>
-                <span class="service-hint">Click para ampliar</span>
               </div>
             </div>
 
@@ -193,7 +198,6 @@
               <div class="service-front">
                 <h3>Movimiento &amp; Regulación</h3>
                 <p>Cuerpo tranquilo + mente disponible.</p>
-                <span class="service-hint">Click para ampliar</span>
               </div>
             </div>
 
@@ -275,9 +279,7 @@
           </div>
 
           <div class="timeline-panel" role="region" aria-live="polite">
-            <div class="timeline-content" data-timeline-content>
-              <!-- JS injects content here -->
-            </div>
+            <div class="timeline-content" data-timeline-content></div>
 
             <div class="timeline-controls" aria-label="Controles del enfoque">
               <button class="timeline-arrow" type="button" data-timeline-prev aria-label="Anterior">‹</button>
@@ -380,32 +382,68 @@
       <div class="container">
         <div class="section__head">
           <h2>Legal y privacidad</h2>
-          <p>Lo esencial explicado con claridad para generar confianza.</p>
+          <p>Transparencia, confianza y claridad. Aquí tienes lo esencial de forma sencilla.</p>
         </div>
 
-        <div class="legal-grid">
-          <div class="legal-card">
-            <h3>Identidad</h3>
-            <p><strong>Mentes en Movimiento</strong></p>
-            <p>Email: <a href="mailto:info@mentesenmovimiento.org">info@mentesenmovimiento.org</a></p>
-            <p>Zona: Costa Daurada (Tarragona)</p>
-            <p class="muted small">La entidad legal (ONG/asociación) está en proceso de registro. Actualizaremos aquí razón social, NIF y registro cuando esté disponible.</p>
-          </div>
+        <div class="legal-layout">
+          <aside class="legal-aside">
+            <div class="legal-badge">
+              <div class="legal-badge__title">Mentes en Movimiento</div>
+              <div class="legal-badge__meta">
+                <span class="chip">Costa Daurada</span>
+                <span class="chip chip--sage">Atención infantil</span>
+              </div>
+              <a class="legal-contact" href="mailto:info@mentesenmovimiento.org">
+                info@mentesenmovimiento.org
+              </a>
+              <p class="muted small" style="margin-top:10px;">
+                La entidad legal (ONG/asociación) está en proceso de registro.
+                Actualizaremos aquí razón social, NIF y registro cuando esté disponible.
+              </p>
+            </div>
+          </aside>
 
-          <div class="legal-card">
-            <h3>Privacidad</h3>
-            <p>Procesamos tus datos solo para responder a tu consulta y coordinar próximos pasos.</p>
-            <ul>
-              <li><strong>Datos:</strong> Nombre, Email, Teléfono (si lo envías), Mensaje</li>
-              <li><strong>Finalidad:</strong> Responder y coordinar</li>
-              <li><strong>Conservación:</strong> El tiempo necesario para responder</li>
-            </ul>
-          </div>
+          <div class="legal-main">
+            <div class="legal-cards">
+              <article class="legal-card">
+                <div class="legal-card__icon" aria-hidden="true">🧾</div>
+                <h3>Identidad</h3>
+                <ul class="legal-list">
+                  <li><span class="k">Nombre:</span> <span class="v">Mentes en Movimiento</span></li>
+                  <li><span class="k">Email:</span> <span class="v"><a href="mailto:info@mentesenmovimiento.org">info@mentesenmovimiento.org</a></span></li>
+                  <li><span class="k">Zona:</span> <span class="v">Costa Daurada (Tarragona)</span></li>
+                </ul>
+              </article>
 
-          <div class="legal-card">
-            <h3>Contenido de terceros</h3>
-            <p>Debido a que mostramos contenido incrustado (por ejemplo de Instagram), esos servicios pueden usar cookies según sus propias políticas.</p>
-            <p class="muted small">Puedes bloquear este contenido desde tu navegador si lo prefieres.</p>
+              <article class="legal-card">
+                <div class="legal-card__icon" aria-hidden="true">🔒</div>
+                <h3>Privacidad</h3>
+                <p class="muted" style="margin-top:6px;">
+                  Procesamos tus datos solo para responder a tu consulta y coordinar próximos pasos.
+                </p>
+                <ul class="legal-list">
+                  <li><span class="k">Datos:</span> <span class="v">Nombre, Email, Teléfono (si lo envías), Mensaje</span></li>
+                  <li><span class="k">Finalidad:</span> <span class="v">Responder y coordinar</span></li>
+                  <li><span class="k">Conservación:</span> <span class="v">El tiempo necesario para responder</span></li>
+                </ul>
+              </article>
+
+              <article class="legal-card">
+                <div class="legal-card__icon" aria-hidden="true">🧩</div>
+                <h3>Contenido de terceros</h3>
+                <p class="muted" style="margin-top:6px;">
+                  Mostramos contenido incrustado (por ejemplo Instagram). Estos servicios pueden usar cookies según sus propias políticas.
+                </p>
+                <p class="muted small" style="margin-top:10px;">
+                  Puedes bloquear este contenido desde tu navegador si lo prefieres.
+                </p>
+              </article>
+            </div>
+
+            <div class="legal-note">
+              <strong>Nota:</strong> Si necesitas un documento legal completo (política de privacidad/cookies y aviso legal)
+              para cumplimiento total en España/UE, lo preparamos cuando tengáis la razón social y registro final.
+            </div>
           </div>
         </div>
       </div>
