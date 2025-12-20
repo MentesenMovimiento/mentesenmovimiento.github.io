@@ -100,12 +100,17 @@
     });
   }
 
-  // SERVICES: expand on click (single-open)
+  // SERVICES: expand on click (single-open) + special desktop placement for Movimiento
   (function () {
     const grid = document.querySelector("[data-services]");
     if (!grid) return;
 
     const cards = Array.from(grid.querySelectorAll("[data-service]"));
+
+    const updateGridMode = () => {
+      const movExpanded = !!grid.querySelector('.service-card[data-service-id="movimiento"].is-expanded');
+      grid.classList.toggle("has-mov-expanded", movExpanded);
+    };
 
     const closeAll = (exceptCard) => {
       cards.forEach((card) => {
@@ -114,6 +119,7 @@
         const hit = card.querySelector(".service-hit");
         if (hit) hit.setAttribute("aria-expanded", "false");
       });
+      updateGridMode();
     };
 
     cards.forEach((card) => {
@@ -133,6 +139,7 @@
           card.classList.remove("is-expanded");
           hit.setAttribute("aria-expanded", "false");
         }
+        updateGridMode();
       });
 
       card.addEventListener("keydown", (e) => {
@@ -144,9 +151,11 @@
       const clickedInside = e.target.closest("[data-services]");
       if (!clickedInside) closeAll();
     });
+
+    updateGridMode();
   })();
 
-  // TIMELINE: Auto-advance (DOUBLED TIMER to 12s)
+  // TIMELINE: Auto-advance (12s)
   (function () {
     const root = document.querySelector("[data-timeline]");
     if (!root) return;
@@ -168,7 +177,7 @@
     let index = 0;
     let timer = null;
     let lastInteraction = Date.now();
-    const INTERVAL = 12000; // doubled from 6000
+    const INTERVAL = 12000;
 
     const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
