@@ -1,3 +1,5 @@
+/* assets/styles.css */
+
 /* -----------------------------------
    GLOBAL VARIABLES
 ----------------------------------- */
@@ -96,6 +98,7 @@ a:hover {
   align-items: center;
   transition: transform 0.45s ease, opacity 0.45s ease;
   border-bottom: 1px solid rgba(231,221,206,0.9);
+  will-change: transform; /* smoother hide/show */
 }
 
 .auto-hide.hide {
@@ -148,17 +151,12 @@ a:hover {
 /* -----------------------------------
    HERO
 ----------------------------------- */
-.hero-mentes {
-  color: var(--terracotta);
-}
-
-.hero-mov {
-  color: var(--fuchsia);
-}
+.hero-mentes { color: var(--terracotta); }
+.hero-mov { color: var(--fuchsia); }
 
 .hero {
   padding: 70px 0 40px;
-  text-align: center;
+  text-align: center; /* mobile default */
   overflow: hidden;
 }
 
@@ -167,28 +165,22 @@ a:hover {
   white-space: nowrap;
 }
 
+/* Fix: start aligned left, drift slightly (no viewport-wide slide) */
 @keyframes heroFloat {
-  0% { transform: translateX(15%); }
-  25% { transform: translateX(85%); }
-  50% { transform: translateX(15%); }
-  75% { transform: translateX(85%); }
-  100% { transform: translateX(15%); }
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(8%); }
+  100% { transform: translateX(0); }
 }
 
 .hero-animate {
   display: inline-block;
   animation: heroFloat 14s ease-in-out infinite;
+  will-change: transform; /* why: avoid jank on long loops */
 }
 
-.hero-slogan {
-  color: var(--muted);
-  font-size: 1.25rem;
-}
-
-.hero-lead {
-  max-width: 60ch;
-  margin: 0.8rem auto;
-  color: var(--muted);
+/* Left-align hero on wider screens */
+@media (min-width: 768px) {
+  .hero { text-align: left; }
 }
 
 /* -----------------------------------
@@ -229,9 +221,7 @@ a:hover {
   border-bottom: 1px solid rgba(231,221,206,0.9);
 }
 
-.section__head h2 {
-  color: var(--terracotta);
-}
+.section__head h2 { color: var(--terracotta); }
 
 .section__head p {
   color: var(--muted);
@@ -255,9 +245,7 @@ a:hover {
   transition: transform 0.35s ease;
 }
 
-.flip-card:hover {
-  transform: scale(1.02);
-}
+.flip-card:hover { transform: scale(1.02); }
 
 .flip-hit {
   position: absolute;
@@ -303,9 +291,7 @@ a:hover {
   transition: background 0.3s ease;
 }
 
-.img-overlay:hover .flip-shade {
-  background: rgba(0, 0, 0, 0.65);
-}
+.img-overlay:hover .flip-shade { background: rgba(0, 0, 0, 0.65); }
 
 .img-overlay h3,
 .img-overlay p {
@@ -339,10 +325,7 @@ a:hover {
 }
 
 @keyframes fadeUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 /* -----------------------------------
@@ -361,7 +344,7 @@ a:hover {
   width: 100%;
   background: var(--terracotta);
   color: var(--white);
-  padding: 14px;
+  padding: 14px 44px 14px 14px; /* why: room for '+' icon */
   font-family: var(--font-head);
   font-size: 1rem;
   font-weight: 600;
@@ -370,23 +353,22 @@ a:hover {
   cursor: pointer;
   border-radius: var(--radius);
   transition: background 0.35s ease;
+  position: relative; /* why: position ::after correctly */
 }
 
-.accordion-toggle:hover {
-  background: #b5542e;
-}
+.accordion-toggle:hover { background: #b5542e; }
 
 .accordion-toggle::after {
   content: "+";
   position: absolute;
   right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 1.2rem;
   transition: transform 0.35s ease;
 }
 
-.accordion-toggle.active::after {
-  transform: rotate(45deg);
-}
+.accordion-toggle.active::after { transform: translateY(-50%) rotate(45deg); }
 
 .accordion-panel {
   max-height: 0;
@@ -415,10 +397,7 @@ a:hover {
 }
 
 @keyframes instaFade {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 /* -----------------------------------
@@ -453,9 +432,7 @@ textarea {
   font-family: var(--font-body);
 }
 
-textarea {
-  resize: vertical;
-}
+textarea { resize: vertical; }
 
 #contact-success {
   display: block;
