@@ -138,7 +138,7 @@ a:hover { text-decoration: underline; }
 
 .hero-animate{
   display: inline-block;
-  animation: heroFloat 9.33s ease-in-out infinite; /* 14s / 1.5 */
+  animation: heroFloat 9.33s ease-in-out infinite; /* 12s / 1.5 */
   will-change: transform;
 }
 
@@ -156,10 +156,10 @@ a:hover { text-decoration: underline; }
 
 .hero-slogan {
   color: var(--sage);
-  font-size: 1.18rem;
+  font-size: 1.3rem;
   font-family: var(--font-head);
   font-weight: 600;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .hero-lead {
