@@ -244,6 +244,20 @@ a:hover {
   max-width: 72ch;
   margin-top: 0.3em;
 }
+/* Section accents for depth using existing palette */
+#servicios {
+  background:
+    radial-gradient(1200px 400px at -10% -20%, rgba(214,75,120,0.08), transparent 60%),
+    radial-gradient(900px 300px at 110% 120%, rgba(211,106,46,0.08), transparent 60%);
+}
+
+#enfoque.section--alt {
+  background:
+    var(--white),
+    radial-gradient(900px 320px at 105% -10%, rgba(122,143,58,0.08), transparent 60%),
+    radial-gradient(900px 320px at -5% 110%, rgba(242,184,75,0.08), transparent 60%);
+  background-blend-mode: normal;
+}
 
 /* -----------------------------------
    SERVICES — FLIP CARDS (square grid)
