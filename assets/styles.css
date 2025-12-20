@@ -123,7 +123,7 @@ a:hover { text-decoration: underline; }
 
 /* HERO */
 .hero {
-  padding: 52px 0 34px; /* reduced */
+  padding: 52px 0 34px;
   text-align: center;
   overflow: hidden;
 }
@@ -144,7 +144,7 @@ a:hover { text-decoration: underline; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6px; /* reduced */
+  margin-bottom: 6px;
 }
 
 .hero-logo{
@@ -210,16 +210,13 @@ a:hover { text-decoration: underline; }
     radial-gradient(900px 300px at 110% 120%, rgba(211,106,46,0.08), transparent 60%);
 }
 
-/* -----------------------------------
-   SERVICES GRID — GENERALIZED DYNAMIC LAYOUT
------------------------------------ */
+/* SERVICES GRID — generalized dynamic layout */
 .services-grid {
   display: grid;
   gap: 18px;
   grid-template-columns: 1fr;
 }
 
-/* base breakpoints */
 @media (min-width: 600px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -228,7 +225,6 @@ a:hover { text-decoration: underline; }
   .services-expand{ grid-auto-flow: dense; }
 }
 
-/* Card base */
 .service-card{
   position: relative;
   border-radius: var(--radius);
@@ -239,7 +235,6 @@ a:hover { text-decoration: underline; }
   transition: transform 0.25s ease;
   outline: none;
 }
-
 .service-card:hover{ transform: scale(1.02); }
 
 .service-hit{
@@ -267,7 +262,6 @@ a:hover { text-decoration: underline; }
   background: var(--overlay-dark);
   transition: background 0.25s ease;
 }
-
 .service-card:hover .service-shade{ background: rgba(0,0,0,0.65); }
 
 .service-front{ position: relative; z-index: 2; }
@@ -296,7 +290,6 @@ a:hover { text-decoration: underline; }
 }
 .service-card.is-expanded .service-shade{ background: rgba(0,0,0,0.80); }
 
-/* Tablet + Mobile ratios */
 @media (min-width: 600px) and (max-width: 991px){
   .service-card{ aspect-ratio: 16 / 12; }
   .service-card.is-expanded{ grid-column: span 2; aspect-ratio: 16 / 10; }
@@ -305,7 +298,6 @@ a:hover { text-decoration: underline; }
   .service-card{ aspect-ratio: 16 / 12; }
 }
 
-/* Desktop: default expanded spans */
 @media (min-width: 992px){
   .service-card.is-expanded{
     grid-column: span 2;
@@ -313,12 +305,7 @@ a:hover { text-decoration: underline; }
     z-index: 10;
   }
 
-  /*
-    When any card expands on desktop, switch to a 3-column layout mode:
-    - Expanded card becomes a 2x2 block in columns 1-2, rows 1-2
-    - Remaining 3 cards stack neatly in column 3, rows 1-3 (top aligned)
-    This avoids the “pushed card at bottom of expanded” look entirely.
-  */
+  /* 3-col mode when expanded: expanded 2x2 on left, 3 stacked on right */
   .services-expand.has-expanded{
     grid-template-columns: repeat(3, 1fr);
   }
@@ -326,17 +313,16 @@ a:hover { text-decoration: underline; }
   .services-expand.has-expanded .service-card.is-expanded{
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
-    aspect-ratio: auto;     /* allow it to breathe */
-    min-height: 100%;       /* keep strong presence */
+    aspect-ratio: auto;
+    min-height: 100%;
   }
 
-  /* Make the stacked side cards consistent and aligned */
   .services-expand.has-expanded .service-card:not(.is-expanded){
     grid-column: 3;
     aspect-ratio: 1 / 1;
   }
 
-  /* Position side-stack rows based on which card is expanded */
+  /* stack order based on which is expanded */
   .services-expand.has-expanded.expanded-educacion .service-card[data-service-id="fisio"]{ grid-row: 1; }
   .services-expand.has-expanded.expanded-educacion .service-card[data-service-id="logopedia"]{ grid-row: 2; }
   .services-expand.has-expanded.expanded-educacion .service-card[data-service-id="movimiento"]{ grid-row: 3; }
@@ -354,7 +340,7 @@ a:hover { text-decoration: underline; }
   .services-expand.has-expanded.expanded-movimiento .service-card[data-service-id="logopedia"]{ grid-row: 3; }
 }
 
-/* BLOG */
+/* BLOG PREVIEW (home only) */
 .blog-cards {
   display: grid;
   gap: 14px;
@@ -371,11 +357,7 @@ a:hover { text-decoration: underline; }
   box-shadow: var(--shadow);
   overflow: hidden;
   padding: 12px;
-  transform: translateY(14px);
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards;
 }
-@keyframes fadeUp { to { transform: translateY(0); opacity: 1; } }
 
 /* TIMELINE */
 #enfoque.section--alt {
@@ -435,9 +417,6 @@ a:hover { text-decoration: underline; }
   min-height: 180px;
 }
 
-.timeline-content h3{ color: var(--terracotta); margin-bottom: 8px; }
-.timeline-content p{ color: var(--muted); max-width: 75ch; }
-
 .timeline-controls{
   position: absolute;
   right: 12px;
@@ -459,7 +438,6 @@ a:hover { text-decoration: underline; }
   justify-content: center;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
-
 .timeline-arrow:hover{ transform: translateY(-1px); border-color: rgba(214,75,120,0.45); }
 
 .timeline-progress{
@@ -489,17 +467,6 @@ a:hover { text-decoration: underline; }
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
-
-.instagram-media {
-  border: 1px solid rgba(231,221,206,0.9) !important;
-  border-radius: var(--radius) !important;
-  overflow: hidden !important;
-  margin: 0 auto !important;
-  opacity: 0;
-  transform: translateY(16px);
-  animation: instaFade 0.8s ease forwards;
-}
-@keyframes instaFade { to { transform: translateY(0); opacity: 1; } }
 
 /* CONTACT FORM */
 .form {
@@ -542,33 +509,28 @@ textarea { resize: vertical; }
   background: rgba(255,255,255,0.96);
   border-top: 1px solid rgba(231,221,206,0.9);
 }
-
 .legal-footer__inner{
   display: grid;
   gap: 14px;
   grid-template-columns: 1fr;
 }
-
 .legal-footer__name{
   font-family: var(--font-head);
   font-weight: 700;
   color: var(--terracotta);
   font-size: 1.05rem;
 }
-
 .legal-footer__label{
   font-family: var(--font-head);
   font-weight: 700;
   color: var(--text);
   margin-bottom: 6px;
 }
-
 .legal-footer__link{
   font-family: var(--font-head);
   font-weight: 700;
   color: var(--fuchsia);
 }
-
 @media (min-width: 900px){
   .legal-footer__inner{
     grid-template-columns: 1.1fr 0.9fr 1.6fr;
