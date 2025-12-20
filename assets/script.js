@@ -57,36 +57,72 @@
     });
   }
 
-  /* Tabs (Enfoque) with keyboard nav + progress */
+  /* Tabs (Enfoque) with keyboard nav + auto-rotate + click zones */
   const tabs = $('[data-tabs]');
   if (tabs) {
     const btns = $$('.tabs__btn', tabs);
     const panels = $$('.tabs__panel', tabs);
     const progress = $('.tabs__progress', tabs);
+    const zonePrev = $('.tabs__zone--left', tabs);
+    const zoneNext = $('.tabs__zone--right', tabs);
+    const autoplayMs = Number(tabs.getAttribute('data-autoplay')) || 6000;
+
+    let idx = 0;
+    let timer = null;
+    let paused = false;
+
     const select = (i) => {
-      btns.forEach((b,idx) => {
-        const sel = idx===i;
+      idx = (i + btns.length) % btns.length;
+      btns.forEach((b,bi) => {
+        const sel = bi===idx;
         b.setAttribute('aria-selected', sel);
-        panels[idx].hidden = !sel;
+        panels[bi].hidden = !sel;
       });
       if (progress) {
-        progress.style.transform = `translateX(${i*100}%)`;
-        progress.style.width = '25%';
+        progress.style.transform = `translateX(${idx*100}%)`;
+        progress.style.width = (100/btns.length) + '%';
       }
     };
+
+    const next = () => select(idx + 1);
+    const prev = () => select(idx - 1);
+
+    const start = () => {
+      if (timer) clearInterval(timer);
+      if (!paused) timer = setInterval(next, autoplayMs);
+    };
+    const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+
+    // Buttons click / keyboard
     btns.forEach((b,i) => {
-      b.addEventListener('click', ()=>select(i));
+      b.addEventListener('click', () => { select(i); start(); }); // reset timer
       b.addEventListener('keydown', (e)=>{
         if (['ArrowRight','ArrowLeft','Home','End'].includes(e.key)) {
           e.preventDefault();
           let ni = i + (e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0);
           if (e.key==='Home') ni = 0; if (e.key==='End') ni = btns.length-1;
-          if (ni<0) ni = btns.length-1; if (ni>=btns.length) ni = 0;
-          btns[ni].focus(); select(ni);
+          select(ni); btns[ni].focus(); start();
         }
       });
     });
+
+    // Click zones (semi-transparent arrows)
+    if (zonePrev) zonePrev.addEventListener('click', ()=>{ prev(); start(); });
+    if (zoneNext) zoneNext.addEventListener('click', ()=>{ next(); start(); });
+
+    // Pause on hover/focus within tabs
+    const pause = () => { paused = true; stop(); };
+    const resume = () => { paused = false; start(); };
+    tabs.addEventListener('pointerenter', pause);
+    tabs.addEventListener('pointerleave', resume);
+    tabs.addEventListener('focusin', pause);
+    tabs.addEventListener('focusout', (e)=>{ if(!tabs.contains(e.relatedTarget)) resume(); });
+
+    // Pause when page hidden
+    document.addEventListener('visibilitychange', ()=>{ document.hidden ? stop() : start(); });
+
     select(0);
+    start();
   }
 
   /* Footer year */
@@ -161,6 +197,18 @@
       if (homeWrap) homeWrap.innerHTML = posts.slice(0,3).map(tpl).join('');
       if (archiveWrap) archiveWrap.innerHTML = posts.map(tpl).join('');
       $$('.reveal').forEach(el => el.classList.add('revealed'));
+    }).catch(()=>{});
+  }
+
+  /* Instagram (3 posts) */
+  const instaWrap = document.querySelector('[data-insta]');
+  if (instaWrap) {
+    const url = (base ? '../' : '') + 'assets/insta.json';
+    fetch(url).then(r=>r.json()).then(items=>{
+      instaWrap.innerHTML = items.slice(0,3).map(it => `
+        <a class="insta-card" href="${it.url}" target="_blank" rel="noopener">
+          <img src="${(base ? '../' : '')+it.thumb}" alt="${it.alt || ''}" loading="lazy">
+        </a>`).join('');
     }).catch(()=>{});
   }
 
