@@ -1,13 +1,37 @@
 // -----------------------------------
 // SITE GLOBAL JS
 // -----------------------------------
+
 (function () {
 
-  // Inject current year in footer
+  // ---- FOOTER YEAR INJECTION ----
   const yearElem = document.getElementById("year");
   if (yearElem) yearElem.textContent = new Date().getFullYear();
 
-  // ######## MOBILE MENU TOGGLE ########
+  // ---- AUTO-HIDE NAVBAR ON SCROLL ----
+  let lastScroll = 0;
+  const header = document.querySelector(".site-header");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 0) {
+      header.classList.remove("hide");
+      return;
+    }
+
+    if (currentScroll > lastScroll && !header.classList.contains("hide")) {
+      header.classList.add("hide");
+    }
+
+    if (currentScroll < lastScroll && header.classList.contains("hide")) {
+      header.classList.remove("hide");
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // ---- MOBILE NAV TOGGLE ----
   const navToggle = document.querySelector("[data-nav-toggle]");
   const navMenu = document.querySelector("[data-menu]");
 
@@ -18,7 +42,6 @@
       navMenu.classList.toggle("open");
     });
 
-    // Close menu on link click (mobile)
     navMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         if (window.innerWidth < 900) {
@@ -29,7 +52,7 @@
     });
   }
 
-  // ######## FLIP CARD TAP/CLICK SUPPORT ########
+  // ---- FLIP CARD INTERACTIONS ----
   document.querySelectorAll(".flip-card").forEach((card) => {
     const hit = card.querySelector(".flip-hit");
     if (!hit) return;
@@ -37,7 +60,6 @@
     hit.addEventListener("click", (event) => {
       event.preventDefault();
 
-      // Close any other flipped cards before opening this one
       document.querySelectorAll(".flip-card.is-flipped").forEach((openCard) => {
         if (openCard !== card) openCard.classList.remove("is-flipped");
       });
@@ -46,12 +68,11 @@
     });
   });
 
-  // ######## CONTACT FORM SUBMISSION (INLINE SUCCESS) ########
+  // ---- CONTACT FORM SUBMISSION (INLINE SUCCESS) ----
   const contactForm = document.querySelector("#contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-
       const formData = new FormData(contactForm);
       const submitUrl = contactForm.getAttribute("action");
 
@@ -66,12 +87,30 @@
           document.getElementById("contact-success").classList.add("show");
           contactForm.classList.add("hidden");
         } else {
-          alert("Hubo un error al enviar tu mensaje. Inténtalo de nuevo más tarde.");
+          alert("Hubo un error al enviar tu mensaje. Intenta de nuevo más tarde.");
         }
       } catch (err) {
-        alert("Error de red. Verifica tu conexión e intenta de nuevo.");
+        alert("Error de red. Verifica tu conexión y vuelve a intentarlo.");
       }
     });
   }
+
+  // ---- COLLAPSIBLE TOC FOR BLOG PAGES ----
+  document.querySelectorAll(".toc[data-toc]").forEach((tocBlock) => {
+    // Create toggle button
+    const toggle = document.createElement("button");
+    toggle.className = "toc-toggle";
+    toggle.textContent = "Mostrar contenido";
+    tocBlock.parentNode.insertBefore(toggle, tocBlock);
+
+    // Hide initial TOC
+    tocBlock.classList.add("hidden");
+
+    toggle.addEventListener("click", () => {
+      const isHidden = tocBlock.classList.contains("hidden");
+      tocBlock.classList.toggle("hidden");
+      toggle.textContent = isHidden ? "Ocultar contenido" : "Mostrar contenido";
+    });
+  });
 
 })();
