@@ -173,7 +173,7 @@
     applyExpandedStateClasses();
   })();
 
-  // TIMELINE: Auto-advance starts ONLY when section is reached in scrolling
+  // TIMELINE: Auto-advance starts when in view; pauses out of view; resumes from same progress
   (function () {
     const root = document.querySelector("[data-timeline]");
     if (!root) return;
@@ -189,30 +189,45 @@
       { title: "Evaluar", body: "Evaluar funciones y habilidades en contextos reales para identificar necesidades y prioridades de intervención." },
       { title: "Planificar", body: "Diseñar un plan centrado en objetivos claros, medibles y relevantes para el niño y su entorno." },
       { title: "Implementar", body: "Aplicar estrategias y prácticas funcionales en la vida diaria del niño, con ajustes continuos." },
-      { title: "Revisar", body: "Monitorear resultados, recopilar retroalimentación y adaptar el plan para fomentar autonomía y bienestar." },
+      { title: "Revisar", body: "Monitorear resultados, recopilar retroalimentación y adaptar el plan para fomentar autonomía y bienestar." }
     ];
 
-    const INTERVAL = 12000; // exact 12s for both progress + swap
+    const INTERVAL = 12000;
     const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
     let index = 0;
+
+    // autoplay state
+    let running = false;
     let timeoutId = null;
-    let running = false; // whether autoplay is active (in view)
 
-    const setBar = () => {
+    // pause/resume progress tracking
+    let barStartTs = null;   // timestamp when current step progress started
+    let elapsedMs = 0;       // accumulated elapsed time for current step while running
+
+    const clearTimer = () => {
+      if (timeoutId) window.clearTimeout(timeoutId);
+      timeoutId = null;
+    };
+
+    const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
+
+    const setBarInstant = (pct) => {
       if (!bar) return;
+      bar.style.transition = "none";
+      bar.style.width = `${pct}%`;
+      void bar.offsetWidth; // reflow to ensure next transition applies cleanly
+    };
 
+    const animateBarToEnd = (remainingMs, fromPct) => {
+      if (!bar) return;
       if (prefersReducedMotion) {
-        bar.style.transition = "none";
-        bar.style.width = "100%";
+        setBarInstant(100);
         return;
       }
 
-      // restart animation exactly INTERVAL long
-      bar.style.transition = "none";
-      bar.style.width = "0%";
-      void bar.offsetWidth; // reflow
-      bar.style.transition = `width ${INTERVAL}ms linear`;
+      setBarInstant(fromPct);
+      bar.style.transition = `width ${remainingMs}ms linear`;
       bar.style.width = "100%";
     };
 
@@ -229,59 +244,72 @@
         const step = steps[index];
         contentEl.innerHTML = `<h3>${step.title}</h3><p>${step.body}</p>`;
       }
-
-      if (running) setBar(); // only animate when running
-      else {
-        // not running: keep bar at 0 so it doesn't look like "in progress"
-        if (bar) {
-          bar.style.transition = "none";
-          bar.style.width = "0%";
-        }
-      }
     };
 
-    const clearTimer = () => {
-      if (timeoutId) window.clearTimeout(timeoutId);
-      timeoutId = null;
-    };
-
-    const scheduleNext = () => {
+    const scheduleNextSwap = (delayMs) => {
       if (prefersReducedMotion) return;
       if (!running) return;
 
       clearTimer();
       timeoutId = window.setTimeout(() => {
         if (!running) return;
+
+        // move to next step and reset timing
+        elapsedMs = 0;
+        barStartTs = performance.now();
         render(index + 1);
-        scheduleNext();
-      }, INTERVAL);
+
+        // start next bar cycle
+        animateBarToEnd(INTERVAL, 0);
+        scheduleNextSwap(INTERVAL);
+      }, delayMs);
     };
 
     const startAutoplay = () => {
       if (prefersReducedMotion) return;
       if (running) return;
+
       running = true;
-      setBar();
-      scheduleNext();
+
+      // resume from elapsedMs
+      elapsedMs = clamp(elapsedMs, 0, INTERVAL);
+      const remaining = clamp(INTERVAL - elapsedMs, 0, INTERVAL);
+      const pct = (elapsedMs / INTERVAL) * 100;
+
+      barStartTs = performance.now();
+      animateBarToEnd(remaining, pct);
+      scheduleNextSwap(remaining);
     };
 
     const stopAutoplay = () => {
       if (!running) return;
+
       running = false;
       clearTimer();
-      // freeze bar visually at its current width (optional) or reset to 0
-      if (bar) {
-        bar.style.transition = "none";
-        bar.style.width = "0%";
+
+      // accumulate elapsed time so we can resume accurately
+      if (barStartTs != null) {
+        const now = performance.now();
+        elapsedMs = clamp(elapsedMs + (now - barStartTs), 0, INTERVAL);
       }
+      barStartTs = null;
+
+      // freeze bar at current percentage (no reset)
+      const pct = (elapsedMs / INTERVAL) * 100;
+      setBarInstant(pct);
     };
 
     const userAdvance = (nextIndex) => {
+      // when user changes step manually, reset progress for that step
       render(nextIndex);
-      // If in view, restart the 12s cycle so progress aligns with new step
-      if (running) {
-        setBar();
-        scheduleNext();
+      elapsedMs = 0;
+      barStartTs = running ? performance.now() : null;
+
+      if (bar) setBarInstant(0);
+
+      if (running && !prefersReducedMotion) {
+        animateBarToEnd(INTERVAL, 0);
+        scheduleNextSwap(INTERVAL);
       }
     };
 
@@ -304,13 +332,13 @@
     if (nextBtn) nextBtn.addEventListener("click", () => next());
     if (prevBtn) prevBtn.addEventListener("click", () => prev());
 
-    // Pause autoplay when user hovers/focuses the component (only if already running)
+    // Hover/focus pauses ONLY while in view (resume on leave)
     root.addEventListener("mouseenter", () => { if (running) stopAutoplay(); });
     root.addEventListener("mouseleave", () => { if (isInView && !prefersReducedMotion) startAutoplay(); });
     root.addEventListener("focusin", () => { if (running) stopAutoplay(); });
     root.addEventListener("focusout", () => { if (isInView && !prefersReducedMotion) startAutoplay(); });
 
-    // IntersectionObserver: start timer only when section reached
+    // IntersectionObserver: start/pause based on section visibility
     let isInView = false;
     const section = root.closest("section") || root;
 
@@ -319,6 +347,7 @@
         for (const entry of entries) {
           if (entry.target !== section) continue;
 
+          // require meaningful visibility so it doesn't flicker start/stop
           isInView = entry.isIntersecting && entry.intersectionRatio >= 0.35;
 
           if (isInView) startAutoplay();
@@ -330,8 +359,9 @@
 
     observer.observe(section);
 
-    // Initial render (do NOT start timer yet)
+    // Initial render (do NOT autoplay until in view)
     render(0);
+    if (bar) setBarInstant(0);
   })();
 
   // CONTACT FORM
