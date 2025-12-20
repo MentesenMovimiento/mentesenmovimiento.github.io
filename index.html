@@ -21,52 +21,77 @@
   <meta property="og:url" content="https://mentesenmovimiento.org/" />
   <meta property="og:image" content="https://mentesenmovimiento.org/assets/images/og-image.jpg" />
 
+  <!-- Twitter Card (SEO) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mentes en Movimiento" />
+  <meta name="twitter:description" content="Cada niño, su propio camino – acompañamiento integral en desarrollo infantil." />
+  <meta name="twitter:image" content="https://mentesenmovimiento.org/assets/images/og-image.jpg" />
+
+  <!-- Preload critical images (same URLs) -->
+  <link rel="preload" as="image" href="assets/images/logo-trans.svg" />
+  <link rel="preload" as="image" href="assets/images/tiles-educacion.jpg" />
+  <link rel="preload" as="image" href="assets/images/tiles-fisio.jpg" />
+  <link rel="preload" as="image" href="assets/images/tiles-logopedia.jpg" />
+  <link rel="preload" as="image" href="assets/images/tiles-mov.jpg" />
+
+  <!-- Structured Data (Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "Mentes en Movimiento",
+    "url": "https://mentesenmovimiento.org/",
+    "areaServed": "Costa Daurada (Tarragona)",
+    "sameAs": [],
+    "description": "Clínica de desarrollo infantil que integra mente, cuerpo y acción. Acompañamos a niños y adolescentes con un enfoque cálido, profesional e inclusivo."
+  }
+  </script>
 </head>
 <body>
 
+  <a href="#servicios" class="skip-link">Saltar al contenido</a>
+
   <!-- STICKY AUTO-HIDE HEADER -->
- <header class="site-header auto-hide">
-  <div class="container nav">
-    <a class="brand" href="/">
-      <img src="assets/images/logo.svg" alt="Mentes en Movimiento logo" class="nav-logo">
-    </a>
+  <header class="site-header auto-hide">
+    <div class="container nav">
+      <a class="brand" href="/">
+        <img src="assets/images/logo-trans.svg" alt="Mentes en Movimiento logo" class="nav-logo" fetchpriority="high" decoding="async">
+      </a>
 
-    <button class="nav-toggle" aria-expanded="false" data-nav-toggle>
-      <span class="sr-only">Abrir menú</span>
-      <svg width="24" height="24" aria-hidden="true">
-        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>
+        <span class="sr-only">Abrir menú</span>
+        <svg width="24" height="24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
 
-    <nav class="nav-menu" data-menu>
-      <a class="nav-link" href="#servicios">Servicios</a>
-      <a class="nav-link" href="#enfoque">Enfoque</a>
-      <a class="nav-link" href="#blog">Blog</a>
-      <a class="nav-link" href="#instagram">Instagram</a>
-      <a class="nav-link" href="#contacto">Contacto</a>
-      <a class="nav-link" href="#legal">Legal</a>
-    </nav>
+      <nav class="nav-menu" id="primary-menu" data-menu aria-label="Navegación principal" hidden>
+        <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link" href="#enfoque">Enfoque</a>
+        <a class="nav-link" href="#blog">Blog</a>
+        <a class="nav-link" href="#instagram">Instagram</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
+        <a class="nav-link" href="#legal">Legal</a>
+      </nav>
 
-    <a class="btn btn--primary hide-sm" href="#contacto">Contactar</a>
-  </div>
-</header>
-
+      <a class="btn btn--primary hide-sm" href="#contacto">Contactar</a>
+    </div>
+  </header>
 
   <!-- HERO -->
-<section class="hero">
-  <div class="hero-inner container">
-    <h1 class="hero-animate">
-      <span class="hero-mentes">Mentes en <span class="hero-mov">Movimiento</span>
-    </h1>
-    <p class="hero-slogan">Cada niño, su propio camino</p>
-    <p class="hero-lead">
-      Clínica de desarrollo infantil que integra mente, cuerpo y acción.
-      Acompañamos a niños y adolescentes con un enfoque cálido, profesional e inclusivo.
-    </p>
-    <a class="btn btn--primary" href="#contacto">Contactar</a>
-  </div>
-</section>
-
+  <section class="hero">
+    <div class="hero-inner container">
+      <h1 class="hero-animate">
+        <span class="hero-mentes">Mentes en <span class="hero-mov">Movimiento</span></span>
+      </h1>
+      <p class="hero-slogan">Cada niño, su propio camino</p>
+      <p class="hero-lead">
+        Clínica de desarrollo infantil que integra mente, cuerpo y acción.
+        Acompañamos a niños y adolescentes con un enfoque cálido, profesional e inclusivo.
+      </p>
+      <a class="btn btn--primary" href="#contacto">Contactar</a>
+    </div>
+  </section>
 
   <main>
 
@@ -81,7 +106,7 @@
         <div class="services-grid">
 
           <article class="flip-card">
-            <button class="flip-hit" aria-label="Girar: Educación"></button>
+            <button class="flip-hit" aria-label="Girar: Educación" aria-pressed="false"></button>
             <div class="flip-inner">
               <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-educacion.jpg');">
                 <div class="flip-shade"></div>
@@ -102,7 +127,7 @@
           </article>
 
           <article class="flip-card">
-            <button class="flip-hit" aria-label="Girar: Fisioterapia"></button>
+            <button class="flip-hit" aria-label="Girar: Fisioterapia" aria-pressed="false"></button>
             <div class="flip-inner">
               <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-fisio.jpg');">
                 <div class="flip-shade"></div>
@@ -123,7 +148,7 @@
           </article>
 
           <article class="flip-card">
-            <button class="flip-hit" aria-label="Girar: Logopedia"></button>
+            <button class="flip-hit" aria-label="Girar: Logopedia" aria-pressed="false"></button>
             <div class="flip-inner">
               <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-logopedia.jpg');">
                 <div class="flip-shade"></div>
@@ -144,16 +169,16 @@
           </article>
 
           <article class="flip-card">
-            <button class="flip-hit" aria-label="Girar: Movimiento"></button>
+            <button class="flip-hit" aria-label="Girar: Movimiento" aria-pressed="false"></button>
             <div class="flip-inner">
               <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-mov.jpg');">
                 <div class="flip-shade"></div>
-                <h3>Movimiento & Regulación</h3>
+                <h3>Movimiento &amp; Regulación</h3>
                 <p>Cuerpo tranquilo + mente disponible.</p>
                 <span class="flip-hint">Tocar para ver más</span>
               </div>
               <div class="flip-back">
-                <h3>Movimiento & Regulación</h3>
+                <h3>Movimiento &amp; Regulación</h3>
                 <ul>
                   <li>Rutinas diarias funcionales</li>
                   <li>Preparación para el aprendizaje</li>
@@ -178,17 +203,17 @@
 
         <div class="blog-cards">
           <a class="blog-card" href="blog/movimiento-desarrollo.html">
-            <img src="assets/images/blog-movimiento.jpg" alt="Movimiento y desarrollo infantil" loading="lazy">
+            <img src="assets/images/blog-movimiento.jpg" alt="Movimiento y desarrollo infantil" loading="lazy" decoding="async">
             <div><h3>¿Por qué el movimiento es clave?</h3><p class="muted">Cuerpo y cerebro: conexión que importa.</p></div>
           </a>
 
           <a class="blog-card" href="blog/logopedia-global.html">
-            <img src="assets/images/blog-logopedia.jpg" alt="Logopedia y desarrollo global" loading="lazy">
+            <img src="assets/images/blog-logopedia.jpg" alt="Logopedia y desarrollo global" loading="lazy" decoding="async">
             <div><h3>Logopedia y desarrollo global</h3><p class="muted">Mucho más que hablar.</p></div>
           </a>
 
           <a class="blog-card" href="blog/intervencion-individualizada.html">
-            <img src="assets/images/blog-camino.jpg" alt="Intervención individualizada" loading="lazy">
+            <img src="assets/images/blog-camino.jpg" alt="Intervención individualizada" loading="lazy" decoding="async">
             <div><h3>Cada niño, su propio camino</h3><p class="muted">Intervención individualizada centrada en fortalezas.</p></div>
           </a>
         </div>
@@ -200,57 +225,54 @@
     </section>
 
     <!-- STEP-BY-STEP “UN ENFOQUE INTEGRADO” -->
-<section class="section section--alt" id="enfoque">
-  <div class="container">
-    <div class="section__head">
-      <h2>Un enfoque integrado</h2>
-      <p>Proceso progresivo para acompañar el desarrollo infantil.</p>
-    </div>
-
-    <div class="accordion">
-
-      <div class="accordion-item">
-        <button class="accordion-toggle">1 — Explorar</button>
-        <div class="accordion-panel">
-          <p>Escuchar y observar con atención, recopilando contexto familiar y escolar para entender fortalezas y retos reales.</p>
+    <section class="section section--alt" id="enfoque">
+      <div class="container">
+        <div class="section__head">
+          <h2>Un enfoque integrado</h2>
+          <p>Proceso progresivo para acompañar el desarrollo infantil.</p>
         </div>
-      </div>
 
-      <div class="accordion-item">
-        <button class="accordion-toggle">2 — Evaluar</button>
-        <div class="accordion-panel">
-          <p>Evaluar funciones y habilidades en contextos reales para identificar necesidades y prioridades de intervención.</p>
+        <div class="accordion">
+
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false" aria-controls="p-explorar" id="t-explorar">1 — Explorar</button>
+            <div class="accordion-panel" id="p-explorar" role="region" aria-labelledby="t-explorar" hidden>
+              <p>Escuchar y observar con atención, recopilando contexto familiar y escolar para entender fortalezas y retos reales.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false" aria-controls="p-evaluar" id="t-evaluar">2 — Evaluar</button>
+            <div class="accordion-panel" id="p-evaluar" role="region" aria-labelledby="t-evaluar" hidden>
+              <p>Evaluar funciones y habilidades en contextos reales para identificar necesidades y prioridades de intervención.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false" aria-controls="p-planificar" id="t-planificar">3 — Planificar</button>
+            <div class="accordion-panel" id="p-planificar" role="region" aria-labelledby="t-planificar" hidden>
+              <p>Diseñar un plan centrado en objetivos claros, medibles y relevantes para el niño y su entorno.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false" aria-controls="p-implementar" id="t-implementar">4 — Implementar</button>
+            <div class="accordion-panel" id="p-implementar" role="region" aria-labelledby="t-implementar" hidden>
+              <p>Aplicar estrategias y prácticas funcionales en la vida diaria del niño, con ajustes continuos.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false" aria-controls="p-revisar" id="t-revisar">5 — Revisar</button>
+            <div class="accordion-panel" id="p-revisar" role="region" aria-labelledby="t-revisar" hidden>
+              <p>Monitorear resultados, recopilar retroalimentación y adaptar el plan para fomentar autonomía y bienestar.</p>
+            </div>
+          </div>
+
         </div>
+
       </div>
-
-      <div class="accordion-item">
-        <button class="accordion-toggle">3 — Planificar</button>
-        <div class="accordion-panel">
-          <p>Diseñar un plan centrado en objetivos claros, medibles y relevantes para el niño y su entorno.</p>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-toggle">4 — Implementar</button>
-        <div class="accordion-panel">
-          <p>Aplicar estrategias y prácticas funcionales en la vida diaria del niño, con ajustes continuos.</p>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-toggle">5 — Revisar</button>
-        <div class="accordion-panel">
-          <p>Monitorear resultados, recopilar retroalimentación y adaptar el plan para fomentar autonomía y bienestar.</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<body>
-  <main>
+    </section>
 
     <!-- INSTAGRAM SECTION -->
     <section class="section section--alt" id="instagram">
@@ -261,6 +283,9 @@
         </div>
 
         <div class="insta-embeds"></div>
+        <noscript>
+          <p class="muted small">Activa JavaScript para ver las publicaciones de Instagram.</p>
+        </noscript>
 
         <script>
           fetch("assets/insta.json")
@@ -305,27 +330,27 @@
 
           <div class="field">
             <label for="nombre">Nombre *</label>
-            <input id="nombre" name="nombre" required>
+            <input id="nombre" name="nombre" required autocomplete="name">
           </div>
 
           <div class="field">
             <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required autocomplete="email">
           </div>
 
           <div class="field">
             <label for="phone">Teléfono (opcional)</label>
-            <input id="phone" name="phone">
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
           </div>
 
           <div class="field">
             <label for="mensaje">Mensaje *</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            <textarea id="mensaje" name="mensaje" rows="5" required autocomplete="off"></textarea>
           </div>
 
           <button class="btn btn--primary" type="submit">Enviar</button>
 
-          <div id="contact-success">
+          <div id="contact-success" role="status" aria-live="polite" hidden>
             ¡Gracias! Tu mensaje ha sido enviado con éxito. Te responderemos pronto.
           </div>
         </form>
@@ -333,7 +358,7 @@
     </section>
 
     <!-- LEGAL SECTION -->
-   <section class="section section--alt" id="legal">
+    <section class="section section--alt" id="legal">
       <div class="container">
         <div class="section__head">
           <h2>Legal y privacidad</h2>
