@@ -2,7 +2,6 @@
    GLOBAL VARIABLES
 ----------------------------------- */
 :root {
-  /* Colors */
   --terracotta: #D36A2E;
   --fuchsia: #D64B78;
   --sage: #7A8F3A;
@@ -13,11 +12,9 @@
   --muted: #6B7280;
   --overlay-dark: rgba(0, 0, 0, 0.55);
 
-  /* Typography */
   --font-head: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 
-  /* Spacing & layout */
   --radius: 18px;
   --nav-height: 60px;
   --shadow: 0 12px 28px rgba(47,39,34,0.10);
@@ -79,25 +76,10 @@ a:hover {
   font-size: 0.9rem;
 }
 
-/* -----------------------------------
-   LAYOUT HELPERS
------------------------------------ */
 .container {
   width: min(1120px, 100%);
   margin: 0 auto;
   padding: 0 16px;
-}
-
-/* -----------------------------------
-   REDUCED MOTION (USER PREFERS)
------------------------------------ */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
 }
 
 /* -----------------------------------
@@ -141,36 +123,26 @@ a:hover {
   font-weight: 500;
 }
 
+.nav-menu .nav-link {
+  color: var(--terracotta);
+  position: relative;
+  transition: color 0.35s ease;
+}
+
+.nav-menu .nav-link:hover,
+.nav-menu .nav-link:focus {
+  color: var(--fuchsia);
+}
+
+.nav-menu .nav-link.active {
+  color: var(--fuchsia) !important;
+  font-weight: 600;
+}
+
 .nav-toggle {
   display: none;
   border: none;
   background: transparent;
-}
-
-/* -----------------------------------
-   SCROLL PROGRESS BAR 
-------------------------------------*/
-#scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 4px;
-  background: var(--fuchsia);
-  z-index: 2000;
-  transition: width 0.1s ease-out;
-}
-
-/* -----------------------------------
-   SMOOTH SCROLL 
-------------------------------------*/
-html {
-  scroll-behavior: smooth;
-}
-
-/* SPACING FIX FOR STICKY HEADER WITH IN-PAGE LINKS */
-.anchor-offset {
-  scroll-margin-top: var(--nav-height);
 }
 
 /* -----------------------------------
@@ -188,7 +160,6 @@ html {
   padding: 70px 0 40px;
   text-align: center;
   overflow: hidden;
-  position: relative;
 }
 
 .hero-inner h1 {
@@ -196,7 +167,6 @@ html {
   white-space: nowrap;
 }
 
-/* Hero float animation */
 @keyframes heroFloat {
   0% { transform: translateX(15%); }
   25% { transform: translateX(85%); }
@@ -376,7 +346,7 @@ html {
 }
 
 /* -----------------------------------
-   ACCORDION (ENFOQUE)
+   ACCORDION
 ----------------------------------- */
 .accordion {
   border-top: 1px solid rgba(231,221,206,0.9);
@@ -426,7 +396,7 @@ html {
 }
 
 /* -----------------------------------
-   INSTAGRAM EMBEDS
+   INSTAGRAM
 ----------------------------------- */
 .insta-embeds {
   display: grid;
@@ -500,7 +470,7 @@ textarea {
 }
 
 /* -----------------------------------
-   COLLAPSIBLE TOC (BLOG PAGES)
+   COLLAPSIBLE TOC
 ----------------------------------- */
 .toc-toggle {
   background: var(--terracotta);
@@ -523,18 +493,12 @@ textarea {
   transition: max-height 0.45s ease;
 }
 
-/* ACTIVE TOC LINK */
-.toc a.active {
-  color: var(--fuchsia);
-  font-weight: 600;
-}
-
-.accordion-toggle,
-.toc-toggle {
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.accordion-panel,
-.toc {
-  will-change: max-height;
+/* -----------------------------------
+   REDUCED MOTION
+----------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
