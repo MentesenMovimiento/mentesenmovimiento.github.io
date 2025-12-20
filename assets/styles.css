@@ -35,7 +35,6 @@ html, body {
 }
 
 body{
-  /* header is fixed; reserve space */
   padding-top: var(--nav-height);
 }
 
@@ -56,7 +55,7 @@ img {
   padding: 0 16px;
 }
 
-/* Visually hide skip link until focused */
+/* Skip link */
 .skip-link{
   position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
 }
@@ -66,7 +65,7 @@ img {
   z-index: 10000; text-decoration: none;
 }
 
-/* Screen-reader only */
+/* SR only */
 .sr-only{
   position:absolute !important;
   width:1px; height:1px;
@@ -93,10 +92,8 @@ a:hover { text-decoration: underline; }
    HEADER / NAVBAR
 ----------------------------------- */
 .site-header {
-  position: fixed; /* more reliable than sticky for auto-hide + transform */
-  top: 0;
-  left: 0;
-  right: 0;
+  position: fixed;
+  top: 0; left: 0; right: 0;
   height: var(--nav-height);
   background: rgba(251,245,236,0.95);
   backdrop-filter: blur(8px);
@@ -153,18 +150,10 @@ a:hover { text-decoration: underline; }
 /* -----------------------------------
    HERO
 ----------------------------------- */
-.hero-mentes { color: var(--terracotta); }
-.hero-mov { color: var(--fuchsia); }
-
 .hero {
   padding: 70px 0 40px;
   text-align: center;
   overflow: hidden;
-}
-
-.hero-inner h1 {
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
-  white-space: nowrap;
 }
 
 @keyframes heroFloat {
@@ -179,7 +168,25 @@ a:hover { text-decoration: underline; }
   will-change: transform;
 }
 
-.hero-slogan { color: var(--muted); font-size: 1.25rem; }
+.hero-logo-wrap{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.hero-logo{
+  width: min(560px, 88vw);
+  height: auto;
+}
+
+.hero-slogan {
+  color: var(--sage); /* requested */
+  font-size: 1.25rem;
+  font-family: var(--font-head);
+  font-weight: 600;
+}
+
 .hero-lead {
   max-width: 60ch;
   margin: 0.8rem auto;
@@ -208,6 +215,12 @@ a:hover { text-decoration: underline; }
 }
 
 .btn--primary:hover { background: #b03d6a; }
+
+.btn--link{
+  border: 1px solid rgba(214,75,120,0.35);
+  color: var(--fuchsia);
+  background: rgba(255,255,255,0.6);
+}
 
 /* -----------------------------------
    COMMON SECTIONS
@@ -255,6 +268,7 @@ a:hover { text-decoration: underline; }
 }
 @media (min-width: 992px) {
   .services-grid { grid-template-columns: repeat(4, 1fr); }
+  .services-expand{ grid-auto-flow: dense; }
 }
 
 .service-card{
@@ -263,7 +277,7 @@ a:hover { text-decoration: underline; }
   overflow: hidden;
   box-shadow: var(--shadow);
   background: var(--white);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1; /* IMPORTANT: keeps real height even with absolute children */
   transition: transform 0.25s ease;
   outline: none;
 }
@@ -312,18 +326,6 @@ a:hover { text-decoration: underline; }
   color: #fff;
 }
 
-.service-hint{
-  display: inline-flex;
-  margin-top: 10px;
-  font-family: var(--font-head);
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.92);
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.45);
-  background: rgba(0,0,0,0.15);
-}
-
 .service-detail{
   position:absolute;
   inset:0;
@@ -364,33 +366,27 @@ a:hover { text-decoration: underline; }
   background: rgba(0,0,0,0.80);
 }
 
-/* Desktop expansion spans */
+/* Desktop expansion spans (keeps square height because aspect-ratio remains) */
 @media (min-width: 992px){
-  .services-expand{
-    grid-auto-flow: dense;
-  }
   .service-card.is-expanded{
     grid-column: span 2;
     grid-row: span 2;
-    aspect-ratio: auto; /* allow bigger panel */
-    min-height: 100%;
+    z-index: 10; /* prevents weird stacking when it reflows */
   }
 }
 
-/* Tablet: expand width but not too huge */
+/* Tablet: expand across row, keep a nice height ratio */
 @media (min-width: 600px) and (max-width: 991px){
+  .service-card{ aspect-ratio: 16 / 12; }
   .service-card.is-expanded{
     grid-column: span 2;
-    aspect-ratio: auto;
-    min-height: 320px;
+    aspect-ratio: 16 / 10;
   }
 }
 
-/* Mobile: expands vertically */
+/* Mobile */
 @media (max-width: 599px){
-  .service-card{
-    aspect-ratio: 16 / 12;
-  }
+  .service-card{ aspect-ratio: 16 / 12; }
 }
 
 /* -----------------------------------
@@ -424,10 +420,7 @@ a:hover { text-decoration: underline; }
 /* -----------------------------------
    TIMELINE — “UN ENFOQUE INTEGRADO”
 ----------------------------------- */
-.timeline{
-  display: grid;
-  gap: 18px;
-}
+.timeline{ display: grid; gap: 18px; }
 
 .timeline-titles{
   display: grid;
@@ -621,6 +614,159 @@ textarea { resize: vertical; }
 #contact-success.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* -----------------------------------
+   LEGAL — NEW LAYOUT
+----------------------------------- */
+.legal-layout{
+  display: grid;
+  gap: 16px;
+}
+
+.legal-aside{
+  order: 0;
+}
+
+.legal-badge{
+  background: rgba(251,245,236,0.9);
+  border: 1px solid rgba(231,221,206,0.9);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.legal-badge__title{
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--terracotta);
+  font-size: 1.1rem;
+}
+
+.legal-badge__meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chip{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(214,75,120,0.10);
+  border: 1px solid rgba(214,75,120,0.25);
+  color: var(--fuchsia);
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.chip--sage{
+  background: rgba(122,143,58,0.12);
+  border-color: rgba(122,143,58,0.30);
+  color: var(--sage);
+}
+
+.legal-contact{
+  display: inline-flex;
+  margin-top: 12px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--fuchsia);
+}
+
+.legal-main{
+  display: grid;
+  gap: 14px;
+}
+
+.legal-cards{
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+}
+
+.legal-card{
+  position: relative;
+  background: var(--white);
+  border: 1px solid rgba(231,221,206,0.9);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.legal-card__icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(214,75,120,0.10);
+  border: 1px solid rgba(214,75,120,0.20);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.legal-card h3{
+  margin: 0 0 8px;
+  color: var(--terracotta);
+}
+
+.legal-list{
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.legal-list li{
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(251,245,236,0.7);
+  border: 1px solid rgba(231,221,206,0.7);
+}
+
+.legal-list .k{
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.legal-list .v{
+  color: var(--muted);
+}
+
+.legal-note{
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  border: 1px dashed rgba(214,75,120,0.35);
+  background: rgba(214,75,120,0.06);
+  color: var(--text);
+}
+
+@media (min-width: 992px){
+  .legal-layout{
+    grid-template-columns: 0.9fr 1.6fr;
+    align-items: start;
+  }
+  .legal-aside{
+    position: sticky;
+    top: calc(var(--nav-height) + 16px);
+  }
+  .legal-cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .legal-card:last-child{
+    grid-column: span 2;
+  }
 }
 
 /* -----------------------------------
