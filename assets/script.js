@@ -121,6 +121,36 @@
       observer.observe(card);
     });
   }
+  
+  // SCROLL PROGRESS BAR
+window.addEventListener("scroll", () => {
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPosition = window.pageYOffset;
+  const scrollPercent = (scrollPosition / docHeight) * 100;
+  const bar = document.getElementById("scroll-progress");
+  if (bar) bar.style.width = `${scrollPercent}%`;
+});
+
+// AUTO-HIGHLIGHT TOC LINK ON SCROLL
+const sectionLinks = document.querySelectorAll("aside.toc a");
+const sections = Array.from(sectionLinks).map(link => {
+  const target = document.querySelector(link.getAttribute("href"));
+  return target ? { link, target } : null;
+}).filter(Boolean);
+
+window.addEventListener("scroll", () => {
+  const scrollPos = window.pageYOffset + (window.innerHeight * 0.25);
+
+  sections.forEach(({ link, target }) => {
+    const top = target.offsetTop;
+    const bottom = top + target.offsetHeight;
+
+    if (scrollPos >= top && scrollPos < bottom) {
+      sectionLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+    }
+  });
+});
 
   // ---- CONTACT FORM SUBMISSION ----
   const contactForm = document.querySelector("#contact-form");
