@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/styles.css" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml" />
 
   <!-- OG -->
   <meta property="og:title" content="Mentes en Movimiento" />
@@ -25,7 +25,13 @@
 
   <!-- Structured data -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Mentes en Movimiento","url":"https://mentesenmovimiento.github.io/Website/","logo":"https://mentesenmovimiento.github.io/Website/assets/logo-horizontal.svg"}
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Mentes en Movimiento",
+    "url":"https://mentesenmovimiento.github.io/Website/",
+    "logo":"https://mentesenmovimiento.github.io/Website/assets/images/logo.svg"
+  }
   </script>
 </head>
 <body>
@@ -34,13 +40,9 @@
   <!-- Header -->
   <header class="site-header" data-header>
     <div class="container nav">
-      <!-- Robust logo linking to the project root, with multiple source fallbacks -->
-      <a class="brand" href="/Website/" aria-label="Inicio">
-        <picture>
-          <source srcset="/Website/assets/logo-horizontal.svg" type="image/svg+xml" />
-          <source srcset="/Website/assets/images/logo-horizontal.svg" type="image/svg+xml" />
-          <img src="/Website/assets/logo.svg" alt="Mentes en Movimiento" height="40" />
-        </picture>
+      <!-- ✅ Brand logo uses assets/images/logo.svg and links to index -->
+      <a class="brand" href="./" aria-label="Inicio">
+        <img src="assets/images/logo.svg" alt="Mentes en Movimiento" height="40" />
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="navmenu" data-nav-toggle>
         <span class="sr-only">Abrir menú</span>
@@ -88,7 +90,6 @@
           <!-- EDUCACIÓN -->
           <article class="service service--edu" data-tilt>
             <div class="service__inner">
-              <!-- Image resolved dynamically via JS (see data-bg) -->
               <div class="service__media" data-bg="educacion">
                 <header class="service__head">
                   <div class="service__icon" aria-hidden="true">📘</div>
@@ -362,12 +363,9 @@
     <div class="container">
       <div class="footer__grid">
         <div>
-          <a href="/Website/" aria-label="Inicio">
-            <picture>
-              <source srcset="/Website/assets/logo-horizontal.svg" type="image/svg+xml" />
-              <source srcset="/Website/assets/images/logo-horizontal.svg" type="image/svg+xml" />
-              <img src="/Website/assets/logo.svg" alt="" height="28" />
-            </picture>
+          <a href="./" aria-label="Inicio">
+            <!-- ✅ Footer logo same asset -->
+            <img src="assets/images/logo.svg" alt="" height="28" />
           </a>
           <p class="muted small">© <span id="year"></span> Mentes en Movimiento</p>
         </div>
