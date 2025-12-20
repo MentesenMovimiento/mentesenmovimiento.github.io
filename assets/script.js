@@ -4,7 +4,7 @@
   const base = document.body.getAttribute('data-base') || '';
 
   /* Header scroll state */
-  const header = $('[data-header]');
+  const header = document.querySelector('[data-header]');
   if (header) {
     const onScroll = () => header.classList.toggle('scrolled', scrollY > 8);
     onScroll(); addEventListener('scroll', onScroll, {passive:true});
@@ -16,6 +16,7 @@
     const expanded = navBtn.getAttribute('aria-expanded') === 'true';
     navBtn.setAttribute('aria-expanded', String(!expanded));
     menu.style.display = expanded ? '' : 'flex';
+    menu.style.flexWrap = 'wrap';
   });
 
   /* Reveal on scroll */
@@ -160,19 +161,7 @@
       if (homeWrap) homeWrap.innerHTML = posts.slice(0,3).map(tpl).join('');
       if (archiveWrap) archiveWrap.innerHTML = posts.map(tpl).join('');
       $$('.reveal').forEach(el => el.classList.add('revealed'));
-    }).catch(()=>{ /* fallback remains */ });
-  }
-
-  /* Instagram loader (3 posts) */
-  const instaWrap = document.querySelector('[data-insta]');
-  if (instaWrap) {
-    const url = (base ? '../' : '') + 'assets/insta.json';
-    fetch(url).then(r=>r.json()).then(items=>{
-      instaWrap.innerHTML = items.slice(0,3).map(it => `
-        <a class="insta-card" href="${it.url}" target="_blank" rel="noopener">
-          <img src="${(base ? '../' : '')+it.thumb}" alt="${it.alt || ''}" loading="lazy">
-        </a>`).join('');
-    }).catch(()=>{ /* keep simple links */ });
+    }).catch(()=>{});
   }
 
   /* Hide empty service banner if image is missing */
