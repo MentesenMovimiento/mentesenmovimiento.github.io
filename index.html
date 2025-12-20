@@ -24,17 +24,17 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
+  <!-- STICKY AUTO-HIDE HEADER -->
+  <header class="site-header auto-hide">
     <div class="container nav">
       <a class="brand" href="/">
-        <img src="assets/images/logo.svg" alt="Mentes en Movimiento logo">
+        <img src="assets/images/logo.svg" alt="Mentes en Movimiento logo" class="nav-logo">
       </a>
 
       <button class="nav-toggle" aria-expanded="false" data-nav-toggle>
         <span class="sr-only">Abrir menú</span>
         <svg width="24" height="24" aria-hidden="true">
-          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </button>
 
@@ -54,7 +54,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner container">
-      <h1>
+      <h1 class="hero-animate">
         <span class="brand-mentes">Mentes</span> en <span class="brand-mov">Movimiento</span>
       </h1>
       <p class="hero-slogan">Cada niño, su propio camino</p>
@@ -77,11 +77,11 @@
         </div>
 
         <div class="services-grid">
-          <!-- EDUCACIÓN -->
+
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Educación"></button>
             <div class="flip-inner">
-              <div class="flip-front" style="background-image:url('assets/images/tiles-educacion.jpg');">
+              <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-educacion.jpg');">
                 <div class="flip-shade"></div>
                 <h3>Educación Especial</h3>
                 <p>Aprendizaje funcional, objetivos con sentido y participación en contextos reales.</p>
@@ -99,11 +99,10 @@
             </div>
           </article>
 
-          <!-- FISIOTERAPIA -->
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Fisioterapia"></button>
             <div class="flip-inner">
-              <div class="flip-front" style="background-image:url('assets/images/tiles-fisio.jpg');">
+              <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-fisio.jpg');">
                 <div class="flip-shade"></div>
                 <h3>Fisioterapia Pediátrica</h3>
                 <p>Postura, coordinación y fuerza funcional para la vida diaria.</p>
@@ -121,11 +120,10 @@
             </div>
           </article>
 
-          <!-- LOGOPEDIA -->
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Logopedia"></button>
             <div class="flip-inner">
-              <div class="flip-front" style="background-image:url('assets/images/tiles-logopedia.jpg');">
+              <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-logopedia.jpg');">
                 <div class="flip-shade"></div>
                 <h3>Logopedia</h3>
                 <p>Comunicación funcional: más que hablar.</p>
@@ -143,11 +141,10 @@
             </div>
           </article>
 
-          <!-- MOVIMIENTO -->
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Movimiento"></button>
             <div class="flip-inner">
-              <div class="flip-front" style="background-image:url('assets/images/tiles-mov.jpg');">
+              <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-mov.jpg');">
                 <div class="flip-shade"></div>
                 <h3>Movimiento & Regulación</h3>
                 <p>Cuerpo tranquilo + mente disponible.</p>
@@ -165,22 +162,6 @@
             </div>
           </article>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- ENFOQUE -->
-    <section class="section section--alt" id="enfoque">
-      <div class="container">
-        <div class="section__head">
-          <h2>Un enfoque integrado</h2>
-          <p>Pasos claros y aplicables que consideramos pilares de nuestro acompañamiento.</p>
-        </div>
-
-        <div class="grid" style="gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
-          <div class="card"><h3>1 — Comprender</h3><p>Escucha, observación y evaluación funcional.</p></div>
-          <div class="card"><h3>2 — Conectar</h3><p>Integramos mente, cuerpo y acción.</p></div>
-          <div class="card"><h3>3 — Acompañar</h3><p>Plan realista, seguimiento y coordinación familiar y educativa.</p></div>
         </div>
       </div>
     </section>
@@ -216,10 +197,262 @@
       </div>
     </section>
 
-    <!-- UPDATED INSTAGRAM SECTION -->
+    <!-- STEP-BY-STEP “UN ENFOQUE INTEGRADO” -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Mentes en Movimiento · Clínica de desarrollo infantil</title>
+  <meta name="description" content="Clínica de desarrollo infantil que integra mente, cuerpo y acción. Acompañamos a niños y adolescentes con un enfoque cálido, profesional e inclusivo." />
+  <link rel="canonical" href="https://mentesenmovimiento.org/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mentes en Movimiento" />
+  <meta property="og:description" content="Cada niño, su propio camino – acompañamiento integral en desarrollo infantil." />
+  <meta property="og:url" content="https://mentesenmovimiento.org/" />
+  <meta property="og:image" content="https://mentesenmovimiento.org/assets/images/og-image.jpg" />
+
+</head>
+<body>
+
+  <!-- STICKY AUTO-HIDE HEADER -->
+  <header class="site-header auto-hide">
+    <div class="container nav">
+      <a class="brand" href="/">
+        <img src="assets/images/logo.svg" alt="Mentes en Movimiento logo" class="nav-logo">
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" data-nav-toggle>
+        <span class="sr-only">Abrir menú</span>
+        <svg width="24" height="24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <nav class="nav-menu" data-menu>
+        <a href="#servicios">Servicios</a>
+        <a href="#enfoque">Enfoque</a>
+        <a href="#blog">Blog</a>
+        <a href="#instagram">Instagram</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#legal">Legal</a>
+      </nav>
+
+      <a class="btn btn--primary hide-sm" href="#contacto">Contactar</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner container">
+      <h1 class="hero-animate">
+        <span class="brand-mentes">Mentes</span> en <span class="brand-mov">Movimiento</span>
+      </h1>
+      <p class="hero-slogan">Cada niño, su propio camino</p>
+      <p class="hero-lead">
+        Clínica de desarrollo infantil que integra mente, cuerpo y acción.
+        Acompañamos a niños y adolescentes con un enfoque cálido, profesional e inclusivo.
+      </p>
+      <a class="btn btn--primary" href="#contacto">Contactar</a>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- SERVICES -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section__head">
+          <h2>Servicios</h2>
+          <p>Explora cada área. En móviles, toca una tarjeta para ver más.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="flip-card">
+            <button class="flip-hit" aria-label="Girar: Educación"></button>
+            <div class="flip-inner">
+              <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-educacion.jpg');">
+                <div class="flip-shade"></div>
+                <h3>Educación Especial</h3>
+                <p>Aprendizaje funcional, objetivos con sentido y participación en contextos reales.</p>
+                <span class="flip-hint">Tocar para ver más</span>
+              </div>
+              <div class="flip-back">
+                <h3>Educación Especial</h3>
+                <ul>
+                  <li>Estrategias aplicables en casa y escuela</li>
+                  <li>Apoyo a autonomía y habilidades diarias</li>
+                  <li>Coordinación con centro educativo</li>
+                </ul>
+                <p class="muted small">Toca de nuevo para cerrar</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <button class="flip-hit" aria-label="Girar: Fisioterapia"></button>
+            <div class="flip-inner">
+              <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-fisio.jpg');">
+                <div class="flip-shade"></div>
+                <h3>Fisioterapia Pediátrica</h3>
+                <p>Postura, coordinación y fuerza funcional para la vida diaria.</p>
+                <span class="flip-hint">Tocar para ver más</span>
+              </div>
+              <div class="flip-back">
+                <h3>Fisioterapia Pediátrica</h3>
+                <ul>
+                  <li>Equilibrio, coordinación</li>
+                  <li>Control postural y patrones de movimiento</li>
+                  <li>Objetivos medibles y sostenibles</li>
+                </ul>
+                <p class="muted small">Toca de nuevo para cerrar</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <button class="flip-hit" aria-label="Girar: Logopedia"></button>
+            <div class="flip-inner">
+              <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-logopedia.jpg');">
+                <div class="flip-shade"></div>
+                <h3>Logopedia</h3>
+                <p>Comunicación funcional: más que hablar.</p>
+                <span class="flip-hint">Tocar para ver más</span>
+              </div>
+              <div class="flip-back">
+                <h3>Logopedia</h3>
+                <ul>
+                  <li>Lenguaje verbal y no verbal</li>
+                  <li>Atención compartida e interacción</li>
+                  <li>Transferencia a casa y escuela</li>
+                </ul>
+                <p class="muted small">Toca de nuevo para cerrar</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card">
+            <button class="flip-hit" aria-label="Girar: Movimiento"></button>
+            <div class="flip-inner">
+              <div class="flip-front img-overlay" style="background-image:url('assets/images/tiles-mov.jpg');">
+                <div class="flip-shade"></div>
+                <h3>Movimiento & Regulación</h3>
+                <p>Cuerpo tranquilo + mente disponible.</p>
+                <span class="flip-hint">Tocar para ver más</span>
+              </div>
+              <div class="flip-back">
+                <h3>Movimiento & Regulación</h3>
+                <ul>
+                  <li>Rutinas diarias funcionales</li>
+                  <li>Preparación para el aprendizaje</li>
+                  <li>Apoyo emocional y atencional</li>
+                </ul>
+                <p class="muted small">Toca de nuevo para cerrar</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG PREVIEW -->
+    <section class="section" id="blog">
+      <div class="container">
+        <div class="section__head">
+          <h2>Blog</h2>
+          <p>Artículos claros y útiles para familias y profesionales.</p>
+        </div>
+
+        <div class="blog-cards">
+          <a class="blog-card" href="blog/movimiento-desarrollo.html">
+            <img src="assets/images/blog-movimiento.jpg" alt="Movimiento y desarrollo infantil" loading="lazy">
+            <div><h3>¿Por qué el movimiento es clave?</h3><p class="muted">Cuerpo y cerebro: conexión que importa.</p></div>
+          </a>
+
+          <a class="blog-card" href="blog/logopedia-global.html">
+            <img src="assets/images/blog-logopedia.jpg" alt="Logopedia y desarrollo global" loading="lazy">
+            <div><h3>Logopedia y desarrollo global</h3><p class="muted">Mucho más que hablar.</p></div>
+          </a>
+
+          <a class="blog-card" href="blog/intervencion-individualizada.html">
+            <img src="assets/images/blog-camino.jpg" alt="Intervención individualizada" loading="lazy">
+            <div><h3>Cada niño, su propio camino</h3><p class="muted">Intervención individualizada centrada en fortalezas.</p></div>
+          </a>
+        </div>
+
+        <p style="text-align:center; margin-top:14px;">
+          <a class="btn btn--link" href="blog/index.html">Ver todo el blog</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- STEP-BY-STEP “UN ENFOQUE INTEGRADO” -->
+    <section class="section section--alt" id="enfoque">
+      <div class="container">
+        <div class="section__head">
+          <h2>Un enfoque integrado</h2>
+          <p>Proceso claro y progresivo para acompañar el desarrollo infantil.</p>
+        </div>
+
+        <div class="step-grid">
+
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h3>Explorar</h3>
+            <p>Escuchar y observar con atención, recopilando contexto familiar y escolar.</p>
+            <p class="small muted">Entender fortalezas y retos reales.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h3>Evaluar</h3>
+            <p>Aplicar evaluaciones funcionales y adaptar según necesidades del niño.</p>
+            <p class="small muted">Basado en evidencia y prácticas actuales.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h3>Planificar</h3>
+            <p>Diseñar una intervención centrada en objetivos reales y medibles.</p>
+            <p class="small muted">Coordinada con familia y escuela cuando procede.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <h3>Implementar</h3>
+            <p>Aplicar estrategias en contextos significativos para el niño.</p>
+            <p class="small muted">Evaluación continua para ajustes.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">5</div>
+            <h3>Revisar</h3>
+            <p>Monitorear resultados, adaptar según progreso y celebrar avances.</p>
+            <p class="small muted">Fortalecer autonomía y confianza.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM SECTION -->
     <section class="section section--alt" id="instagram">
       <div class="container">
-        <div class="section__head"><h2>Instagram</h2><p>Últimas publicaciones</p></div>
+        <div class="section__head">
+          <h2>Instagram</h2>
+          <p>Últimas publicaciones</p>
+        </div>
 
         <div class="insta-embeds"></div>
 
@@ -251,7 +484,7 @@
       </div>
     </section>
 
-       <!-- CONTACT -->
+    <!-- CONTACT SECTION -->
     <section class="section" id="contacto">
       <div class="container">
         <div class="section__head">
@@ -293,7 +526,7 @@
       </div>
     </section>
 
-    <!-- LEGAL -->
+    <!-- LEGAL SECTION -->
     <section class="section section--alt" id="legal">
       <div class="container">
         <div class="section__head">
