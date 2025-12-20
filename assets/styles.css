@@ -130,14 +130,14 @@ a:hover { text-decoration: underline; }
 }
 
 @keyframes heroFloat {
-  0%   { transform: translateX(0); }
-  50%  { transform: translateX(6%); }
-  100% { transform: translateX(0); }
+  0%   { transform: translateX(-10%); }
+  50%  { transform: translateX(10%); }
+  100% { transform: translateX(-10%); }
 }
 
 .hero-animate {
   display: inline-block;
-  animation: heroFloat 14s ease-in-out infinite;
+  animation: heroFloat 12s ease-in-out infinite;
   will-change: transform;
 }
 
