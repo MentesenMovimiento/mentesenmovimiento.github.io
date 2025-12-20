@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Mentes en Movimiento · Clínica de desarrollo infantil</title>
   <meta name="description" content="Clínica de desarrollo infantil que integra mente, cuerpo y acción. Acompañamos a niños y adolescentes con un enfoque cálido, profesional e inclusivo." />
@@ -78,7 +78,6 @@
 
         <div class="services-grid">
 
-          <!-- EDUCACIÓN -->
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Educación"></button>
             <div class="flip-inner">
@@ -100,7 +99,6 @@
             </div>
           </article>
 
-          <!-- FISIOTERAPIA -->
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Fisioterapia"></button>
             <div class="flip-inner">
@@ -122,7 +120,6 @@
             </div>
           </article>
 
-          <!-- LOGOPEDIA -->
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Logopedia"></button>
             <div class="flip-inner">
@@ -144,7 +141,6 @@
             </div>
           </article>
 
-          <!-- MOVIMIENTO -->
           <article class="flip-card">
             <button class="flip-hit" aria-label="Girar: Movimiento"></button>
             <div class="flip-inner">
@@ -175,26 +171,13 @@
       <div class="container">
         <div class="section__head">
           <h2>Un enfoque integrado</h2>
-          <p>Pasos claros y aplicables que consideramos como pilares de nuestro acompañamiento.</p>
+          <p>Pasos claros y aplicables que consideramos pilares de nuestro acompañamiento.</p>
         </div>
 
         <div class="grid" style="gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
-
-          <div class="card">
-            <h3>1 — Comprender</h3>
-            <p>Escucha, observación y evaluación funcional, para entender fortalezas y necesidades.</p>
-          </div>
-
-          <div class="card">
-            <h3>2 — Conectar</h3>
-            <p>Integración de mente, cuerpo y acción para promover participación.</p>
-          </div>
-
-          <div class="card">
-            <h3>3 — Acompañar</h3>
-            <p>Plan realista, seguimiento y ajustes; colaboración con familia y escuela.</p>
-          </div>
-
+          <div class="card"><h3>1 — Comprender</h3><p>Escucha, observación y evaluación funcional.</p></div>
+          <div class="card"><h3>2 — Conectar</h3><p>Integramos mente, cuerpo y acción.</p></div>
+          <div class="card"><h3>3 — Acompañar</h3><p>Plan realista, seguimiento y coordinación familiar y educativa.</p></div>
         </div>
       </div>
     </section>
@@ -209,27 +192,18 @@
 
         <div class="blog-cards">
           <a class="blog-card" href="blog/movimiento-desarrollo.html">
-            <img src="assets/images/blog-movimiento.jpg" alt="Blog: ¿Por qué el movimiento es clave en el desarrollo infantil?" loading="lazy">
-            <div>
-              <h3>¿Por qué el movimiento es clave?</h3>
-              <p class="muted">Cuerpo y cerebro: conexión que importa.</p>
-            </div>
+            <img src="assets/images/blog-movimiento.jpg" alt="Movimiento y desarrollo infantil" loading="lazy">
+            <div><h3>¿Por qué el movimiento es clave?</h3><p class="muted">Cuerpo y cerebro: conexión que importa.</p></div>
           </a>
 
           <a class="blog-card" href="blog/logopedia-global.html">
-            <img src="assets/images/blog-logopedia.jpg" alt="Blog: Logopedia y desarrollo global" loading="lazy">
-            <div>
-              <h3>Logopedia y desarrollo global</h3>
-              <p class="muted">Mucho más que hablar.</p>
-            </div>
+            <img src="assets/images/blog-logopedia.jpg" alt="Logopedia y desarrollo global" loading="lazy">
+            <div><h3>Logopedia y desarrollo global</h3><p class="muted">Mucho más que hablar.</p></div>
           </a>
 
           <a class="blog-card" href="blog/intervencion-individualizada.html">
-            <img src="assets/images/blog-camino.jpg" alt="Blog: intervención individualizada" loading="lazy">
-            <div>
-              <h3>Cada niño, su propio camino</h3>
-              <p class="muted">Intervención individualizada centrada en fortalezas.</p>
-            </div>
+            <img src="assets/images/blog-camino.jpg" alt="Intervención individualizada" loading="lazy">
+            <div><h3>Cada niño, su propio camino</h3><p class="muted">Intervención individualizada centrada en fortalezas.</p></div>
           </a>
         </div>
 
@@ -242,23 +216,16 @@
     <!-- INSTAGRAM -->
     <section class="section section--alt" id="instagram">
       <div class="container">
-        <div class="section__head">
-          <h2>Instagram</h2>
-          <p>Últimas publicaciones</p>
-        </div>
-
+        <div class="section__head"><h2>Instagram</h2><p>Últimas publicaciones</p></div>
         <div class="insta-embeds">
           <script>
             fetch('assets/insta.json')
               .then(r => r.json())
-              .then(data => {
-                data.posts.forEach(url => {
-                  document.write(`<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14"><a href="${url}">Ver en Instagram</a></blockquote>`);
-                });
-              });
+              .then(data => { data.posts.forEach(url => {
+                document.write(`<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14"><a href="${url}">Ver en Instagram</a></blockquote>`);
+              }); });
           </script>
         </div>
-
         <script async src="https://www.instagram.com/embed.js"></script>
       </div>
     </section>
@@ -266,120 +233,43 @@
     <!-- CONTACT -->
     <section class="section" id="contacto">
       <div class="container">
-        <div class="section__head">
-          <h2>Contacto</h2>
-          <p>Envíanos tu mensaje y te responderemos lo antes posible.</p>
-        </div>
+        <div class="section__head"><h2>Contacto</h2><p>Escríbenos y te responderemos pronto.</p></div>
 
-        <div class="split">
+        <form id="contact-form" class="form" action="https://formsubmit.co/info@mentesenmovimiento.org" method="POST">
+          <input type="hidden" name="_subject" value="Consulta desde la web" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
 
-          <!-- Contact details -->
-          <div class="contact">
-            <li><strong>Email</strong><br><a href="mailto:info@mentesenmovimiento.org">info@mentesenmovimiento.org</a></li>
-            <li><strong>Ubicación</strong><br>Costa Daurada (Tarragona)</li>
+          <div class="field"><label for="nombre">Nombre *</label><input id="nombre" name="nombre" required></div>
+          <div class="field"><label for="email">Email *</label><input type="email" id="email" name="email" required></div>
+          <div class="field"><label for="phone">Teléfono (opcional)</label><input id="phone" name="phone"></div>
+          <div class="field"><label for="mensaje">Mensaje *</label><textarea id="mensaje" name="mensaje" rows="5" required></textarea></div>
+
+          <button class="btn btn--primary" type="submit">Enviar</button>
+
+          <div id="contact-success">
+            ¡Gracias! Tu mensaje ha sido enviado con éxito. Te responderemos pronto.
           </div>
-
-          <!-- Contact form -->
-          <form id="contact-form" class="form" action="https://formsubmit.co/info@mentesenmovimiento.org" method="POST">
-            <!-- Hidden fields for FormSubmit -->
-            <input type="hidden" name="_subject" value="Consulta desde la web Mentes en Movimiento" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-
-            <div class="field">
-              <label for="nombre">Nombre *</label>
-              <input type="text" id="nombre" name="nombre" required>
-            </div>
-
-            <div class="field">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="field">
-              <label for="phone">Teléfono (opcional)</label>
-              <input type="text" id="phone" name="phone">
-            </div>
-
-            <div class="field">
-              <label for="mensaje">Mensaje *</label>
-              <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-            </div>
-
-            <button class="btn btn--primary" type="submit">Enviar</button>
-
-            <div id="contact-success">
-              ¡Gracias! Tu mensaje ha sido enviado con éxito. Te responderemos pronto.
-            </div>
-          </form>
-
-        </div>
+        </form>
       </div>
     </section>
 
     <!-- LEGAL -->
     <section class="section section--alt" id="legal">
       <div class="container">
-        <div class="section__head">
-          <h2>Legal, transparencia y privacidad</h2>
-          <p>Queremos que te sientas seguro/a al contactarnos. Aquí lo esencial explicado de forma clara.</p>
-        </div>
-
+        <div class="section__head"><h2>Legal y privacidad</h2><p>Lo esencial explicado con claridad.</p></div>
         <div class="legal-grid">
-          <div class="legal-card">
-            <h3>Identidad y contacto</h3>
-            <p><strong>Mentes en Movimiento</strong></p>
-            <p><strong>Email:</strong> <a href="mailto:info@mentesenmovimiento.org">info@mentesenmovimiento.org</a></p>
-            <p><strong>Zona:</strong> Costa Daurada (Tarragona)</p>
-            <p class="muted small">
-              Nota: la entidad legal (ONG/asociación) está en proceso de registro. Este apartado se actualizará con razón social, NIF y número de registro.
-            </p>
-          </div>
-
-          <div class="legal-card">
-            <h3>Privacidad</h3>
-            <p>
-              Solo procesamos tus datos si nos los envías mediante el formulario o correo. Únicamente los usamos para responder y coordinar.
-            </p>
-            <ul>
-              <li><strong>Datos tratados:</strong> nombre, email, teléfono (si lo proporcionas), mensaje</li>
-              <li><strong>Finalidad:</strong> responder y coordinar</li>
-              <li><strong>Conservación:</strong> el tiempo necesario para responder tu consulta</li>
-            </ul>
-          </div>
-
-          <div class="legal-card">
-            <h3>Contenido de terceros</h3>
-            <p>
-              Podemos mostrar contenido incrustado (por ejemplo de Instagram). Dichos servicios pueden utilizar cookies según sus propias políticas.
-            </p>
-            <p class="muted small">Puedes bloquear este contenido desde tu navegador si lo prefieres.</p>
-          </div>
+          <div class="legal-card"><h3>Identidad</h3><p>Mentes en Movimiento | Email: <a href="mailto:info@mentesenmovimiento.org">info@mentesenmovimiento.org</a></p></div>
+          <div class="legal-card"><h3>Privacidad</h3><p>Solo usamos tus datos para responder a tu consulta.</p></div>
+          <div class="legal-card"><h3>Contenido de terceros</h3><p>Contenido incrustado puede usar cookies según sus políticas.</p></div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer__grid">
-
-      <div>
-        <a class="brand" href="/">
-          <img src="assets/images/logo.svg" alt="Mentes en Movimiento logo" height="28">
-        </a>
-        <p class="muted small">© <span id="year"></span> Mentes en Movimiento</p>
-      </div>
-
-      <nav class="footer__nav">
-        <a href="#servicios">Servicios</a>
-        <a href="#enfoque">Enfoque</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#legal">Legal</a>
-      </nav>
-
-    </div>
+    <div class="container"><p class="muted small">© <span id="year"></span> Mentes en Movimiento</p></div>
   </footer>
 
   <script src="assets/script.js"></script>
