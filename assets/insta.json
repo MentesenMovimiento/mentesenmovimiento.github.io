@@ -1,5 +1,7 @@
-[
-  { "thumb": "assets/images/ig-1.jpg", "url": "https://www.instagram.com/mentesenmovimiento/", "alt": "Juego funcional con movimiento" },
-  { "thumb": "assets/images/ig-2.jpg", "url": "https://www.instagram.com/mentesenmovimiento/", "alt": "Actividad de coordinación" },
-  { "thumb": "assets/images/ig-3.jpg", "url": "https://www.instagram.com/mentesenmovimiento/", "alt": "Comunicación en contexto real" }
-]
+{
+  "posts": [
+    "https://www.instagram.com/p/REEMPLAZA_POST_1/",
+    "https://www.instagram.com/p/REEMPLAZA_POST_2/",
+    "https://www.instagram.com/p/REEMPLAZA_POST_3/"
+  ]
+}
