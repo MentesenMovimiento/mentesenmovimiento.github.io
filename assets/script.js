@@ -67,6 +67,23 @@
       card.classList.toggle("is-flipped");
     });
   });
+  
+// ACCORDION FUNCTIONALITY
+document.querySelectorAll('.accordion-toggle').forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    const panel = toggle.nextElementSibling;
+    const isOpen = panel.style.display === "block";
+
+    // Close all panels
+    document.querySelectorAll('.accordion-panel').forEach(p => p.style.display = "none");
+    document.querySelectorAll('.accordion-toggle').forEach(t => t.classList.remove('active'));
+
+    if (!isOpen) {
+      panel.style.display = "block";
+      toggle.classList.add('active');
+    }
+  });
+});
 
   // ---- CONTACT FORM SUBMISSION (INLINE SUCCESS) ----
   const contactForm = document.querySelector("#contact-form");
