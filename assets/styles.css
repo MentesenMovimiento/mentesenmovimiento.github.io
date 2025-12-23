@@ -725,3 +725,69 @@ textarea { resize: vertical; }
 .no-scroll {
   overflow: hidden;
 }
+/* PROJECT MODAL */
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-modal[aria-hidden="true"] {
+  display: none;
+}
+
+.project-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(47,39,34,0.55);
+  backdrop-filter: blur(4px);
+}
+
+.project-modal__content {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  max-width: 520px;
+  width: calc(100% - 32px);
+  z-index: 1;
+}
+
+.project-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.project-steps {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.project-step {
+  padding: 12px;
+  border: 1px solid rgba(231,221,206,0.9);
+  border-radius: 12px;
+}
+
+.project-step.active {
+  border-color: var(--fuchsia);
+  background: rgba(214,75,120,0.08);
+}
+
+.project-step .status {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.85rem;
+  color: var(--fuchsia);
+  font-weight: 700;
+}
