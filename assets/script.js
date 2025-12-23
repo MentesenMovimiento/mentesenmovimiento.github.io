@@ -354,6 +354,74 @@
     }
   })();
 
+  // PROJECT TIMELINE POPUP
+  (function() {
+    const popup = document.getElementById("timeline-popup");
+    const openLink = document.querySelector("[data-open-timeline]");
+    if (!popup || !openLink) return;
+    const closeBtn = popup.querySelector("[data-close-timeline]");
+    const prevBtn = popup.querySelector("[data-project-prev]");
+    const nextBtn = popup.querySelector("[data-project-next]");
+    const contentEl = popup.querySelector("[data-project-timeline-content]");
+    const titleEl = popup.querySelector("#timeline-popup-title");
+    const statusEl = popup.querySelector(".timeline-status");
+    const textEl = popup.querySelector(".timeline-text");
+    const steps = [
+      { title: "Idea y planificación", status: "Completado", color: "#7A8F3A", description: "Concepto inicial definido y objetivos establecidos." },
+      { title: "Formación del equipo", status: "Completado", color: "#7A8F3A", description: "Equipo interdisciplinar seleccionado y preparado." },
+      { title: "Búsqueda del local", status: "Completado", color: "#7A8F3A", description: "Localización adecuada encontrada y asegurada." },
+      { title: "Adecuación del espacio", status: "En progreso", color: "#F2B84B", description: "Reformas y equipamiento en marcha para adaptar el espacio." },
+      { title: "Inauguración", status: "Pendiente", color: "#6B7280", description: "Preparativos finales en curso antes de la apertura oficial." }
+    ];
+    let currentStep = 0;
+    const renderStep = (index) => {
+      currentStep = (index + steps.length) % steps.length;
+      const step = steps[currentStep];
+      if (titleEl && statusEl && textEl) {
+        titleEl.textContent = step.title;
+        statusEl.textContent = step.status;
+        statusEl.style.color = step.color;
+        textEl.textContent = step.description;
+      }
+    };
+    const showPopup = () => {
+      popup.removeAttribute("hidden");
+      popup.setAttribute("aria-hidden", "false");
+      document.body.classList.add("no-scroll");
+      renderStep(currentStep);
+    };
+    const hidePopup = () => {
+      popup.setAttribute("hidden", "");
+      popup.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("no-scroll");
+    };
+    if (!localStorage.getItem("projectTimelineShown")) {
+      showPopup();
+      localStorage.setItem("projectTimelineShown", "true");
+    }
+    openLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      showPopup();
+    });
+    if (closeBtn) {
+      closeBtn.addEventListener("click", hidePopup);
+    }
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) hidePopup();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !popup.hasAttribute("hidden")) {
+        hidePopup();
+      }
+    });
+    if (prevBtn) prevBtn.addEventListener("click", () => {
+      renderStep(currentStep - 1);
+    });
+    if (nextBtn) nextBtn.addEventListener("click", () => {
+      renderStep(currentStep + 1);
+    });
+  })();
+
   // CONTACT FORM
   const contactForm = document.querySelector("#contact-form");
   if (contactForm) {
