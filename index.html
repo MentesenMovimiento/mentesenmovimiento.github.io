@@ -53,7 +53,7 @@
           <img class="hero-logo" src="assets/images/logo-trans.svg" alt="Mentes en Movimiento" decoding="async">
         </div>
         
-<!-- trust anchors (lightweight) -->
+        <!-- trust anchors (lightweight) -->
         <div class="trust-strip" aria-label="Puntos de confianza">
           <div class="trust-chip">Enfoque funcional y aplicable</div>
           <div class="trust-chip">Coordinación familia–escuela</div>
@@ -114,7 +114,7 @@
 
           <!-- EDUCACIÓN -->
           <article class="service-card" data-service data-service-id="educacion">
-            <button class="service-hit" aria-expanded="false" aria-label="Abrir: Educación Especial"></button>
+            <button class="service-hit" aria-expanded="false" aria-label="Abrir:  Educación Especial"></button>
 
             <div class="service-media" style="background-image:url('assets/images/tiles-educacion.jpg');">
               <div class="service-shade"></div>
@@ -150,7 +150,7 @@
 
           <!-- FISIO -->
           <article class="service-card" data-service data-service-id="fisio">
-            <button class="service-hit" aria-expanded="false" aria-label="Abrir: Fisioterapia Pediátrica"></button>
+            <button class="service-hit" aria-expanded="false" aria-label="Abrir:  Fisioterapia Pediátrica"></button>
 
             <div class="service-media" style="background-image:url('assets/images/tiles-fisio.jpg');">
               <div class="service-shade"></div>
@@ -184,13 +184,13 @@
 
           <!-- LOGOPEDIA -->
           <article class="service-card" data-service data-service-id="logopedia">
-            <button class="service-hit" aria-expanded="false" aria-label="Abrir: Logopedia"></button>
+            <button class="service-hit" aria-expanded="false" aria-label="Abrir:  Logopedia"></button>
 
             <div class="service-media" style="background-image:url('assets/images/tiles-logopedia.jpg');">
               <div class="service-shade"></div>
               <div class="service-front">
                 <h3>Logopedia</h3>
-                <p>Comunicación funcional: comprensión, intención y contexto.</p>
+                <p>Comunicación más allá del habla: intención, comprensión y contexto.</p>
               </div>
             </div>
 
@@ -218,7 +218,7 @@
 
           <!-- MOVIMIENTO & REGULACIÓN -->
           <article class="service-card" data-service data-service-id="movimiento">
-            <button class="service-hit" aria-expanded="false" aria-label="Abrir: Movimiento y Regulación"></button>
+            <button class="service-hit" aria-expanded="false" aria-label="Abrir:  Movimiento y Regulación"></button>
 
             <div class="service-media" style="background-image:url('assets/images/tiles-movimiento.jpg');">
               <div class="service-shade"></div>
@@ -251,6 +251,13 @@
           </article>
 
         </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Nuestra clínica">
+      <div class="container clinic-photos">
+        <img src="assets/images/clinic-1.svg" alt="Clínica - Imagen 1" class="clinic-photo" />
+        <img src="assets/images/clinic-2.svg" alt="Clínica - Imagen 2" class="clinic-photo" />
       </div>
     </section>
 
@@ -418,10 +425,25 @@
 
     <footer class="site-footer" role="contentinfo">
       <div class="container">
-        <p class="muted small">© <span id="year"></span> Mentes en Movimiento</p>
+        <p class="muted small">© <span id="year"></span> Mentes en Movimiento – <a href="#" class="legal-footer__link" data-open-timeline>Estado del proyecto</a></p>
       </div>
     </footer>
   </main>
+
+  <div id="timeline-popup" class="timeline-popup" hidden aria-hidden="true">
+    <div class="timeline-popup-inner" role="dialog" aria-modal="true" aria-labelledby="timeline-popup-title">
+      <button type="button" class="timeline-popup-close" data-close-timeline aria-label="Cerrar popup">&times;</button>
+      <div class="timeline-popup-content" data-project-timeline-content>
+        <h3 id="timeline-popup-title"></h3>
+        <p class="timeline-status"></p>
+        <p class="timeline-text"></p>
+      </div>
+      <div class="timeline-popup-controls">
+        <button type="button" data-project-prev aria-label="Paso anterior">Anterior</button>
+        <button type="button" data-project-next aria-label="Paso siguiente">Siguiente</button>
+      </div>
+    </div>
+  </div>
 
   <script src="assets/script.js"></script>
 </body>
