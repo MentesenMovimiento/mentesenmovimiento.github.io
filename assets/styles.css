@@ -752,15 +752,24 @@ textarea { resize: vertical; }
 .lang-flag{
   width: 22px;
   height: 22px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 999px;
   overflow: hidden;
+
   line-height: 1;
-  font-size: 16px;
+  font-size: 15px; /* normalize emoji size */
+
   background: rgba(255,255,255,0.35);
+
+  /* polish */
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
+
 
 .lang-flag.ca {
   display: inline-block;
