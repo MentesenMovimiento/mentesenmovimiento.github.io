@@ -525,8 +525,8 @@
         aria: "Etapas del enfoque",
         panel_aria: "Contenido del enfoque",
         controls_aria: "Controles de enfoque",
-        prev_aria: "Anterior",
-        next_aria: "Siguiente",
+        prev_aria: "<",
+        next_aria: ">",
         progress_aria: "Progreso",
         labels: ["Explorar", "Evaluar", "Planificar", "Implementar", "Revisar"],
         steps: [
@@ -673,8 +673,8 @@
         aria: "Etapes de l’enfocament",
         panel_aria: "Contingut de l’enfocament",
         controls_aria: "Controls de l’enfocament",
-        prev_aria: "Anterior",
-        next_aria: "Següent",
+        prev_aria: "<",
+        next_aria: ">",
         progress_aria: "Progrés",
         labels: ["Explorar", "Avaluar", "Planificar", "Implementar", "Revisar"],
         steps: [
@@ -821,8 +821,8 @@
         aria: "Approach stages",
         panel_aria: "Approach content",
         controls_aria: "Approach controls",
-        prev_aria: "Previous",
-        next_aria: "Next",
+        prev_aria: "<",
+        next_aria: ">",
         progress_aria: "Progress",
         labels: ["Explore", "Assess", "Plan", "Implement", "Review"],
         steps: [
