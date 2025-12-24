@@ -1,0 +1,196 @@
+{
+  "es": {
+    "__meta.title": "Logopedia funcional y desarrollo global: comunicación más allá del habla | Mentes en Movimiento",
+    "__meta.description": "Logopedia funcional: comunicación más allá del habla. Intención, comprensión, turnos, juego y contexto. Estrategias aplicables en casa y aula.",
+
+    "breadcrumb.home": "Inicio",
+    "breadcrumb.blog": "Blog",
+    "breadcrumb.category": "Logopedia",
+
+    "hero.title": "Logopedia y desarrollo global: comunicación mucho más que hablar",
+    "hero.meta": "Comunicación · Logopedia funcional · Lectura: 8–11 min",
+    "hero.image_alt": "Interacción y comunicación en infancia",
+
+    "intro.p1": "Cuando pensamos en logopedia, a menudo imaginamos “pronunciar bien” o “decir más palabras”. Pero la comunicación funcional incluye muchas piezas: <strong>intención</strong>, <strong>turnos</strong>, <strong>comprensión</strong>, <strong>lenguaje no verbal</strong>, <strong>juego</strong> y <strong>contexto</strong>.",
+
+    "boxes.parent.badge": "Familias",
+    "boxes.parent.title": "Quizá te suene si…",
+    "boxes.parent.li1": "Tu hijo se frustra cuando no le entienden o evita comunicar.",
+    "boxes.parent.li2": "Habla, pero le cuesta iniciar o mantener turnos.",
+    "boxes.parent.li3": "Necesita mucha repetición para seguir instrucciones.",
+    "boxes.parent.li4": "El juego es limitado o cuesta compartir intereses.",
+
+    "toc.title": "En este artículo",
+    "toc.i1": "1) Comunicación ≠ solo habla",
+    "toc.i2": "2) Señales para valorar",
+    "toc.i3": "3) Cuerpo y emoción",
+    "toc.i4": "4) Estrategias simples",
+    "toc.i5": "5) CAA / AAC",
+    "toc.i6": "Preguntas frecuentes",
+
+    "sections.s1.title": "1) Comunicación ≠ solo habla",
+    "sections.s1.p1": "Un niño puede hablar mucho y aun así tener dificultades para comunicarse. Y al revés: puede comunicarse eficazmente con gestos, mirada o apoyos visuales.",
+
+    "callout.key": "Objetivo realista:",
+    "callout.text": "que el niño pueda hacerse entender, entender a otros y participar.",
+
+    "sections.s2.title": "2) Señales de que conviene valorar",
+    "sections.s2.li1": "Le cuesta seguir instrucciones sencillas.",
+    "sections.s2.li2": "Evita comunicar o se frustra.",
+    "sections.s2.li3": "Poca iniciativa comunicativa.",
+    "sections.s2.li4": "Dificultades claras en interacción o juego.",
+
+    "sections.s3.title": "3) Por qué cuerpo y emoción importan",
+    "sections.s3.p1": "La comunicación mejora cuando el sistema está regulado. Estrategias de regulación suelen facilitar comprensión, tolerancia y lenguaje.",
+
+    "sections.s4.title": "4) Estrategias simples",
+    "sections.s4.li1": "Espera + mirada antes de anticiparte.",
+    "sections.s4.li2": "Modela un nivel ligeramente superior.",
+    "sections.s4.li3": "Turnos cortos y estructurados.",
+    "sections.s4.li4": "Opciones visibles (A o B).",
+    "sections.s4.li5": "Rutinas repetibles.",
+
+    "sections.s5.title": "5) CAA / AAC",
+    "sections.s5.p1": "Los sistemas aumentativos no quitan habla. Reducen frustración y aumentan oportunidades de comunicación funcional.",
+
+    "faq.title": "Preguntas frecuentes",
+    "faq.q1": "¿La logopedia sirve si no habla?",
+    "faq.a1": "Sí. Se trabaja intención, comprensión, juego y comunicación no verbal.",
+    "faq.q2": "¿Cuándo se ven cambios?",
+    "faq.a2": "Depende del perfil y de la práctica diaria en casa y escuela.",
+
+    "nav.prev": "← Anterior",
+    "nav.next": "Siguiente →",
+    "nav.contact": "Contactar"
+  },
+
+  "ca": {
+    "__meta.title": "Logopèdia funcional i desenvolupament global: comunicació més enllà de la parla | Mentes en Movimiento",
+    "__meta.description": "Logopèdia funcional: comunicació més enllà de la parla. Intenció, comprensió, torns, joc i context. Estratègies pràctiques.",
+
+    "breadcrumb.home": "Inici",
+    "breadcrumb.blog": "Blog",
+    "breadcrumb.category": "Logopèdia",
+
+    "hero.title": "Logopèdia i desenvolupament global: comunicar és molt més que parlar",
+    "hero.meta": "Comunicació · Logopèdia funcional · Lectura: 8–11 min",
+    "hero.image_alt": "Interacció i comunicació a la infància",
+
+    "intro.p1": "Quan pensem en logopèdia, sovint imaginem “pronunciar bé” o “dir més paraules”. Però la comunicació funcional inclou moltes peces: <strong>intenció</strong>, <strong>torns</strong>, <strong>comprensió</strong>, <strong>llenguatge no verbal</strong>, <strong>joc</strong> i <strong>context</strong>.",
+
+    "boxes.parent.badge": "Famílies",
+    "boxes.parent.title": "Potser t’hi reconeixes si…",
+    "boxes.parent.li1": "El teu fill es frustra quan no l’entenen o evita comunicar.",
+    "boxes.parent.li2": "Parla, però li costa iniciar o mantenir torns.",
+    "boxes.parent.li3": "Necessita molta repetició per seguir instruccions.",
+    "boxes.parent.li4": "El joc és limitat o costa compartir interessos.",
+
+    "toc.title": "En aquest article",
+    "toc.i1": "1) Comunicació ≠ només parla",
+    "toc.i2": "2) Senyals per valorar",
+    "toc.i3": "3) Cos i emoció",
+    "toc.i4": "4) Estratègies simples",
+    "toc.i5": "5) CAA / AAC",
+    "toc.i6": "Preguntes freqüents",
+
+    "sections.s1.title": "1) Comunicació ≠ només parla",
+    "sections.s1.p1": "Un infant pot parlar molt i tot i així tenir dificultats comunicatives. I al revés: pot comunicar-se eficaçment amb gestos o suports visuals.",
+
+    "callout.key": "Objectiu realista:",
+    "callout.text": "que l’infant pugui fer-se entendre, entendre els altres i participar.",
+
+    "sections.s2.title": "2) Senyals que convé valorar",
+    "sections.s2.li1": "Li costa seguir instruccions senzilles.",
+    "sections.s2.li2": "Evita comunicar o es frustra.",
+    "sections.s2.li3": "Poca iniciativa comunicativa.",
+    "sections.s2.li4": "Dificultats clares en interacció o joc.",
+
+    "sections.s3.title": "3) Per què el cos i l’emoció importen",
+    "sections.s3.p1": "La comunicació millora quan el sistema està regulat. Estratègies de regulació faciliten comprensió i llenguatge.",
+
+    "sections.s4.title": "4) Estratègies simples",
+    "sections.s4.li1": "Espera + mirada abans d’anticipar-te.",
+    "sections.s4.li2": "Modela un nivell lleugerament superior.",
+    "sections.s4.li3": "Torns curts i estructurats.",
+    "sections.s4.li4": "Opcions visibles (A o B).",
+    "sections.s4.li5": "Rutines repetibles.",
+
+    "sections.s5.title": "5) CAA / AAC",
+    "sections.s5.p1": "Els sistemes augmentatius no treuen parla. Redueixen frustració i augmenten oportunitats comunicatives.",
+
+    "faq.title": "Preguntes freqüents",
+    "faq.q1": "La logopèdia serveix si no parla?",
+    "faq.a1": "Sí. Es treballa intenció, comprensió, joc i comunicació no verbal.",
+    "faq.q2": "Quan es veuen canvis?",
+    "faq.a2": "Depèn del perfil i de la pràctica diària a casa i escola.",
+
+    "nav.prev": "← Anterior",
+    "nav.next": "Següent →",
+    "nav.contact": "Contactar"
+  },
+
+  "en": {
+    "__meta.title": "Functional speech therapy and global development | Mentes en Movimiento",
+    "__meta.description": "Functional speech therapy: communication beyond speech. Intention, comprehension, turn-taking, play and context.",
+
+    "breadcrumb.home": "Home",
+    "breadcrumb.blog": "Blog",
+    "breadcrumb.category": "Speech therapy",
+
+    "hero.title": "Speech therapy and global development: communication beyond talking",
+    "hero.meta": "Communication · Functional speech therapy · Read time: 8–11 min",
+    "hero.image_alt": "Interaction and communication in early childhood",
+
+    "intro.p1": "When we think about speech therapy, we often imagine “pronouncing well” or “saying more words”. But functional communication includes many pieces: <strong>intention</strong>, <strong>turn-taking</strong>, <strong>comprehension</strong>, <strong>non-verbal language</strong>, <strong>play</strong> and <strong>context</strong>.",
+
+    "boxes.parent.badge": "Families",
+    "boxes.parent.title": "You may recognise this if…",
+    "boxes.parent.li1": "Your child gets frustrated when not understood.",
+    "boxes.parent.li2": "They speak but struggle with turn-taking.",
+    "boxes.parent.li3": "They need frequent repetition to follow instructions.",
+    "boxes.parent.li4": "Play is limited or shared interests are difficult.",
+
+    "toc.title": "In this article",
+    "toc.i1": "1) Communication ≠ speech only",
+    "toc.i2": "2) Signs worth assessing",
+    "toc.i3": "3) Body and emotion",
+    "toc.i4": "4) Simple strategies",
+    "toc.i5": "5) AAC",
+    "toc.i6": "FAQs",
+
+    "sections.s1.title": "1) Communication ≠ speech only",
+    "sections.s1.p1": "A child may speak a lot and still struggle to communicate. Others may communicate effectively using gestures or visual supports.",
+
+    "callout.key": "Realistic goal:",
+    "callout.text": "for the child to be understood, understand others and participate.",
+
+    "sections.s2.title": "2) Signs worth assessing",
+    "sections.s2.li1": "Difficulty following simple instructions.",
+    "sections.s2.li2": "Avoids communication or becomes frustrated.",
+    "sections.s2.li3": "Low communicative initiative.",
+    "sections.s2.li4": "Clear interaction or play difficulties.",
+
+    "sections.s3.title": "3) Why body and emotion matter",
+    "sections.s3.p1": "Communication improves when the system is regulated. Regulation strategies support comprehension and language.",
+
+    "sections.s4.title": "4) Simple strategies",
+    "sections.s4.li1": "Wait + eye contact before anticipating.",
+    "sections.s4.li2": "Model slightly above their level.",
+    "sections.s4.li3": "Short, structured turns.",
+    "sections.s4.li4": "Visible choices (A or B).",
+    "sections.s4.li5": "Repeatable routines.",
+
+    "sections.s5.title": "5) AAC",
+    "sections.s5.p1": "Augmentative systems do not reduce speech. They lower frustration and increase communication opportunities.",
+
+    "faq.title": "Frequently asked questions",
+    "faq.q1": "Does speech therapy help if a child doesn’t speak yet?",
+    "faq.a1": "Yes. It focuses on intention, comprehension, play and non-verbal communication.",
+    "faq.q2": "When will we see changes?",
+    "faq.a2": "It depends on the profile and daily practice at home and school.",
+
+    "nav.prev": "← Previous",
+    "nav.next": "Next →",
+    "nav.contact": "Contact"
+  }
+}
