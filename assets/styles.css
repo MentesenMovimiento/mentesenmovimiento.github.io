@@ -289,17 +289,18 @@ a:hover { text-decoration: underline; }
 }
 .service-card:hover{ transform: scale(1.02); }
 
-/* Hide service hit button text (accessibility only) */
-.service-hit {
+.service-hit{
   position: absolute;
   inset: 0;
-  background: none;
-  border: 0;
-  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 5;
+
+  /* hide injected text but keep accessibility */
   color: transparent;
   font-size: 0;
 }
-
 
 .service-media{
   position:absolute;
