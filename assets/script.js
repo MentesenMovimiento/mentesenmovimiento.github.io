@@ -912,23 +912,21 @@
     const key = el.getAttribute("data-i18n");
     const val = getByPath(I18N[lang], key);
 
+    // ⛔ Do nothing if no translation exists
+    if (typeof val !== "string") return;
+
     // Timeline labels (array-based)
-    if (typeof key === "string" && key.startsWith("timeline.labels.")) {
-      const idx = Number(key.split(".").pop());
-      const arr = I18N[lang]?.timeline?.labels;
-      if (Array.isArray(arr) && Number.isFinite(idx) && arr[idx]) {
-        el.textContent = arr[idx];
-      }
+    if (key.startsWith("timeline.labels.")) {
+      el.textContent = val;
       return;
     }
 
-    if (typeof val === "string") {
-      if (el.hasAttribute("data-i18n-html")) {
-        // Explicit opt-in: allow HTML replacement
-        el.innerHTML = val;
-      } else {
-        el.textContent = val;
-      }
+    // ✅ Explicit opt-in only
+    if (el.hasAttribute("data-i18n-html")) {
+      el.innerHTML = val;
+    } else if (el.childElementCount === 0) {
+      // Only replace leaf nodes
+      el.textContent = val;
     }
   });
 
@@ -938,14 +936,11 @@
     const key = el.getAttribute("data-i18n");
     const val = getByPath(I18N[lang], key);
 
-    if (attr && typeof val === "string" && el.hasAttribute(attr)) {
+    if (attr && typeof val === "string") {
       el.setAttribute(attr, val);
     }
   });
 };
-
-
-
 
   const applyTimelineSteps = (lang) => {
   const steps = I18N[lang]?.timeline?.steps;
