@@ -1,143 +1,186 @@
 {
   "es": {
-    "meta": {
-      "title": "Movimiento y desarrollo infantil: atención, regulación y aprendizaje | Mentes en Movimiento",
-      "description": "Cómo el movimiento apoya regulación emocional, atención y preparación para aprender. Señales frecuentes, ideas prácticas y estrategias para casa y aula.",
-      "og_title": "Movimiento y desarrollo infantil: atención, regulación y aprendizaje",
-      "og_description": "Movimiento con intención para regular, atender y aprender: explicación clara + estrategias para casa y escuela."
-    },
+    "__meta.title": "Movimiento y desarrollo infantil: atención, regulación y aprendizaje | Mentes en Movimiento",
+    "__meta.description": "Cómo el movimiento apoya regulación emocional, atención y preparación para aprender. Señales frecuentes, ideas prácticas y estrategias para casa y aula.",
 
-    "a11y": {
-      "skip": "Saltar al contenido"
-    },
+    "breadcrumb.home": "Inicio",
+    "breadcrumb.blog": "Blog",
+    "breadcrumb.category": "Movimiento",
 
-    "nav": {
-      "services": "Servicios",
-      "approach": "Enfoque",
-      "blog": "Blog",
-      "instagram": "Instagram",
-      "legal": "Legal"
-    },
+    "hero.title": "Movimiento y desarrollo infantil: por qué es una base para aprender",
+    "hero.meta": "Movimiento · Regulación · Aprendizaje · Lectura: 7–10 min",
+    "hero.image_alt": "Niño en actividad motora que apoya el desarrollo",
 
-    "breadcrumb": {
-      "home": "Inicio",
-      "blog": "Blog",
-      "topic": "Movimiento"
-    },
+    "intro.p1": "En la infancia, el movimiento no es “solo ejercicio”: es una forma primaria de explorar, organizar el cuerpo y regular el estado interno. Cuando el cuerpo está más regulado, el cerebro suele estar más disponible para <strong>atender</strong>, <strong>procesar información</strong> y <strong>aprender</strong>.",
 
-    "title": "Movimiento y desarrollo infantil: por qué es una base para aprender",
+    "boxes.parent.badge": "Familias",
+    "boxes.parent.title": "Quizá te suene si…",
+    "boxes.parent.li1": "Tu hijo “no para” y la calma dura muy poco.",
+    "boxes.parent.li2": "Se frustra rápido con deberes o transiciones (casa → cole).",
+    "boxes.parent.li3": "Parece que “no escucha” cuando hay ruido o prisas.",
+    "boxes.parent.li4": "Necesita moverse para poder estar en una actividad.",
 
-    "meta_line": "Movimiento · Regulación · Aprendizaje · Lectura: 7–10 min",
+    "toc.title": "En este artículo",
+    "toc.i1": "1) Cuerpo–cerebro",
+    "toc.i2": "2) Regulación emocional",
+    "toc.i3": "3) Preparación para aprender",
+    "toc.i4": "4) Rutina 2–5–2",
+    "toc.i5": "5) Si se activa más",
+    "toc.i6": "Preguntas frecuentes",
 
-    "hero": {
-      "alt": "Niño en actividad motora que apoya el desarrollo"
-    },
+    "sections.s1.title": "1) Conexión cuerpo–cerebro: qué significa en la vida real",
+    "sections.s1.p1": "Muchas habilidades escolares (mantener postura, escuchar, esperar turno, copiar, planificar una tarea) se sostienen sobre bases motoras y sensoriales.",
 
-    "intro": "En la infancia, el movimiento no es “solo ejercicio”: es una forma primaria de explorar, organizar el cuerpo y regular el estado interno. Cuando el cuerpo está más regulado, el cerebro suele estar más disponible para <strong>atender</strong>, <strong>procesar información</strong> y <strong>aprender</strong>.",
+    "callout.key": "Idea clave:",
+    "callout.text": "si el cuerpo necesita moverse para regularse, exigir quietud sin estrategias suele empeorar la atención.",
 
-    "box_parent": {
-      "title": "<span class=\"badge\">Familias</span> Quizá te suene si…",
-      "li1": "Tu hijo “no para” y la calma dura muy poco.",
-      "li2": "Se frustra rápido con deberes o transiciones (casa → cole, juego → cena).",
-      "li3": "Parece que “no escucha” cuando hay ruido o prisas.",
-      "li4": "Necesita moverse para poder estar en una actividad."
-    },
+    "sections.s2.title": "2) Movimiento y regulación emocional",
+    "sections.s2.p1": "Regularse no es “portarse bien”. Es poder pasar de un estado a otro (activación ↔ calma) con apoyo.",
+    "sections.s2.h3": "Señales frecuentes",
+    "sections.s2.li1": "Se levanta constantemente o “no para”.",
+    "sections.s2.li2": "Se derrumba en la silla o se cansa rápido.",
+    "sections.s2.li3": "Explota o se bloquea ante cambios pequeños.",
+    "sections.s2.li4": "Busca presión (empujar, chocar, morder objetos).",
 
-    "toc": {
-      "title": "En este artículo",
-      "item1": "1) Cuerpo–cerebro: qué significa",
-      "item2": "2) Movimiento y regulación emocional",
-      "item3": "3) Preparación para aprender",
-      "item4": "4) Rutina 2–5–2 (casa/aula)",
-      "item5": "5) Si se activa más con movimiento",
-      "item6": "Preguntas frecuentes"
-    },
+    "sections.s3.title": "3) Preparación para el aprendizaje",
+    "sections.s3.p1": "Antes de pedir una tarea cognitiva, conviene preparar el sistema: postura, atención y estado emocional.",
 
-    "section1": {
-      "title": "1) Conexión cuerpo–cerebro: qué significa en la vida real",
-      "p1": "Muchas habilidades escolares (mantener postura, escuchar, esperar turno, copiar, planificar una tarea) se sostienen sobre bases motoras y sensoriales: estabilidad, control ocular, coordinación, ritmo y autorregulación. Por eso a veces “parece” un tema de atención, pero el cuerpo está pidiendo ayuda para organizarse.",
-      "callout": "<strong>Idea clave:</strong> si el cuerpo necesita moverse para regularse, exigir quietud sin estrategias suele empeorar la atención. El objetivo es <em>movimiento con intención</em> (organizador), no “moverse por moverse”."
-    },
+    "sections.s4.title": "4) Rutina práctica 2–5–2",
+    "sections.s4.li1": "<strong>2 min</strong> de movimiento organizador.",
+    "sections.s4.li2": "<strong>5 min</strong> de tarea concreta.",
+    "sections.s4.li3": "<strong>2 min</strong> de pausa reguladora.",
 
-    "section2": {
-      "title": "2) Movimiento y regulación emocional",
-      "p1": "Regularse no es “portarse bien”. Es poder pasar de un estado a otro (activación ↔ calma) con apoyo. El movimiento puede ayudar a bajar activación (descargar tensión) o subirla (activar) según la necesidad.",
-      "signals_title": "Señales frecuentes de que falta regulación corporal",
-      "signals": [
-        "Se levanta constantemente o “no para” incluso cuando quiere hacerlo.",
-        "Se derrumba en la silla, apoya la cabeza, se cansa rápido.",
-        "Explota o se bloquea ante cambios pequeños.",
-        "Busca presión: empuja, choca, se pega, muerde objetos (a veces)."
-      ],
-      "reassure_title": "<span class=\"badge\">Tranquilidad</span> Esto NO significa que…",
-      "reassure": [
-        "Tu hijo “no quiera” o “sea vago”.",
-        "Tenga un diagnóstico necesariamente.",
-        "La solución sea “más disciplina”."
-      ],
-      "reassure_note": "Significa que el cuerpo puede necesitar apoyos más específicos para organizarse en ciertos contextos."
-    },
+    "sections.s5.title": "5) Qué hacer si se activa más con movimiento",
+    "sections.s5.p1": "Puede pasar si el movimiento elegido es demasiado activador. Cambia a opciones más organizadoras como empujar, arrastrar o ritmos lentos.",
 
-    "section3": {
-      "title": "3) Preparación para el aprendizaje (learning readiness)",
-      "p1": "Antes de pedir una tarea cognitiva, conviene preparar el sistema: postura + atención + estado emocional. A veces <strong>2–5 minutos</strong> de actividad motora antes de empezar cambian totalmente el resultado.",
-      "teacher_title": "<span class=\"badge\">Aula</span> Sin interrumpir a la clase",
-      "teacher": [
-        "<strong>Micropausas</strong> (20–40s): estirar brazos, presión en manos, respiración guiada.",
-        "<strong>Encargos</strong> (30–60s): llevar un papel, borrar pizarra, recoger material.",
-        "<strong>Cambio de postura</strong>: 2 min de pie en el sitio con norma clara.",
-        "<strong>Inicio de tarea</strong>: “primero 3 minutos, luego pausa breve”."
-      ]
-    },
+    "faq.title": "Preguntas frecuentes",
+    "faq.q1": "¿Cuánto movimiento necesita un niño?",
+    "faq.a1": "Depende del perfil. Más que minutos, observa si mejora atención y calma tras un bloque breve.",
+    "faq.q2": "¿Y si el colegio no permite pausas?",
+    "faq.a2": "Se pueden usar microajustes discretos: encargos, cambios de postura o presión en manos.",
 
-    "section4": {
-      "title": "4) Rutina práctica: “2–5–2” para casa o aula",
-      "p1": "Una estructura simple para probar durante 7–14 días. La clave es que sea <strong>repetible</strong> y <strong>predecible</strong>.",
-      "steps": [
-        "<strong>2 min</strong> de movimiento organizador (empujar pared, “animal walk”, escalón, arrastrar cojín).",
-        "<strong>5 min</strong> de tarea (con inicio/fin claros, muy concreta).",
-        "<strong>2 min</strong> de pausa reguladora (beber agua, estirar, presión profunda, respirar)."
-      ],
-      "try_title": "<span class=\"badge\">Hoy</span> Prueba esto en 10 minutos",
-      "try": [
-        "Elige 1 tarea corta (ej: 5 líneas de lectura, 3 sumas, recoger juguetes).",
-        "Haz 90 segundos de “empujar pared” + 30 segundos de respiración lenta.",
-        "Haz la tarea con temporizador visible (5 min).",
-        "Pausa breve (2 min) antes de “otra cosa”."
-      ],
-      "try_note": "Si funciona, repítelo igual 5–7 días antes de cambiar."
-    },
+    "nav.back": "← Volver al blog",
+    "nav.next": "Siguiente: Logopedia →",
+    "nav.contact": "Contactar"
+  },
 
-    "section5": {
-      "title": "5) Qué hacer si “se activa más” con movimiento",
-      "p1": "Puede pasar si el movimiento elegido es demasiado activador (saltos rápidos, correr, música intensa). Cambia a opciones más organizadoras: <strong>propiocepción</strong> (empujar, arrastrar, cargar), ritmos lentos y pausas estructuradas."
-    },
+  "ca": {
+    "__meta.title": "Moviment i desenvolupament infantil: atenció, regulació i aprenentatge | Mentes en Movimiento",
+    "__meta.description": "Com el moviment afavoreix la regulació emocional, l’atenció i la preparació per aprendre. Senyals freqüents i estratègies pràctiques.",
 
-    "summary": {
-      "title": "Resumen rápido",
-      "items": [
-        "El movimiento puede ser una herramienta para regular (no un premio ni un castigo).",
-        "Mejor que “más movimiento” es <strong>movimiento adecuado</strong> para ese niño y ese momento.",
-        "La estructura (2–5–2) ayuda a generalizar en casa y en clase."
-      ]
-    },
+    "breadcrumb.home": "Inici",
+    "breadcrumb.blog": "Blog",
+    "breadcrumb.category": "Moviment",
 
-    "faq": {
-      "title": "Preguntas frecuentes",
-      "q1": "¿Cuánto movimiento necesita un niño al día?",
-      "a1": "Depende de edad, contexto y perfil. Más útil que contar minutos es observar si mejora la atención y la calma tras un bloque breve y repetible.",
-      "q2": "¿Y si el colegio no permite “pausas activas”?",
-      "a2": "Se puede empezar con microajustes discretos: encargos, cambios de postura, presión en manos y temporizadores.",
-      "q3": "¿Esto funciona para todos los niños?",
-      "a3": "No de la misma manera. Si algo empeora, no es un fracaso: es información para ajustar."
-    },
+    "hero.title": "Moviment i desenvolupament infantil: una base per aprendre",
+    "hero.meta": "Moviment · Regulació · Aprenentatge · Lectura: 7–10 min",
+    "hero.image_alt": "Infant realitzant activitat motora que afavoreix el desenvolupament",
 
-    "related": "Si además hay dificultades de comunicación, lee <a href=\"./logopedia-global.html\">Logopedia funcional</a>. Y si quieres entender cómo se ajusta un plan al perfil del niño, lee <a href=\"./intervencion-individualizada.html\">Intervención individualizada</a>.",
+    "intro.p1": "A la infància, el moviment no és “només exercici”: és una manera primària d’explorar, organitzar el cos i regular l’estat intern. Quan el cos està més regulat, el cervell sol estar més disponible per <strong>atendre</strong>, <strong>processar informació</strong> i <strong>aprendre</strong>.",
 
-    "blog_nav": {
-      "back": "← Volver al blog",
-      "next": "Siguiente: Logopedia →",
-      "contact": "Contactar"
-    }
+    "boxes.parent.badge": "Famílies",
+    "boxes.parent.title": "Potser t’hi reconeixes si…",
+    "boxes.parent.li1": "El teu fill “no para” i la calma dura poc.",
+    "boxes.parent.li2": "Es frustra ràpid amb deures o transicions.",
+    "boxes.parent.li3": "Sembla que “no escolta” quan hi ha soroll.",
+    "boxes.parent.li4": "Necessita moure’s per poder estar en una activitat.",
+
+    "toc.title": "En aquest article",
+    "toc.i1": "1) Cos–cervell",
+    "toc.i2": "2) Regulació emocional",
+    "toc.i3": "3) Preparació per aprendre",
+    "toc.i4": "4) Rutina 2–5–2",
+    "toc.i5": "5) Si s’activa més",
+    "toc.i6": "Preguntes freqüents",
+
+    "sections.s1.title": "1) Connexió cos–cervell a la vida real",
+    "sections.s1.p1": "Moltes habilitats escolars es basen en fonaments motors i sensorials.",
+
+    "callout.key": "Idea clau:",
+    "callout.text": "si el cos necessita moviment per regular-se, exigir quietud sense estratègies pot empitjorar l’atenció.",
+
+    "sections.s2.title": "2) Moviment i regulació emocional",
+    "sections.s2.p1": "Regular-se no és “portar-se bé”, sinó poder passar d’un estat a un altre amb suport.",
+
+    "sections.s3.title": "3) Preparació per a l’aprenentatge",
+    "sections.s3.p1": "Abans d’exigir una tasca cognitiva, cal preparar el sistema.",
+
+    "sections.s4.title": "4) Rutina pràctica 2–5–2",
+    "sections.s4.li1": "<strong>2 min</strong> de moviment organitzador.",
+    "sections.s4.li2": "<strong>5 min</strong> de tasca concreta.",
+    "sections.s4.li3": "<strong>2 min</strong> de pausa reguladora.",
+
+    "sections.s5.title": "5) Què fer si el moviment activa massa",
+    "sections.s5.p1": "Si el moviment és massa activador, opta per opcions més organitzadores.",
+
+    "faq.title": "Preguntes freqüents",
+    "faq.q1": "Quant moviment necessita un infant?",
+    "faq.a1": "Depèn del perfil. Observa si millora l’atenció després d’un bloc breu.",
+    "faq.q2": "I si l’escola no permet pauses?",
+    "faq.a2": "Es poden fer ajustos discrets sense interrompre la classe.",
+
+    "nav.back": "← Tornar al blog",
+    "nav.next": "Següent: Logopèdia →",
+    "nav.contact": "Contactar"
+  },
+
+  "en": {
+    "__meta.title": "Movement and child development: attention, regulation and learning | Mentes en Movimiento",
+    "__meta.description": "How movement supports emotional regulation, attention and readiness to learn. Practical strategies for home and school.",
+
+    "breadcrumb.home": "Home",
+    "breadcrumb.blog": "Blog",
+    "breadcrumb.category": "Movement",
+
+    "hero.title": "Movement and child development: a foundation for learning",
+    "hero.meta": "Movement · Regulation · Learning · Read time: 7–10 min",
+    "hero.image_alt": "Child engaged in movement supporting development",
+
+    "intro.p1": "In childhood, movement is not “just exercise”: it is a primary way to explore, organise the body and regulate internal states. When the body is regulated, the brain is more available to <strong>pay attention</strong>, <strong>process information</strong> and <strong>learn</strong>.",
+
+    "boxes.parent.badge": "Families",
+    "boxes.parent.title": "You may recognise this if…",
+    "boxes.parent.li1": "Your child is constantly on the move.",
+    "boxes.parent.li2": "They become easily frustrated during transitions.",
+    "boxes.parent.li3": "They seem not to listen in noisy environments.",
+    "boxes.parent.li4": "They need to move in order to stay engaged.",
+
+    "toc.title": "In this article",
+    "toc.i1": "1) Body–brain",
+    "toc.i2": "2) Emotional regulation",
+    "toc.i3": "3) Readiness to learn",
+    "toc.i4": "4) 2–5–2 routine",
+    "toc.i5": "5) When movement over-activates",
+    "toc.i6": "FAQs",
+
+    "sections.s1.title": "1) Body–brain connection in real life",
+    "sections.s1.p1": "Many school skills rely on motor and sensory foundations.",
+
+    "callout.key": "Key idea:",
+    "callout.text": "if the body needs movement to regulate, demanding stillness without support can reduce attention.",
+
+    "sections.s2.title": "2) Movement and emotional regulation",
+    "sections.s2.p1": "Regulation is not about behaviour, but about shifting states with support.",
+
+    "sections.s3.title": "3) Readiness for learning",
+    "sections.s3.p1": "Before asking for cognitive work, it helps to prepare the system.",
+
+    "sections.s4.title": "4) Practical 2–5–2 routine",
+    "sections.s4.li1": "<strong>2 min</strong> of organising movement.",
+    "sections.s4.li2": "<strong>5 min</strong> of focused task.",
+    "sections.s4.li3": "<strong>2 min</strong> of regulating pause.",
+
+    "sections.s5.title": "5) What to do if movement increases activation",
+    "sections.s5.p1": "If movement is too stimulating, switch to more organising options.",
+
+    "faq.title": "Frequently asked questions",
+    "faq.q1": "How much movement does a child need?",
+    "faq.a1": "It depends on the child. Look for improved attention after short, repeatable blocks.",
+    "faq.q2": "What if school doesn’t allow movement breaks?",
+    "faq.a2": "Small, discreet adjustments can still support regulation.",
+
+    "nav.back": "← Back to blog",
+    "nav.next": "Next: Speech therapy →",
+    "nav.contact": "Contact us"
   }
 }
