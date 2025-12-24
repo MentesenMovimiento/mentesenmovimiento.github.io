@@ -4,157 +4,165 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title data-i18n="blog.movimiento.meta_title">
-    Movimiento y desarrollo infantil · Mentes en Movimiento
-  </title>
-
-  <meta
-    name="description"
-    content="Movimiento, regulación y aprendizaje en la infancia. Por qué el cuerpo es la base del desarrollo cognitivo."
-    data-i18n-attr="content"
-    data-i18n="blog.movimiento.meta_desc"
-  />
-
+  <title>Movimiento y desarrollo infantil · Mentes en Movimiento</title>
+  <meta name="description" content="Por qué el movimiento es clave en el desarrollo infantil: atención, regulación y preparación para aprender." />
   <link rel="canonical" href="https://mentesenmovimiento.github.io/blog/movimiento-desarrollo.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Movimiento y desarrollo infantil · Mentes en Movimiento" />
+  <meta property="og:description" content="Atención, regulación y preparación para aprender: el desarrollo infantil empieza en el cuerpo." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mentesenmovimiento.github.io/blog/movimiento-desarrollo.html" />
+  <meta property="og:image" content="https://mentesenmovimiento.github.io/assets/images/blog-movimiento.jpg" />
+
+  <!-- Global + Blog styles -->
   <link rel="stylesheet" href="../assets/styles.css" />
-  <link rel="stylesheet" href="../assets/blog.css" />
+  <link rel="stylesheet" href="blog.css" />
 </head>
 
 <body>
-  <!-- NAV (same as index) -->
+  <a href="#contenido" class="skip-link" data-i18n="a11y.skip">Saltar al contenido</a>
+
+  <!-- NAV (same architecture as index + language switcher) -->
   <header class="site-header auto-hide" role="banner">
     <div class="container nav">
-      <a class="brand" href="../index.html" aria-label="Ir al inicio">
-        <img src="../assets/images/logo-trans.svg" alt="Mentes en Movimiento" class="nav-logo">
+      <a class="brand" href="../index.html" aria-label="Ir al inicio" data-i18n-attr="aria-label" data-i18n="nav.home_aria">
+        <img src="../assets/images/logo-trans.svg" alt="Mentes en Movimiento" class="nav-logo" fetchpriority="high" decoding="async">
       </a>
 
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>
-        <span class="sr-only">Abrir menú</span>
+        <span class="sr-only" data-i18n="nav.menu_open">Abrir menú</span>
         <svg width="24" height="24" aria-hidden="true">
           <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
       </button>
 
-      <nav class="nav-menu" id="primary-menu" data-menu>
+      <nav class="nav-menu" id="primary-menu" data-menu aria-label="Navegación principal" data-i18n-attr="aria-label" data-i18n="nav.aria">
         <a class="nav-link" href="../index.html#servicios" data-i18n="nav.services">Servicios</a>
         <a class="nav-link" href="../index.html#enfoque" data-i18n="nav.approach">Enfoque</a>
-        <a class="nav-link active" href="../index.html#blog" data-i18n="nav.blog">Blog</a>
+        <a class="nav-link active" href="index.html" data-i18n="nav.blog">Blog</a>
         <a class="nav-link" href="../index.html#instagram" data-i18n="nav.instagram">Instagram</a>
         <a class="nav-link" href="../index.html#legal" data-i18n="nav.legal">Legal</a>
       </nav>
 
-      <!-- Language switcher -->
-      <div class="lang-switcher">
+      <div class="lang-switcher" aria-label="Selector de idioma">
         <button type="button" class="lang-btn" data-lang="es" aria-label="Español">
-          <span class="lang-flag">🇪🇸</span><span class="lang-code">ES</span>
+          <span class="lang-flag" aria-hidden="true">🇪🇸</span><span class="lang-code">ES</span>
         </button>
         <button type="button" class="lang-btn" data-lang="ca" aria-label="Català">
-          <span class="lang-flag ca">CA</span><span class="lang-code">CA</span>
+          <span class="lang-flag ca" aria-hidden="true"></span><span class="lang-code">CA</span>
         </button>
         <button type="button" class="lang-btn" data-lang="en" aria-label="English">
-          <span class="lang-flag">🇬🇧</span><span class="lang-code">EN</span>
+          <span class="lang-flag" aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span>
         </button>
       </div>
     </div>
   </header>
 
-  <main class="blog-page">
-    <article class="blog-article container">
+  <main id="contenido" class="blog-wrap">
+    <!-- HERO -->
+    <section class="blog-hero">
+      <div class="container blog-hero__inner">
+        <p class="blog-kicker">Desarrollo infantil</p>
+        <h1 class="blog-title">¿Por qué el movimiento es clave en el desarrollo infantil?</h1>
+        <p class="blog-subtitle">Atención, regulación y preparación para aprender: el desarrollo infantil empieza en el cuerpo.</p>
 
-      <!-- Breadcrumb -->
-      <nav class="breadcrumb">
-        <a href="../index.html#blog" data-i18n="blog.breadcrumb">Blog</a>
-        <span>›</span>
-        <span data-i18n="blog.movimiento.breadcrumb">Movimiento</span>
-      </nav>
-
-      <!-- Title -->
-      <h1 data-i18n="blog.movimiento.h1">
-        Movimiento y desarrollo infantil: por qué es una base para aprender
-      </h1>
-
-      <p class="blog-meta" data-i18n="blog.movimiento.meta">
-        Movimiento · Regulación · Aprendizaje · Lectura: 7–10 min
-      </p>
-
-      <!-- Intro -->
-      <p data-i18n="blog.movimiento.intro_1">
-        El movimiento no es solo una forma de “gastar energía”. En la infancia, el cuerpo es la principal vía de
-        aprendizaje: a través del movimiento, el cerebro organiza la información, regula emociones y se prepara para
-        aprender.
-      </p>
-
-      <p data-i18n="blog.movimiento.intro_2">
-        Cuando hablamos de dificultades de atención, conducta o aprendizaje, muchas veces el origen no está solo en la
-        mente, sino en cómo el cuerpo procesa el entorno.
-      </p>
-
-      <!-- Highlight box -->
-      <div class="info-box">
-        <h3 data-i18n="blog.movimiento.box_title">Quizá te suene si…</h3>
-        <ul>
-          <li data-i18n="blog.movimiento.box_1">Le cuesta estar sentado o concentrarse</li>
-          <li data-i18n="blog.movimiento.box_2">Parece “desconectado” o demasiado inquieto</li>
-          <li data-i18n="blog.movimiento.box_3">Se frustra con facilidad</li>
-          <li data-i18n="blog.movimiento.box_4">Tiene dificultades para seguir rutinas</li>
-        </ul>
+        <div class="blog-meta">
+          <span class="blog-chip">Educación</span>
+          <span class="blog-chip">Movimiento</span>
+          <span class="blog-chip">Regulación</span>
+        </div>
       </div>
+    </section>
 
-      <!-- Section 1 -->
-      <h2 data-i18n="blog.movimiento.s1_h2">El cuerpo como base del aprendizaje</h2>
-      <p data-i18n="blog.movimiento.s1_p1">
-        Antes de leer, escribir o calcular, el niño necesita un cuerpo organizado. El control postural, el equilibrio,
-        la coordinación y la regulación sensorial son la base sobre la que se construyen las habilidades académicas.
-      </p>
+    <!-- CONTENT -->
+    <article class="blog-article">
+      <div class="container blog-content">
 
-      <p data-i18n="blog.movimiento.s1_p2">
-        Si el cuerpo está desorganizado, el cerebro dedica recursos a autorregularse en lugar de aprender.
-      </p>
-
-      <!-- Section 2 -->
-      <h2 data-i18n="blog.movimiento.s2_h2">Movimiento y regulación emocional</h2>
-      <p data-i18n="blog.movimiento.s2_p1">
-        El movimiento ayuda a regular el sistema nervioso. No se trata de “cansar” al niño, sino de ofrecerle el tipo
-        de movimiento que su cuerpo necesita para encontrar equilibrio.
-      </p>
-
-      <ul>
-        <li data-i18n="blog.movimiento.s2_l1">Algunos niños necesitan activarse</li>
-        <li data-i18n="blog.movimiento.s2_l2">Otros necesitan bajar el nivel de activación</li>
-        <li data-i18n="blog.movimiento.s2_l3">Muchos alternan entre ambos estados</li>
-      </ul>
-
-      <!-- Section 3 -->
-      <h2 data-i18n="blog.movimiento.s3_h2">¿Cómo trabajamos el movimiento en Mentes en Movimiento?</h2>
-      <p data-i18n="blog.movimiento.s3_p1">
-        En nuestra clínica, el movimiento no es un añadido: es parte central del enfoque. Diseñamos actividades con
-        intención, adaptadas al perfil del niño y conectadas con sus objetivos diarios.
-      </p>
-
-      <p data-i18n="blog.movimiento.s3_p2">
-        El objetivo no es solo mejorar habilidades físicas, sino facilitar atención, regulación y participación en la
-        vida real.
-      </p>
-
-      <!-- CTA -->
-      <div class="blog-cta">
-        <p data-i18n="blog.movimiento.cta_text">
-          Si te resuena lo que has leído y quieres saber cómo podemos ayudar a tu hijo/a:
+        <p>
+          Cuando pensamos en desarrollo infantil, solemos imaginar aprendizaje “mental”: lenguaje, lectura, atención…
+          Pero la base de todo eso es física. El cerebro aprende a través del cuerpo. El movimiento no es un extra:
+          es una herramienta directa para organizar el sistema nervioso, mejorar la regulación y abrir la puerta al aprendizaje.
         </p>
-        <a class="btn btn--primary" href="../index.html#contacto" data-i18n="blog.movimiento.cta_btn">
-          Contacta con nosotros
-        </a>
+
+        <h2>1) Movimiento = información para el cerebro</h2>
+        <p>
+          Cada postura, giro, salto o equilibrio envía señales a través del sistema vestibular y propioceptivo.
+          Esa información ayuda a construir un “mapa corporal” que sostiene habilidades como la coordinación,
+          la planificación motora y la atención.
+        </p>
+
+        <h2>2) Regulación: del cuerpo a la emoción</h2>
+        <p>
+          Muchos niños con dificultades de regulación no “se portan mal”: su sistema está desorganizado.
+          El movimiento con intención puede ayudar a subir o bajar el nivel de activación (activación ↔ calma),
+          facilitando que el niño esté disponible para aprender.
+        </p>
+
+        <div class="pro-tip">
+          <strong>Idea práctica:</strong> antes de una tarea exigente (deberes, lectura, escritura),
+          prueba 3–5 minutos de “movimiento organizado” (empujar pared, arrastre, saltos controlados, respiración + estiramientos).
+        </div>
+
+        <h2>3) Preparación para aprender (learning readiness)</h2>
+        <p>
+          Un cuerpo estable facilita una mente estable. Cuando el cuerpo está organizado (postura, respiración, tono),
+          el cerebro libera recursos para la atención, el lenguaje y la función ejecutiva.
+        </p>
+
+        <h2>4) ¿Qué buscamos en Mentes en Movimiento?</h2>
+        <p>
+          Nuestro enfoque integra educación y movimiento para que el niño progrese en objetivos funcionales:
+          participación en clase, autonomía, comunicación y bienestar. Lo importante no es “hacer ejercicio”,
+          sino usar el movimiento como puente hacia habilidades que se generalicen en casa y en el colegio.
+        </p>
+
+        <hr class="blog-divider" />
+
+        <div class="blog-cta">
+          <h3>¿Quieres orientación inicial?</h3>
+          <p>Cuéntanos tu caso y te daremos una primera guía clara (sin compromiso).</p>
+          <a class="btn btn--primary" href="../index.html#contacto">Cuéntanos tu caso</a>
+        </div>
+
+        <nav class="blog-nav">
+          <a class="blog-nav__link" href="index.html">← Volver al blog</a>
+          <a class="blog-nav__link" href="logopedia-global.html">Siguiente: Logopedia funcional →</a>
+        </nav>
+
       </div>
-
     </article>
-  </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <p class="muted small">© <span id="year"></span> Mentes en Movimiento</p>
-    </div>
-  </footer>
+    <!-- FOOTER -->
+    <section class="legal-footer" id="legal" aria-label="Información legal y privacidad" data-i18n-attr="aria-label" data-i18n="legal.aria">
+      <div class="container legal-footer__inner">
+        <div>
+          <div class="legal-footer__name">Mentes en Movimiento</div>
+          <p class="muted small" style="margin:6px 0 0;" data-i18n="legal.location">Costa Daurada (Tarragona)</p>
+        </div>
+
+        <div>
+          <div class="legal-footer__label" data-i18n="legal.contact_label">Contacto</div>
+          <p class="muted small" style="margin:0;">
+            <a class="legal-footer__link" href="mailto:info@mentesenmovimiento.org">info@mentesenmovimiento.org</a>
+          </p>
+        </div>
+
+        <div>
+          <div class="legal-footer__label" data-i18n="legal.privacy_label">Datos y privacidad</div>
+          <p class="muted small" style="margin:0;" data-i18n="legal.privacy">
+            Usamos tus datos únicamente para responder a tu consulta. Cumplimos con la normativa aplicable de protección de datos (RGPD).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p class="muted small">© <span id="year"></span> <span>Mentes en Movimiento</span></p>
+      </div>
+    </footer>
+  </main>
 
   <script src="../assets/script.js"></script>
 </body>
