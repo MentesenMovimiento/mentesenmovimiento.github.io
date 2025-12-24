@@ -233,6 +233,14 @@ a:hover { text-decoration: underline; }
 .section__head h2 { color: var(--terracotta); }
 .section__head p { color: var(--muted); max-width: 72ch; margin-top: 0.3em; }
 
+/* Center heading + lead in Who We Are section */
+#equipo .section__head {
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Trust cards */
 .trust-grid{
   display: grid;
@@ -281,14 +289,17 @@ a:hover { text-decoration: underline; }
 }
 .service-card:hover{ transform: scale(1.02); }
 
-.service-hit{
-  position:absolute;
-  inset:0;
-  border:none;
-  background:transparent;
-  cursor:pointer;
-  z-index: 5;
+/* Hide service hit button text (accessibility only) */
+.service-hit {
+  position: absolute;
+  inset: 0;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: transparent;
+  font-size: 0;
 }
+
 
 .service-media{
   position:absolute;
