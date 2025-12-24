@@ -924,10 +924,16 @@
 
       if (typeof val === "string") {
   if (el.hasAttribute("data-i18n-html")) {
+  // Only allow HTML replacement on leaf nodes
+  if (el.children.length === 0) {
     el.innerHTML = val;
   } else {
     el.textContent = val;
   }
+} else {
+  el.textContent = val;
+}
+
 }
 
       }
@@ -975,10 +981,19 @@
     if (!I18N[lang]) lang = "es";
     localStorage.setItem("mm_lang", lang);
 
-    applyMeta(lang);
-    applyText(lang);
-    applyTimelineSteps(lang);
-    setActiveLangBtn(lang);
+  applyMeta(lang);
+  applyText(lang);
+  applyTimelineSteps(lang);
+
+  // 🔁 restart timeline safely after DOM text changes
+  setTimeout(() => {
+  if (window.__MM_TL__?.setSteps) {
+    window.__MM_TL__.setSteps(I18N[lang]?.timeline?.steps || []);
+  }
+}, 0);
+
+setActiveLangBtn(lang);
+
   };
 
   document.addEventListener("DOMContentLoaded", () => {
