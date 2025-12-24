@@ -994,31 +994,4 @@ setActiveLangBtn(lang);
       });
     });
   });
-  
-  async function loadBlogI18n(slug, lang) {
-  try {
-    const res = await fetch(`./${slug}.i18n.json`);
-    const data = await res.json();
-    const t = data[lang] || data.es;
-
-    document.querySelectorAll("[data-blog]").forEach(el => {
-      const key = el.dataset.blog;
-      if (t[key]) el.textContent = t[key];
-    });
-
-    document.querySelectorAll("[data-blog-html]").forEach(el => {
-      const key = el.dataset.blogHtml;
-      if (t[key]) el.innerHTML = t[key];
-    });
-
-    if (t.meta) {
-      document.title = t.meta.title;
-      const desc = document.querySelector("meta[name='description']");
-      if (desc) desc.content = t.meta.description;
-    }
-  } catch (e) {
-    console.error("Blog i18n load failed", e);
-  }
-}
-
 })();
