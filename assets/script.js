@@ -924,12 +924,8 @@
 
     if (typeof val === "string") {
       if (el.hasAttribute("data-i18n-html")) {
-        // Only allow HTML replacement on leaf nodes
-        if (el.children.length === 0) {
-          el.innerHTML = val;
-        } else {
-          el.textContent = val;
-        }
+        // Explicit opt-in: allow HTML replacement
+        el.innerHTML = val;
       } else {
         el.textContent = val;
       }
@@ -947,6 +943,7 @@
     }
   });
 };
+
 
 
   const applyTimelineSteps = (lang) => {
