@@ -776,6 +776,8 @@ textarea { resize: vertical; }
   width: 1.4em;
   height: 1.4em;
   border-radius: 50%;
+  transform: scale(0.75);
+  transform-origin: center;
   background: linear-gradient(
     to bottom,
     #FFD400 0%,
