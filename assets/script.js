@@ -923,7 +923,13 @@
       }
 
       if (typeof val === "string") {
-        el.textContent = val;
+  if (el.hasAttribute("data-i18n-html")) {
+    el.innerHTML = val;
+  } else {
+    el.textContent = val;
+  }
+}
+
       }
     });
 
