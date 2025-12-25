@@ -1024,24 +1024,30 @@ const applyBlogI18n = (lang) => {
       }
 
       // Text + attributes (alt, aria-label, etc.)
-      document.querySelectorAll("[data-blog-i18n]").forEach(el => {
-        const key = el.getAttribute("data-blog-i18n");
-        const val = data[key];
-        if (typeof val !== "string") return;
+      document
+  .querySelectorAll("[data-blog-i18n], [data-blog-i18n-html]")
+  .forEach(el => {
 
-        const attr = el.getAttribute("data-blog-i18n-attr");
-        if (attr) {
-          el.setAttribute(attr, val);
-          return;
-        }
+    const key =
+      el.getAttribute("data-blog-i18n") ||
+      el.getAttribute("data-blog-i18n-html");
 
-        if (el.hasAttribute("data-blog-i18n-html")) {
-          el.innerHTML = val;
-        } else {
-          el.textContent = val;
-        }
-      });
-    })
-    .catch(err => console.error("Blog i18n error:", err));
-};
+    if (!key) return;
+
+    const val = data[key];
+    if (typeof val !== "string") return;
+
+    const attr = el.getAttribute("data-blog-i18n-attr");
+    if (attr) {
+      el.setAttribute(attr, val);
+      return;
+    }
+
+    if (el.hasAttribute("data-blog-i18n-html")) {
+      el.innerHTML = val;
+    } else {
+      el.textContent = val;
+    }
+  });
+
 
