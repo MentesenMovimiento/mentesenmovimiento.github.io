@@ -983,12 +983,15 @@
 }, 0);
 
 setActiveLangBtn(lang);
+mmBlogApplyLang(lang);
 
   };
 
   document.addEventListener("DOMContentLoaded", () => {
     const initial = detectLang();
     setLang(initial);
+    
+    mmBlogInit();
 
     document.querySelectorAll(".lang-btn[data-lang]").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -998,56 +1001,75 @@ setActiveLangBtn(lang);
     });
   });
 })();
- /* ================= BLOG I18N LOADER ================= */
+/* ================= BLOG I18N LOADER (NO IIFE) ================= */
 
-const applyBlogI18n = (lang) => {
+let __MM_BLOG_DICT__ = null;
+let __MM_BLOG_SRC__ = null;
+
+function mmBlogApplyLang(lang) {
+  const blogRoot = document.querySelector("[data-blog]");
+  if (!blogRoot) return;
+
+  const dict = __MM_BLOG_DICT__;
+  if (!dict) return;
+
+  const data = dict[lang] || dict.es;
+  if (!data) return;
+
+  // Meta
+  if (typeof data["__meta.title"] === "string") document.title = data["__meta.title"];
+  if (typeof data["__meta.description"] === "string") {
+    const m = document.querySelector('meta[name="description"]');
+    if (m) m.setAttribute("content", data["__meta.description"]);
+  }
+
+  // Text + HTML + Attr (alt/aria-label/etc.)
+  document
+    .querySelectorAll("[data-blog-i18n], [data-blog-i18n-html]")
+    .forEach((el) => {
+      const key =
+        el.getAttribute("data-blog-i18n") ||
+        el.getAttribute("data-blog-i18n-html");
+
+      if (!key) return;
+
+      const val = data[key];
+      if (typeof val !== "string") return;
+
+      const attr = el.getAttribute("data-blog-i18n-attr");
+      if (attr) {
+        el.setAttribute(attr, val);
+        return;
+      }
+
+      if (el.hasAttribute("data-blog-i18n-html")) {
+        el.innerHTML = val;
+      } else {
+        el.textContent = val;
+      }
+    });
+}
+
+function mmBlogInit() {
   const blogRoot = document.querySelector("[data-blog]");
   if (!blogRoot) return;
 
   const src = blogRoot.getAttribute("data-blog-i18n");
   if (!src) return;
 
+  // If already loaded for this page, just apply current lang
+  if (__MM_BLOG_DICT__ && __MM_BLOG_SRC__ === src) {
+    mmBlogApplyLang(localStorage.getItem("mm_lang") || "es");
+    return;
+  }
+
+  __MM_BLOG_SRC__ = src;
+
   fetch(src)
-    .then(r => r.json())
-    .then(dict => {
-      const data = dict[lang] || dict.es;
-      if (!data) return;
-
-      // Meta
-      if (data["__meta.title"]) {
-        document.title = data["__meta.title"];
-      }
-
-      if (data["__meta.description"]) {
-        const m = document.querySelector('meta[name="description"]');
-        if (m) m.setAttribute("content", data["__meta.description"]);
-      }
-
-      // Text + attributes (alt, aria-label, etc.)
-      document
-  .querySelectorAll("[data-blog-i18n], [data-blog-i18n-html]")
-  .forEach(el => {
-
-    const key =
-      el.getAttribute("data-blog-i18n") ||
-      el.getAttribute("data-blog-i18n-html");
-
-    if (!key) return;
-
-    const val = data[key];
-    if (typeof val !== "string") return;
-
-    const attr = el.getAttribute("data-blog-i18n-attr");
-    if (attr) {
-      el.setAttribute(attr, val);
-      return;
-    }
-
-    if (el.hasAttribute("data-blog-i18n-html")) {
-      el.innerHTML = val;
-    } else {
-      el.textContent = val;
-    }
-  });
-
-
+    .then((r) => r.json())
+    .then((dict) => {
+      __MM_BLOG_DICT__ = dict || null;
+      mmBlogApplyLang(localStorage.getItem("mm_lang") || "es");
+    })
+    .catch((err) => console.error("Blog i18n error:", err));
+}
