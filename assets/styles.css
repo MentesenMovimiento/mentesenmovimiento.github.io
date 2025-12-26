@@ -136,11 +136,13 @@ a:hover { text-decoration: underline; }
   100% { transform: translateX(-10%); }
 }
 
-.hero-animate{
+.hero-animate {
   display: inline-block;
-  animation: heroFloat 9.33s ease-in-out infinite; /* 12s / 1.5 */
+  animation: heroFloat 9.33s ease-in-out infinite;
+  animation-delay: 120ms;
   will-change: transform;
 }
+
 
 .hero-logo-wrap{
   display: inline-flex;
@@ -174,6 +176,12 @@ a:hover { text-decoration: underline; }
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 14px;
+}
+
+@media (max-width: 640px) {
+  .hero-animate {
+    transform: translateX(0);
+  }
 }
 
 .trust-strip{
