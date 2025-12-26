@@ -318,6 +318,17 @@ a:hover { text-decoration: underline; }
   font-size: 0;
 }
 
+/* SERVICES – desktop baseline */
+.service-card {
+  max-height: 520px;
+}
+
+.service-front,
+.service-back {
+  max-height: 520px;
+  overflow: hidden;
+}
+
 .service-media{
   position:absolute;
   inset:0;
