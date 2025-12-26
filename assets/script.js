@@ -103,10 +103,6 @@ function setLang(lang) {
       window.__MM_TL__.setSteps(window.I18N[lang].timeline.steps);
     }
 
-    if (typeof applyTimelineSteps === "function") {
-      applyTimelineSteps(lang);
-    }
-
     setActiveLangBtn(lang);
 
     // blog support (optional)
@@ -1074,17 +1070,6 @@ window.I18N = {
         phase5: { title: "Phase 5 · Opening", desc: "Hiring, inspections and phased opening." }
       }
     }
-  };
-
-  const getByPath = (obj, path) => {
-    if (!obj || !path) return undefined;
-    const parts = path.split(".");
-    let cur = obj;
-    for (const p of parts) {
-      cur = cur?.[p];
-      if (cur == null) return undefined;
-    }
-    return cur;
   };
 
   window.dispatchEvent(new Event("mm:i18n-ready"));
