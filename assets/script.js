@@ -98,6 +98,10 @@ function setLang(lang) {
 
     applyMeta(lang);
     applyText(lang);
+    
+    if (window.__MM_TL__ && window.I18N?.[lang]?.timeline?.steps) {
+      window.__MM_TL__.setSteps(window.I18N[lang].timeline.steps);
+    }
 
     if (typeof applyTimelineSteps === "function") {
       applyTimelineSteps(lang);
