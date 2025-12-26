@@ -22,6 +22,7 @@
     "boxes.parent.li3": "Parece que “no escucha” cuando hay ruido o prisas.",
     "boxes.parent.li4": "Necesita moverse para poder estar en una actividad.",
 
+    "toc.aria": "Contenido del artículo",
     "toc.title": "En este artículo",
     "toc.i1": "1) Cuerpo–cerebro",
     "toc.i2": "2) Regulación emocional",
@@ -55,15 +56,20 @@
     "sections.s5.title": "5) Qué hacer si se activa más con movimiento",
     "sections.s5.p1": "Puede pasar si el movimiento elegido es demasiado activador. Cambia a opciones más organizadoras como empujar, arrastrar o ritmos lentos.",
 
+    "faq.aria": "Preguntas frecuentes",
     "faq.title": "Preguntas frecuentes",
     "faq.q1": "¿Cuánto movimiento necesita un niño?",
     "faq.a1": "Depende del perfil. Más que minutos, observa si mejora la atención y la calma tras bloques breves y repetibles.",
     "faq.q2": "¿Y si el colegio no permite pausas?",
     "faq.a2": "Se pueden usar microajustes discretos: encargos, cambios de postura, presión en manos o temporizadores.",
 
+    "related.p1": "Si además hay dificultades de comunicación, lee <a href=\"./logopedia-global.html\">Logopedia funcional</a>. Y si quieres entender cómo se ajusta un plan al perfil del niño, lee <a href=\"./intervencion-individualizada.html\">Intervención individualizada</a>.",
+
     "blognav.back": "← Volver al blog",
     "blognav.next": "Siguiente: Logopedia →",
-    "blognav.contact": "Contactar"
+    "blognav.contact": "Contactar",
+
+    "footer.brand": "Mentes en Movimiento"
   },
 
   "ca": {
@@ -89,6 +95,7 @@
     "boxes.parent.li3": "Sembla que no escolta amb soroll o presses.",
     "boxes.parent.li4": "Necessita moure’s per mantenir-se en una activitat.",
 
+    "toc.aria": "Contingut de l’article",
     "toc.title": "En aquest article",
     "toc.i1": "1) Cos–cervell",
     "toc.i2": "2) Regulació emocional",
@@ -117,15 +124,20 @@
     "sections.s5.title": "5) Què fer si el moviment activa massa",
     "sections.s5.p1": "Si el moviment és massa activador, opta per opcions més organitzadores.",
 
+    "faq.aria": "Preguntes freqüents",
     "faq.title": "Preguntes freqüents",
     "faq.q1": "Quant moviment necessita un infant?",
     "faq.a1": "Depèn del perfil. Observa si millora l’atenció després de blocs breus.",
     "faq.q2": "I si l’escola no permet pauses?",
     "faq.a2": "Es poden fer ajustos discrets sense interrompre la classe.",
 
+    "related.p1": "Si també hi ha dificultats de comunicació, llegeix <a href=\"./logopedia-global.html\">Logopèdia funcional</a>. I si vols entendre com s’ajusta un pla al perfil de l’infant, llegeix <a href=\"./intervencion-individualizada.html\">Intervenció individualitzada</a>.",
+
     "blognav.back": "← Tornar al blog",
     "blognav.next": "Següent: Logopèdia →",
-    "blognav.contact": "Contactar"
+    "blognav.contact": "Contactar",
+
+    "footer.brand": "Mentes en Movimiento"
   },
 
   "en": {
@@ -151,6 +163,7 @@
     "boxes.parent.li3": "They seem not to listen in noisy environments.",
     "boxes.parent.li4": "They need movement to stay engaged.",
 
+    "toc.aria": "Article contents",
     "toc.title": "In this article",
     "toc.i1": "1) Body–brain",
     "toc.i2": "2) Emotional regulation",
@@ -179,14 +192,19 @@
     "sections.s5.title": "5) What to do if movement increases activation",
     "sections.s5.p1": "If movement is too stimulating, switch to more organising options.",
 
+    "faq.aria": "Frequently asked questions",
     "faq.title": "Frequently asked questions",
     "faq.q1": "How much movement does a child need?",
     "faq.a1": "It depends on the child. Look for improved attention after short, repeatable blocks.",
     "faq.q2": "What if school doesn’t allow movement breaks?",
     "faq.a2": "Small, discreet adjustments can still support regulation.",
 
+    "related.p1": "If there are also communication difficulties, read <a href=\"./logopedia-global.html\">Functional speech therapy</a>. And if you want to understand how a plan is tailored to a child’s profile, read <a href=\"./intervencion-individualizada.html\">Individualised intervention</a>.",
+
     "blognav.back": "← Back to blog",
     "blognav.next": "Next: Speech therapy →",
-    "blognav.contact": "Contact us"
+    "blognav.contact": "Contact us",
+
+    "footer.brand": "Mentes en Movimiento"
   }
 }
