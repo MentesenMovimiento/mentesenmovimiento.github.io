@@ -115,9 +115,11 @@ function setLang(lang) {
 }
 
 // ---- boot ----
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("mm:i18n-ready", () => {
   const initial = detectLang();
   setLang(initial);
+});
+
 
   if (typeof mmBlogInit === "function") {
     mmBlogInit();
@@ -625,7 +627,7 @@ function mmBlogInit() {
 
 /* ============================ i18n MULTILINGUAL LAYER ============================ */
 (function () {
-  const I18N = {
+window.I18N = {
     es: {
       meta: {
         title: "Mentes en Movimiento · Clínica de desarrollo infantil",
@@ -1081,4 +1083,7 @@ function mmBlogInit() {
     }
     return cur;
   };
+
+  window.dispatchEvent(new Event("mm:i18n-ready"));
+
 })();
