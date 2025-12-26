@@ -1075,3 +1075,15 @@ window.I18N = {
   window.dispatchEvent(new Event("mm:i18n-ready"));
 
 })();
+
+// PROJECT MODAL – footer trigger
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-project-open]");
+  if (!btn) return;
+
+  const modal = document.getElementById("projectModal");
+  if (!modal) return;
+
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+});
