@@ -773,6 +773,10 @@ window.I18N = {
         phase4: { title: "Fase 4 · Local", desc: "Elección del espacio, proyecto técnico y adecuación." },
         phase5: { title: "Fase 5 · Apertura", desc: "Contratación, inspecciones y apertura progresiva." }
       }
+      footer: {
+        project_progress: "Ver progreso del proyecto"
+      }
+
     },
 
     ca: {
@@ -921,6 +925,10 @@ window.I18N = {
         phase4: { title: "Fase 4 · Local", desc: "Elecció de l’espai, projecte tècnic i adequació." },
         phase5: { title: "Fase 5 · Obertura", desc: "Contractació, inspeccions i obertura progressiva." }
       }
+      footer: {
+        project_progress: "Veure l’estat del projecte"
+      }
+
     },
 
     en: {
@@ -1069,6 +1077,10 @@ window.I18N = {
         phase4: { title: "Phase 4 · Premises", desc: "Select premises, technical project and compliance works." },
         phase5: { title: "Phase 5 · Opening", desc: "Hiring, inspections and phased opening." }
       }
+      footer: {
+        project_progress: "View project progress"
+      }
+
     }
   };
 
