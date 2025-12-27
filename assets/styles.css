@@ -303,7 +303,7 @@ a:hover { text-decoration: underline; }
 @media (min-width: 992px){
   .services-grid{
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(360px, auto); 
+    grid-auto-rows: minmax(300px, auto); 
   }
 
   .services-expand{
@@ -378,8 +378,19 @@ a:hover { text-decoration: underline; }
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: flex-end;   
+  align-items: stretch;   
   padding: 8px;
+}
+.service-front{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* ⬅ forces bottom alignment */
+  height: 100%;
+}
+
+.service-front h3,
+.service-front p{
+  margin-top: 0;
 }
 
 /* Overlay */
@@ -504,10 +515,8 @@ a:hover { text-decoration: underline; }
    ======================== */
 
 @media (min-width: 992px){
-
   .service-card{
     aspect-ratio: auto;
-
   }
 }
 
