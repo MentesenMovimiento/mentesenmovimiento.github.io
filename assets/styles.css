@@ -279,7 +279,7 @@ a:hover { text-decoration: underline; }
 }
 
 /* =========================================================
-   SERVICES GRID — FULL RESPONSIVE DROP-IN REPLACEMENT
+   SERVICES GRID — FULL RESPONSIVE DROP-IN (CORRECTED)
    ========================================================= */
 
 /* ========================
@@ -303,7 +303,7 @@ a:hover { text-decoration: underline; }
 @media (min-width: 992px){
   .services-grid{
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(220px, auto);
+    grid-auto-rows: minmax(260px, auto); /* ⬅ slightly taller base */
   }
 
   .services-expand{
@@ -351,7 +351,7 @@ a:hover { text-decoration: underline; }
 }
 
 /* ========================
-   FRONT / MEDIA
+   FRONT / MEDIA (FIXED)
    ======================== */
 
 .service-front{
@@ -365,15 +365,15 @@ a:hover { text-decoration: underline; }
   color: #fff;
 }
 
+/* 🔧 FIX: top-aligned text */
 .service-media{
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: flex-end;
-  padding-top: 14px;
-  padding-bottom: 6px;
+  align-items: flex-start;   /* ⬅ FIX */
+  padding: 16px;
 }
 
 /* Overlay */
@@ -439,7 +439,7 @@ a:hover { text-decoration: underline; }
 }
 
 /* ========================
-   MOBILE — NO CUT-OFF
+   MOBILE — INLINE EXPANSION
    ======================== */
 
 @media (max-width: 599px){
@@ -452,13 +452,6 @@ a:hover { text-decoration: underline; }
     height: auto;
   }
 
-  .service-card.is-expanded,
-  .service-card.is-expanded .service-front,
-  .service-card.is-expanded .service-detail{
-    height: auto;
-    overflow: visible;
-  }
-
   .service-detail{
     position: static;
     transform: none;
@@ -469,7 +462,7 @@ a:hover { text-decoration: underline; }
 }
 
 /* ========================
-   TABLET
+   TABLET — INLINE EXPANSION
    ======================== */
 
 @media (min-width: 600px) and (max-width: 991px){
@@ -478,13 +471,13 @@ a:hover { text-decoration: underline; }
   }
 
   .service-card.is-expanded{
-    grid-column: span 2;
+    grid-column: auto;   /* ⬅ no grid spanning */
     aspect-ratio: auto;
   }
 }
 
 /* ========================
-   DESKTOP — 2×2 EXPANSION
+   DESKTOP — 4×2 GRID (NO ROW 3)
    ======================== */
 
 @media (min-width: 992px){
@@ -493,19 +486,22 @@ a:hover { text-decoration: underline; }
     aspect-ratio: 16 / 12;
   }
 
+  /* Expanded card = 2×2 */
   .service-card.is-expanded{
     grid-column: span 2;
     grid-row: span 2;
     aspect-ratio: auto;
   }
 
+  /* Let content define height */
   .service-card.is-expanded .service-detail{
-    max-height: 100%;
+    max-height: none;
   }
 
-  /* EXPANDED LAYOUT MODE */
+  /* Expanded layout mode */
   .services-expand.has-expanded{
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto); /* ⬅ exactly 2 rows */
   }
 
   .services-expand.has-expanded .service-card.is-expanded{
@@ -513,47 +509,10 @@ a:hover { text-decoration: underline; }
     grid-row: 1 / span 2;
   }
 
+  /* Remaining cards stay within row 1–2 only */
   .services-expand.has-expanded .service-card:not(.is-expanded){
-    grid-column: 3;
     aspect-ratio: 1 / 1;
   }
-
-  /* ORDERING MAPS */
-  .services-expand.has-expanded.expanded-educacion
-  .service-card[data-service-id="fisio"]{ grid-row: 1; }
-
-  .services-expand.has-expanded.expanded-educacion
-  .service-card[data-service-id="logopedia"]{ grid-row: 2; }
-
-  .services-expand.has-expanded.expanded-educacion
-  .service-card[data-service-id="movimiento"]{ grid-row: 3; }
-
-  .services-expand.has-expanded.expanded-fisio
-  .service-card[data-service-id="educacion"]{ grid-row: 1; }
-
-  .services-expand.has-expanded.expanded-fisio
-  .service-card[data-service-id="logopedia"]{ grid-row: 2; }
-
-  .services-expand.has-expanded.expanded-fisio
-  .service-card[data-service-id="movimiento"]{ grid-row: 3; }
-
-  .services-expand.has-expanded.expanded-logopedia
-  .service-card[data-service-id="educacion"]{ grid-row: 1; }
-
-  .services-expand.has-expanded.expanded-logopedia
-  .service-card[data-service-id="fisio"]{ grid-row: 2; }
-
-  .services-expand.has-expanded.expanded-logopedia
-  .service-card[data-service-id="movimiento"]{ grid-row: 3; }
-
-  .services-expand.has-expanded.expanded-movimiento
-  .service-card[data-service-id="educacion"]{ grid-row: 1; }
-
-  .services-expand.has-expanded.expanded-movimiento
-  .service-card[data-service-id="fisio"]{ grid-row: 2; }
-
-  .services-expand.has-expanded.expanded-movimiento
-  .service-card[data-service-id="logopedia"]{ grid-row: 3; }
 }
 
 /* ========================
@@ -611,6 +570,7 @@ a:hover { text-decoration: underline; }
     height: 84px;
   }
 }
+
 
 /* CTA panel */
 .cta-panel{
