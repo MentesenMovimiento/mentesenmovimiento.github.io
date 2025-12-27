@@ -541,6 +541,24 @@ a:hover { text-decoration: underline; }
     min-height: 360px;
   }
 }
+/* ========================
+   TABLET — PREVENT IMAGE BLEED
+   ======================== */
+
+@media (min-width: 600px) and (max-width: 991px){
+
+  /* Expanded card grows — front must grow with it */
+  .service-card.is-expanded .service-front{
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* Ensure detail fully covers the card */
+  .service-card.is-expanded .service-detail{
+    inset: 0;
+    height: 100%;
+  }
+}
 
 
 /* ========================
