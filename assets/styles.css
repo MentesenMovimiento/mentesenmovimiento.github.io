@@ -372,7 +372,8 @@ a:hover { text-decoration: underline; }
   background-position: center;
   display: flex;
   align-items: flex-end;
-  padding: 14px;
+  padding-top: 14px;
+  padding-bottom: 6px;
 }
 
 /* Overlay */
