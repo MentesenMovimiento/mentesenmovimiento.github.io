@@ -368,7 +368,7 @@ a:hover { text-decoration: underline; }
 .service-detail ul{ margin: 0.3rem 0 0.6rem; padding-left: 1.2rem; }
 .service-detail li{ margin: 0.35rem 0; }
 
-.service-card.is-expanded{ transform: scale(1.01); }
+.service-card.is-expanded{ transform: scale(1.005); }
 .service-card.is-expanded .service-detail{
   opacity: 1; transform: translateY(0); pointer-events: auto;
 }
@@ -387,6 +387,13 @@ a:hover { text-decoration: underline; }
     grid-column: span 2;
     z-index: 10;
   }
+  
+/* Prevent oversized expansion on wide desktops */
+@media (min-width: 1200px){
+  [data-services]{
+    grid-auto-rows: minmax(220px, 26vh);
+  }
+}
 
   /* 3-col mode when expanded: expanded 2x2 on left, 3 stacked on right */
   .services-expand.has-expanded{
@@ -429,6 +436,7 @@ a:hover { text-decoration: underline; }
   align-items: flex-start;
   margin-top: 14px;
   padding-top: 14px;
+  padding-bot: 14px;
   border-top: 1px solid rgba(231,221,206,0.9);
 }
 
