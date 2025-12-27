@@ -666,6 +666,49 @@ a:hover { text-decoration: underline; }
   }
 }
 
+/* ========================
+   MOBILE — IN-PLACE EXPANSION
+   ======================== */
+
+@media (max-width: 599px){
+
+  /* Always single column */
+  .services-grid,
+  .services-expand,
+  .services-expand.has-expanded{
+    grid-template-columns: 1fr !important;
+    grid-auto-flow: row !important;
+  }
+
+  /* Reset any desktop grid spanning */
+  .services-expand.has-expanded .service-card,
+  .services-expand.has-expanded .service-card.is-expanded{
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  /* Expanded card opens in place */
+  .service-card.is-expanded{
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  .service-card.is-expanded,
+  .service-card.is-expanded .service-front,
+  .service-card.is-expanded .service-detail{
+    height: auto;
+    overflow: visible;
+  }
+
+  /* Detail becomes natural document flow */
+  .service-detail{
+    position: static;
+    transform: none;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
 
 /* CTA panel */
 .cta-panel{
