@@ -165,12 +165,21 @@ function mmBlogApplyLang(lang) {
       if (typeof val !== "string") return;
 
       const attr = el.getAttribute("data-blog-i18n-attr");
+
       if (attr) {
+        // Attribute translation (aria-label, alt, title, etc.)
         el.setAttribute(attr, val);
+      
       } else if (el.hasAttribute("data-blog-i18n-html")) {
+        // HTML-safe translation (strong, em, a, etc.)
         el.innerHTML = val;
+      
       } else {
+        // Plain text translation
         el.textContent = val;
+      }
+
+
       }
     });
 }
