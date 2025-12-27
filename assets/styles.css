@@ -491,17 +491,26 @@ a:hover { text-decoration: underline; }
    ======================== */
 
 @media (max-width: 599px){
-  .services-grid{
-    grid-template-columns: 1fr;
-    grid-auto-flow: row;
+  /* Force single-column stack */
+  .services-grid,
+  .services-expand{
+    grid-template-columns: 1fr !important;
+    grid-auto-flow: row !important;
   }
 
+  /* Disable ALL grid spanning on mobile */
   .service-card,
   .service-card.is-expanded{
-    grid-column: auto !important;
+    grid-column: 1 / -1 !important;
     grid-row: auto !important;
   }
+
+  /* Expanded card opens IN PLACE */
+  .service-card.is-expanded{
+    position: relative;
+  }
 }
+
 
 /* ========================
    TABLET — INLINE EXPANSION
