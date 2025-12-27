@@ -168,15 +168,15 @@ function mmBlogApplyLang(lang) {
 
       if (attr) {
         // Attribute translation (aria-label, alt, title, etc.)
-        el.setAttribute(attr, val);
+        el.setAttribute(attr, value);
       
       } else if (el.hasAttribute("data-blog-i18n-html")) {
         // HTML-safe translation (strong, em, a, etc.)
-        el.innerHTML = val;
+        el.innerHTML = value;
       
       } else {
         // Plain text translation
-        el.textContent = val;
+        el.textContent = value;
       }
 
 
