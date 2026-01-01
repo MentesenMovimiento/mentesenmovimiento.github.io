@@ -1,26 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Landing & legal -->
+  <!-- Homepage -->
   <url>
     <loc>https://mentesenmovimiento.org/</loc>
-  </url>
-  <url>
-    <loc>https://mentesenmovimiento.org/legal.html</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
-  <!-- Blog archive + posts -->
+  <!-- Blog Archive -->
   <url>
-    <loc>https://mentesenmovimiento.org/blog/index.html</loc>
+    <loc>https://mentesenmovimiento.org/blog/</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
+
+  <!-- Blog Posts -->
   <url>
     <loc>https://mentesenmovimiento.org/blog/movimiento-desarrollo.html</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://mentesenmovimiento.org/blog/logopedia-global.html</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://mentesenmovimiento.org/blog/intervencion-individualizada.html</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
